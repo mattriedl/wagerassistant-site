@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expected Value Calculator - Find +EV Bets | Wager Assistant</title>
+<meta name="description" content="Free expected value calculator. Find +EV bets by entering odds, stake and win probability to see EV per bet, expected ROI and break-even probability.">
+<meta property="og:title" content="Expected Value Calculator - Wager Assistant">
+<meta property="og:description" content="Calculate the expected value of any bet to find +EV opportunities.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wagerassistant.com/expected_value_calculator.html">
+<meta property="og:site_name" content="Wager Assistant">
+<link rel="canonical" href="https://wagerassistant.com/expected_value_calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261012">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Wager Assistant Blog" href="/blog/feed.xml">
+<!-- Site verification: add Google Search Console & Bing Webmaster Tools meta tags here -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Expected Value Calculator", "description": "Calculate expected value of bets to identify profitable opportunities", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://wagerassistant.com/expected_value_calculator.html", "provider": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}, "publisher": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Wager Assistant">
+<meta property="og:image" content="https://wagerassistant.com/og-image.png">
+<meta property="og:image:alt" content="Expected Value Calculator - Wager Assistant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Expected Value Calculator - Find +EV Bets | Wager Assistant">
+<meta name="twitter:description" content="Free expected value calculator. Find +EV bets by entering odds, stake and win probability to see EV per bet, expected ROI and break-even probability.">
+<meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
+<meta name="theme-color" content="#0d0f1a">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is expected value in betting?", "acceptedAnswer": {"@type": "Answer", "text": "Expected value (EV) is the average profit or loss a bet would produce if repeated many times. It is calculated as (win probability × profit) − (loss probability × stake)."}}, {"@type": "Question", "name": "What is a +EV bet?", "acceptedAnswer": {"@type": "Answer", "text": "A +EV (positive expected value) bet is one where your estimated win probability is higher than the price's implied probability, meaning it profits over the long run."}}, {"@type": "Question", "name": "How do I calculate the EV of a bet?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply your win probability by the potential profit, then subtract the loss probability multiplied by your stake. Our EV calculator does this instantly."}}, {"@type": "Question", "name": "Does +EV guarantee a win?", "acceptedAnswer": {"@type": "Answer", "text": "No. +EV means a bet is profitable on average over many wagers, but individual bets can still lose. Edge plays out over a large sample."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wagerassistant.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Advanced Strategy", "item": "https://wagerassistant.com/index.html#advanced"}, {"@type": "ListItem", "position": 3, "name": "Expected Value Calculator", "item": "https://wagerassistant.com/expected_value_calculator.html"}]}
+</script>
+</head>
+<body>
+<!-- =============================================================
+     BULLETPROOF STATIC NAVIGATION  (pure CSS, no JS required)
+     Works in every browser even with JavaScript disabled.
+     ============================================================= -->
+<header class="wa-nav">
+  <div class="wa-nav-inner">
+    <a href="index.html" class="wa-brand"><span class="wa-brand-icon">&spades;</span><span class="wa-brand-text">Wager<b>Assistant</b></span></a>
+    <input type="checkbox" id="wa-nav-toggle" class="wa-nav-toggle" aria-label="Toggle navigation menu">
+    <nav class="wa-menu" aria-label="Main navigation">
+      <a href="index.html" class="wa-link">Home</a>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Basic <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="betting_calculator.html" class="">Betting Calculator</a>
+          <a href="moneyline_calculator.html" class="">Moneyline Calculator</a>
+          <a href="spread_calculator.html" class="">Spread Calculator</a>
+          <a href="over_under_calculator.html" class="">Over/Under Calculator</a>
+          <a href="parlay_calculator.html" class="">Parlay Calculator</a>
+          <a href="odds_converter.html" class="">Odds Converter</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Advanced <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="arbitrage_calculator.html" class="">Arbitrage Calculator</a>
+          <a href="hedging_calculator.html" class="">Hedging Calculator</a>
+          <a href="dutching_calculator.html" class="">Dutching Calculator</a>
+          <a href="kelly_criterion_calculator.html" class="">Kelly Criterion</a>
+          <a href="expected_value_calculator.html" class="wa-active">Expected Value (EV)</a>
+          <a href="no_vig_calculator.html" class="">No-Vig / True Odds</a>
+          <a href="margin_calculator.html" class="">Margin Calculator</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">System <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="accumulator_calculator.html" class="">Accumulator</a>
+          <a href="round_robin_calculator.html" class="">Round Robin</a>
+          <a href="yankee_calculator.html" class="">Yankee</a>
+          <a href="trixie_calculator.html" class="">Trixie</a>
+          <a href="patent_calculator.html" class="">Patent</a>
+          <a href="lucky_15_calculator.html" class="">Lucky 15</a>
+          <a href="lucky_31_calculator.html" class="">Lucky 31</a>
+          <a href="lucky_63_calculator.html" class="">Lucky 63</a>
+          <a href="goliath_calculator.html" class="">Goliath</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Specialty <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="asian_handicap_calculator.html" class="">Asian Handicap</a>
+          <a href="teaser_calculator.html" class="">Teaser Calculator</a>
+          <a href="each_way_calculator.html" class="">Each-Way</a>
+          <a href="matched_betting_calculator.html" class="">Matched Betting</a>
+          <a href="bonus_bet_converter.html" class="">Bonus Bet Converter</a>
+          <a href="poisson_calculator.html" class="">Poisson Distribution</a>
+          <a href="half_point_calculator.html" class="">Half-Point</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Tracking <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="roi_calculator.html" class="">ROI Calculator</a>
+          <a href="progression_bet_calculator.html" class="">Bet Progression</a>
+          <a href="implied_probability_calculator.html" class="">Implied Probability</a>
+        </div>
+      </div>
+      <a href="blog/index.html" class="wa-link">Blog</a>
+    </nav>
+    <label for="wa-nav-toggle" class="wa-burger" aria-label="Open menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+
+<div class="page-content">
+  
+<!--SEO-CONTENT-->
+  <div class="breadcrumb-wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <a href="index.html#advanced">Advanced Strategy</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-current">Expected Value Calculator</span>
+    </nav>
+  </div>
+  <!-- AD ZONE: Leaderboard 728x90 - READY FOR INTEGRATION -->
+  <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+
+  <header class="header">
+    <div class="badge">📈 Expected Value</div>
+    <h1>Expected Value Calculator</h1>
+    <p>Enter your stake, the market odds, and your estimated win probability. The calculator determines if the bet has positive or negative expected value.</p>
+  </header>
+
+  <main class="card">
+    <div class="odds-toggle">
+      <label>Odds Format:</label>
+      <div class="toggle-group">
+        <button id="btn-us" class="active" onclick="setFormat('american')">American</button>
+        <button id="btn-dec" onclick="setFormat('decimal')">Decimal</button>
+        <button id="btn-frac" onclick="setFormat('fractional')">Fractional</button>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="stake">Stake ($)</label>
+        <input type="number" id="stake" placeholder="e.g. 100" min="0" step="any" oninput="calculate()">
+      </div>
+      <div class="form-group">
+        <label for="odds">Market Odds</label>
+        <input type="text" id="odds" placeholder="e.g. +150" oninput="calculate()">
+      </div>
+    </div>
+
+    <div class="slider-group">
+      <label>Estimated Win Probability: <span id="probDisplay">50%</span></label>
+      <div class="slider-row">
+        <input type="range" id="probSlider" min="1" max="99" value="50" step="1" oninput="updateProb()">
+        <div class="slider-val" id="probVal">50%</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="result-highlight" id="evBox" style="display:none;">
+      <div class="result-label">Expected Value per Bet</div>
+      <div class="result-value" id="res-ev">—</div>
+      <div style="margin-top:6px;font-size:14px;font-weight:700;" id="res-tag"></div>
+    </div>
+
+    <section class="summary" style="margin-top:20px;" aria-label="EV results">
+      <div class="summary-card">
+        <div class="s-label">Expected ROI</div>
+        <div class="s-value accent" id="res-roi">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Break-Even Prob</div>
+        <div class="s-value yellow" id="res-breakeven">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Potential Profit</div>
+        <div class="s-value green" id="res-profit">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Implied Probability</div>
+        <div class="s-value" id="res-implied">—</div>
+      </div>
+    </section>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="calculate()">Calculate</button>
+      <button class="btn-secondary" onclick="resetCalc()">↻ Reset</button>
+    </div>
+
+    <div class="info-box">
+      <h3>Understanding Expected Value</h3>
+      <strong>EV = (Win Probability × Profit if Win) − (Loss Probability × Stake)</strong><br>
+      A <strong>positive EV</strong> bet means you expect to profit long-term. A <strong>negative EV</strong> bet favors the bookmaker. The <strong>break-even probability</strong> is the minimum win rate needed to be profitable at these odds (= 1 / Decimal Odds).
+    </div>
+  </main>
+
+  <section class="seo-content" id="guide">
+    <div class="seo-section">
+      <p>The <strong>expected value calculator</strong> reveals whether a bet is profitable in the long run. Enter the odds, your stake and your estimated win probability, and this <strong>EV betting calculator</strong> returns the expected value per bet, your expected ROI and the break-even probability the price requires.</p>
+      <p>Positive expected value (+EV) is the foundation of every winning betting strategy. Our <strong>positive EV calculator</strong> shows you exactly how much each wager is worth on average, so you can bet only when the math is in your favour.</p>
+    </div>
+
+    <div class="seo-section">
+      <h2>How to Use the Expected Value Calculator</h2>
+      <ol class="seo-list steps">
+        <li>Select your odds format.</li>
+        <li>Enter your stake and the market odds.</li>
+        <li>Set your estimated win probability using the slider.</li>
+        <li>Read the EV per bet, expected ROI, break-even probability and +EV / &minus;EV status.</li>
+      </ol>
+    </div>
+
+    <!-- AD ZONE: In-content 300x250 - READY FOR INTEGRATION -->
+    <div class="ad-zone ad-inline" aria-hidden="true"><span>Advertisement</span></div>
+
+    <div class="seo-section">
+      <h2>Why Use Our Expected Value Calculator?</h2>
+      <p>Winning bettors do not chase wins — they chase value. A bet with positive expected value will profit over a large sample even if it loses sometimes. This calculator quantifies that value so you can build a long-term edge instead of relying on luck.</p>
+      <h3>Pro Tips for Smarter Betting</h3>
+      <ul class="seo-list">
+        <li>Only bet when EV is positive and you trust your probability estimate.</li>
+        <li>The break-even probability shows the minimum true chance the bet needs to be worthwhile.</li>
+        <li>Combine +EV selection with Kelly sizing for disciplined, growth-oriented betting.</li>
+      </ul>
+    </div>
+
+    <div class="seo-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What is expected value in betting?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Expected value (EV) is the average profit or loss a bet would produce if repeated many times. It is calculated as (win probability × profit) − (loss probability × stake).</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What is a +EV bet?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A +EV (positive expected value) bet is one where your estimated win probability is higher than the price's implied probability, meaning it profits over the long run.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How do I calculate the EV of a bet?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Multiply your win probability by the potential profit, then subtract the loss probability multiplied by your stake. Our EV calculator does this instantly.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>Does +EV guarantee a win?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">No. +EV means a bet is profitable on average over many wagers, but individual bets can still lose. Edge plays out over a large sample.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-calcs">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="kelly_criterion_calculator.html" class="related-card">
+          <span class="rc-icon">🧠</span>
+          <span class="rc-text">
+            <span class="rc-title">Kelly Criterion Calculator</span>
+            <span class="rc-sub">Advanced Strategy</span>
+          </span>
+        </a>
+        <a href="no_vig_calculator.html" class="related-card">
+          <span class="rc-icon">🧮</span>
+          <span class="rc-text">
+            <span class="rc-title">No-Vig Calculator</span>
+            <span class="rc-sub">Advanced Strategy</span>
+          </span>
+        </a>
+        <a href="implied_probability_calculator.html" class="related-card">
+          <span class="rc-icon">🎲</span>
+          <span class="rc-text">
+            <span class="rc-title">Implied Probability Calculator</span>
+            <span class="rc-sub">Tracking & Analysis</span>
+          </span>
+        </a>
+        <a href="betting_calculator.html" class="related-card">
+          <span class="rc-icon">🧮</span>
+          <span class="rc-text">
+            <span class="rc-title">Betting Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="arbitrage_calculator.html" class="related-card">
+          <span class="rc-icon">🎯</span>
+          <span class="rc-text">
+            <span class="rc-title">Arbitrage Calculator</span>
+            <span class="rc-sub">Advanced Strategy</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT HUB: Betting news / blog / guides - READY FOR INTEGRATION -->
+    <div class="content-hub" aria-label="Latest betting insights">
+      <h2>Betting Insights &amp; Guides</h2>
+      <div class="hub-grid">
+        <article class="hub-card"><span class="hub-tag">Guide</span><h3>Understanding Betting Odds</h3><p>Coming soon: in-depth guides to odds formats, value betting, and bankroll management.</p></article>
+        <article class="hub-card"><span class="hub-tag">News</span><h3>Latest Betting News</h3><p>Coming soon: automated sports betting news and market updates.</p></article>
+        <article class="hub-card"><span class="hub-tag">Strategy</span><h3>Winning Strategies</h3><p>Coming soon: expert strategy breakdowns to sharpen your edge.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
+</footer>
+
+<script defer src="nav.js?v=20261012"></script>
+<script>
+
+let oddsFormat = 'american';
+
+function setFormat(fmt) {
+  oddsFormat = fmt;
+  document.getElementById('btn-us').classList.toggle('active', fmt === 'american');
+  document.getElementById('btn-dec').classList.toggle('active', fmt === 'decimal');
+  document.getElementById('btn-frac').classList.toggle('active', fmt === 'fractional');
+  const ph = fmt === 'american' ? 'e.g. +150' : fmt === 'decimal' ? 'e.g. 2.50' : 'e.g. 3/2';
+  document.getElementById('odds').placeholder = ph;
+  calculate();
+}
+
+function updateProb() {
+  const v = document.getElementById('probSlider').value;
+  document.getElementById('probDisplay').textContent = v + '%';
+  document.getElementById('probVal').textContent = v + '%';
+  calculate();
+}
+
+function calculate() {
+  const stake = parseFloat(document.getElementById('stake').value);
+  const oddsVal = document.getElementById('odds').value.trim();
+  const prob = parseFloat(document.getElementById('probSlider').value) / 100;
+
+  if (isNaN(stake) || stake <= 0 || !oddsVal) { clearResults(); return; }
+
+  const dec = parseOddsToDecimal(oddsVal, oddsFormat);
+  if (!dec) { clearResults(); return; }
+
+  const profitIfWin = stake * (dec - 1);
+  const ev = (prob * profitIfWin) - ((1 - prob) * stake);
+  const roi = (ev / stake) * 100;
+  const breakEven = (1 / dec) * 100;
+  const impliedProb = breakEven;
+
+  document.getElementById('res-ev').textContent = fmtSign$(ev);
+  document.getElementById('res-ev').style.color = ev >= 0 ? 'var(--green)' : 'var(--red)';
+
+  const tag = document.getElementById('res-tag');
+  if (ev > 0) { tag.textContent = '✓ POSITIVE EV'; tag.style.color = 'var(--green)'; }
+  else if (ev === 0) { tag.textContent = '— NEUTRAL EV'; tag.style.color = 'var(--yellow)'; }
+  else { tag.textContent = '✗ NEGATIVE EV'; tag.style.color = 'var(--red)'; }
+
+  document.getElementById('evBox').style.display = 'block';
+  document.getElementById('res-roi').textContent = roi.toFixed(2) + '%';
+  document.getElementById('res-breakeven').textContent = breakEven.toFixed(2) + '%';
+  document.getElementById('res-profit').textContent = fmt$(profitIfWin);
+  document.getElementById('res-implied').textContent = impliedProb.toFixed(2) + '%';
+}
+
+function clearResults() {
+  document.getElementById('evBox').style.display = 'none';
+  ['res-roi','res-breakeven','res-profit','res-implied'].forEach(id => {
+    document.getElementById(id).textContent = '—';
+  });
+}
+
+function resetCalc() {
+  document.getElementById('stake').value = '';
+  document.getElementById('odds').value = '';
+  document.getElementById('probSlider').value = 50;
+  updateProb();
+  clearResults();
+}
+</script>
+</body>
+</html>

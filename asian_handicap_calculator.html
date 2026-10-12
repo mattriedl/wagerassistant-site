@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asian Handicap Calculator - Settlement | Wager Assistant</title>
+<meta name="description" content="Free Asian handicap calculator. Settle AH and Asian goal-line bets with full, half and quarter lines — instant win, half-win, push and loss results.">
+<meta property="og:title" content="Asian Handicap Calculator - Wager Assistant">
+<meta property="og:description" content="Calculate Asian Handicap bet settlements with full, half &amp; quarter line support.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wagerassistant.com/asian_handicap_calculator.html">
+<meta property="og:site_name" content="Wager Assistant">
+<link rel="canonical" href="https://wagerassistant.com/asian_handicap_calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261012">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Wager Assistant Blog" href="/blog/feed.xml">
+<!-- Site verification: add Google Search Console & Bing Webmaster Tools meta tags here -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Asian Handicap Calculator", "description": "Calculate Asian Handicap bet settlement results", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://wagerassistant.com/asian_handicap_calculator.html", "provider": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}, "publisher": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Wager Assistant">
+<meta property="og:image" content="https://wagerassistant.com/og-image.png">
+<meta property="og:image:alt" content="Asian Handicap Calculator - Wager Assistant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Asian Handicap Calculator - Settlement Tool | Wager Assistant">
+<meta name="twitter:description" content="Free Asian handicap calculator. Settle AH and Asian goal-line bets with full, half and quarter lines — instant win, half-win, push and loss results.">
+<meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
+<meta name="theme-color" content="#0d0f1a">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does an Asian handicap work?", "acceptedAnswer": {"@type": "Answer", "text": "An Asian handicap gives one team a virtual head start or deficit, removing the draw. The final score is adjusted by the handicap to settle the bet as a win, loss, push or split result."}}, {"@type": "Question", "name": "What is a quarter handicap?", "acceptedAnswer": {"@type": "Answer", "text": "A quarter handicap (e.g. −0.25 or +0.75) splits your stake equally across the two nearest half-lines, allowing half-win and half-loss outcomes."}}, {"@type": "Question", "name": "What does a push mean in Asian handicap?", "acceptedAnswer": {"@type": "Answer", "text": "A push occurs on whole-number handicaps when the adjusted score is a tie. Your stake is refunded in full."}}, {"@type": "Question", "name": "Why bet Asian handicaps?", "acceptedAnswer": {"@type": "Answer", "text": "Asian handicaps offer two outcomes instead of three, typically lower margins, and partial-stake protection on quarter lines — often better value than traditional handicaps."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wagerassistant.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Specialty Tools", "item": "https://wagerassistant.com/index.html#specialty"}, {"@type": "ListItem", "position": 3, "name": "Asian Handicap Calculator", "item": "https://wagerassistant.com/asian_handicap_calculator.html"}]}
+</script>
+</head>
+<body>
+<!-- =============================================================
+     BULLETPROOF STATIC NAVIGATION  (pure CSS, no JS required)
+     Works in every browser even with JavaScript disabled.
+     ============================================================= -->
+<header class="wa-nav">
+  <div class="wa-nav-inner">
+    <a href="index.html" class="wa-brand"><span class="wa-brand-icon">&spades;</span><span class="wa-brand-text">Wager<b>Assistant</b></span></a>
+    <input type="checkbox" id="wa-nav-toggle" class="wa-nav-toggle" aria-label="Toggle navigation menu">
+    <nav class="wa-menu" aria-label="Main navigation">
+      <a href="index.html" class="wa-link">Home</a>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Basic <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="betting_calculator.html" class="">Betting Calculator</a>
+          <a href="moneyline_calculator.html" class="">Moneyline Calculator</a>
+          <a href="spread_calculator.html" class="">Spread Calculator</a>
+          <a href="over_under_calculator.html" class="">Over/Under Calculator</a>
+          <a href="parlay_calculator.html" class="">Parlay Calculator</a>
+          <a href="odds_converter.html" class="">Odds Converter</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Advanced <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="arbitrage_calculator.html" class="">Arbitrage Calculator</a>
+          <a href="hedging_calculator.html" class="">Hedging Calculator</a>
+          <a href="dutching_calculator.html" class="">Dutching Calculator</a>
+          <a href="kelly_criterion_calculator.html" class="">Kelly Criterion</a>
+          <a href="expected_value_calculator.html" class="">Expected Value (EV)</a>
+          <a href="no_vig_calculator.html" class="">No-Vig / True Odds</a>
+          <a href="margin_calculator.html" class="">Margin Calculator</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">System <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="accumulator_calculator.html" class="">Accumulator</a>
+          <a href="round_robin_calculator.html" class="">Round Robin</a>
+          <a href="yankee_calculator.html" class="">Yankee</a>
+          <a href="trixie_calculator.html" class="">Trixie</a>
+          <a href="patent_calculator.html" class="">Patent</a>
+          <a href="lucky_15_calculator.html" class="">Lucky 15</a>
+          <a href="lucky_31_calculator.html" class="">Lucky 31</a>
+          <a href="lucky_63_calculator.html" class="">Lucky 63</a>
+          <a href="goliath_calculator.html" class="">Goliath</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Specialty <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="asian_handicap_calculator.html" class="wa-active">Asian Handicap</a>
+          <a href="teaser_calculator.html" class="">Teaser Calculator</a>
+          <a href="each_way_calculator.html" class="">Each-Way</a>
+          <a href="matched_betting_calculator.html" class="">Matched Betting</a>
+          <a href="bonus_bet_converter.html" class="">Bonus Bet Converter</a>
+          <a href="poisson_calculator.html" class="">Poisson Distribution</a>
+          <a href="half_point_calculator.html" class="">Half-Point</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Tracking <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="roi_calculator.html" class="">ROI Calculator</a>
+          <a href="progression_bet_calculator.html" class="">Bet Progression</a>
+          <a href="implied_probability_calculator.html" class="">Implied Probability</a>
+        </div>
+      </div>
+      <a href="blog/index.html" class="wa-link">Blog</a>
+    </nav>
+    <label for="wa-nav-toggle" class="wa-burger" aria-label="Open menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+
+<div class="page-content">
+  
+<!--SEO-CONTENT-->
+  <div class="breadcrumb-wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <a href="index.html#specialty">Specialty Tools</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-current">Asian Handicap Calculator</span>
+    </nav>
+  </div>
+  <!-- AD ZONE: Leaderboard 728x90 - READY FOR INTEGRATION -->
+  <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+
+  <header class="header">
+    <div class="badge">⚽ Asian Handicap</div>
+    <h1>Asian Handicap Calculator</h1>
+    <p>Enter your bet details and the final score to see the settlement result. Supports full, half, and quarter lines for handicaps and totals.</p>
+  </header>
+
+  <main class="card">
+    <div class="odds-toggle">
+      <label>Odds Format:</label>
+      <div class="toggle-group">
+        <button id="btn-us" class="active" onclick="setFormat('american')">American</button>
+        <button id="btn-dec" onclick="setFormat('decimal')">Decimal</button>
+        <button id="btn-frac" onclick="setFormat('fractional')">Fractional</button>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="betType">Bet Type</label>
+        <select id="betType">
+          <option value="handicap">Handicap</option>
+          <option value="total">Total (Over/Under)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="position">Position</label>
+        <select id="position">
+          <option value="home">Home / Over</option>
+          <option value="away">Away / Under</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="line">Handicap / Total Line</label>
+        <input type="text" id="line" placeholder="e.g. -0.75 or 2.5">
+      </div>
+      <div class="form-group">
+        <label for="odds">Odds</label>
+        <input type="text" id="odds" placeholder="e.g. -110">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="stake">Stake ($)</label>
+        <input type="number" id="stake" placeholder="e.g. 100" min="0" step="any">
+      </div>
+    </div>
+
+    <hr class="divider">
+    <h2 style="font-size:14px;font-weight:700;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">Final Score</h2>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="homeScore">Home Score</label>
+        <input type="number" id="homeScore" placeholder="0" min="0" step="1">
+      </div>
+      <div class="form-group">
+        <label for="awayScore">Away Score</label>
+        <input type="number" id="awayScore" placeholder="0" min="0" step="1">
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="calculate()">Calculate Settlement</button>
+      <button class="btn-secondary" onclick="resetCalc()">↻ Reset</button>
+    </div>
+
+    <div class="result-highlight" id="resultBox" style="display:none;margin-top:24px;">
+      <div class="result-label" id="res-label">Settlement</div>
+      <div class="result-value" id="res-result">—</div>
+      <div style="margin-top:8px;font-size:14px;color:var(--muted);" id="res-detail"></div>
+    </div>
+
+    <section class="summary" style="margin-top:20px;" id="summarySection" aria-label="Settlement details">
+      <div class="summary-card">
+        <div class="s-label">Return</div>
+        <div class="s-value green" id="res-return">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Profit / Loss</div>
+        <div class="s-value" id="res-pnl">—</div>
+      </div>
+    </section>
+
+    <div class="info-box">
+      <h3>How Asian Handicaps Work</h3>
+      <strong>Whole line (-1, +2):</strong> Win, lose, or push (stake refunded).<br>
+      <strong>Half line (-0.5, +1.5):</strong> Win or lose — no push possible.<br>
+      <strong>Quarter line (-0.75, +1.25):</strong> Split into two equal bets on adjacent lines. One half may win while the other pushes or loses.
+    </div>
+  </main>
+
+  <section class="seo-content" id="guide">
+    <div class="seo-section">
+      <p>The <strong>Asian handicap calculator</strong> settles AH and Asian goal-line bets in seconds, correctly handling full, half and quarter lines including the split-stake outcomes that confuse most bettors. Enter your handicap, odds, stake and the final score, and this <strong>Asian handicap settlement calculator</strong> returns win, half-win, push, half-loss or loss with the exact payout.</p>
+      <p>Asian handicaps remove the draw and reduce the bookmaker's margin, which is why sharp soccer bettors love them. Our <strong>quarter handicap calculator</strong> takes the headache out of settling quarter lines like &minus;0.25 or +0.75.</p>
+    </div>
+
+    <div class="seo-section">
+      <h2>How to Use the Asian Handicap Calculator</h2>
+      <ol class="seo-list steps">
+        <li>Enter your handicap line (e.g. &minus;0.5, +0.25, &minus;1).</li>
+        <li>Enter your stake and the odds.</li>
+        <li>Enter the final score for both teams.</li>
+        <li>Read the settled result — win, half-win, push, half-loss or loss — and your payout.</li>
+      </ol>
+    </div>
+
+    <!-- AD ZONE: In-content 300x250 - READY FOR INTEGRATION -->
+    <div class="ad-zone ad-inline" aria-hidden="true"><span>Advertisement</span></div>
+
+    <div class="seo-section">
+      <h2>Why Use Our Asian Handicap Calculator?</h2>
+      <p>Quarter-line handicaps split your stake across two lines, producing half-win and half-loss results that are easy to get wrong by hand. This calculator applies the exact rules so you always know precisely how an Asian handicap bet settles.</p>
+      <h3>Pro Tips for Smarter Betting</h3>
+      <ul class="seo-list">
+        <li>Quarter lines (e.g. &minus;0.25) split your stake between the two nearest half-lines.</li>
+        <li>A push on a whole-number handicap refunds your stake.</li>
+        <li>Asian handicaps usually carry lower margins than 1X2 markets — better long-term value.</li>
+      </ul>
+    </div>
+
+    <div class="seo-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How does an Asian handicap work?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">An Asian handicap gives one team a virtual head start or deficit, removing the draw. The final score is adjusted by the handicap to settle the bet as a win, loss, push or split result.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What is a quarter handicap?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A quarter handicap (e.g. &minus;0.25 or +0.75) splits your stake equally across the two nearest half-lines, allowing half-win and half-loss outcomes.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What does a push mean in Asian handicap?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A push occurs on whole-number handicaps when the adjusted score is a tie. Your stake is refunded in full.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>Why bet Asian handicaps?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Asian handicaps offer two outcomes instead of three, typically lower margins, and partial-stake protection on quarter lines — often better value than traditional handicaps.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-calcs">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="spread_calculator.html" class="related-card">
+          <span class="rc-icon">📐</span>
+          <span class="rc-text">
+            <span class="rc-title">Spread Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="half_point_calculator.html" class="related-card">
+          <span class="rc-icon">➕</span>
+          <span class="rc-text">
+            <span class="rc-title">Half-Point Calculator</span>
+            <span class="rc-sub">Specialty Tools</span>
+          </span>
+        </a>
+        <a href="over_under_calculator.html" class="related-card">
+          <span class="rc-icon">🔢</span>
+          <span class="rc-text">
+            <span class="rc-title">Over/Under Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="poisson_calculator.html" class="related-card">
+          <span class="rc-icon">📐</span>
+          <span class="rc-text">
+            <span class="rc-title">Poisson Calculator</span>
+            <span class="rc-sub">Specialty Tools</span>
+          </span>
+        </a>
+        <a href="margin_calculator.html" class="related-card">
+          <span class="rc-icon">📊</span>
+          <span class="rc-text">
+            <span class="rc-title">Margin Calculator</span>
+            <span class="rc-sub">Advanced Strategy</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT HUB: Betting news / blog / guides - READY FOR INTEGRATION -->
+    <div class="content-hub" aria-label="Latest betting insights">
+      <h2>Betting Insights &amp; Guides</h2>
+      <div class="hub-grid">
+        <article class="hub-card"><span class="hub-tag">Guide</span><h3>Understanding Betting Odds</h3><p>Coming soon: in-depth guides to odds formats, value betting, and bankroll management.</p></article>
+        <article class="hub-card"><span class="hub-tag">News</span><h3>Latest Betting News</h3><p>Coming soon: automated sports betting news and market updates.</p></article>
+        <article class="hub-card"><span class="hub-tag">Strategy</span><h3>Winning Strategies</h3><p>Coming soon: expert strategy breakdowns to sharpen your edge.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
+</footer>
+
+<script defer src="nav.js?v=20261012"></script>
+<script>
+
+let oddsFormat = 'american';
+
+function setFormat(fmt) {
+  oddsFormat = fmt;
+  document.getElementById('btn-us').classList.toggle('active', fmt === 'american');
+  document.getElementById('btn-dec').classList.toggle('active', fmt === 'decimal');
+  document.getElementById('btn-frac').classList.toggle('active', fmt === 'fractional');
+}
+
+function settleSingleLine(line, diff, stake, decOdds) {
+  // diff > 0 means our selection is winning
+  const adjustedDiff = diff + line;
+  if (adjustedDiff > 0) {
+    // Win
+    return stake * decOdds;
+  } else if (adjustedDiff === 0) {
+    // Push
+    return stake;
+  } else {
+    // Lose
+    return 0;
+  }
+}
+
+function calculate() {
+  const betType = document.getElementById('betType').value;
+  const position = document.getElementById('position').value;
+  const lineStr = document.getElementById('line').value.trim();
+  const oddsVal = document.getElementById('odds').value.trim();
+  const stake = parseFloat(document.getElementById('stake').value);
+  const homeScore = parseInt(document.getElementById('homeScore').value) || 0;
+  const awayScore = parseInt(document.getElementById('awayScore').value) || 0;
+
+  const line = parseFloat(lineStr);
+  if (isNaN(line) || isNaN(stake) || stake <= 0 || !oddsVal) return;
+
+  const decOdds = parseOddsToDecimal(oddsVal, oddsFormat);
+  if (!decOdds) return;
+
+  let diff;
+  if (betType === 'handicap') {
+    diff = position === 'home' ? (homeScore - awayScore) : (awayScore - homeScore);
+  } else {
+    const totalGoals = homeScore + awayScore;
+    diff = position === 'home' ? (totalGoals) : -(totalGoals); // home=over, away=under
+    // For totals, line represents the total line, so:
+    // Over: diff = totalGoals - line (positive = win)
+    // Under: diff = line - totalGoals (positive = win)
+    diff = position === 'home' ? (totalGoals - 0) : (0 - totalGoals);
+    // Actually let's recalculate properly for totals
+    if (position === 'home') { // Over
+      diff = totalGoals; // will be compared against -line
+    } else { // Under
+      diff = -totalGoals; // will be compared against -(-line) = line
+    }
+    // We need to adjust: for totals, the "line" means over/under X goals
+    // Settlement: Over wins if totalGoals > line
+    // Let's use a simpler approach
+  }
+
+  // Quarter line detection
+  const frac = Math.abs(line) % 0.5;
+  const isQuarter = (frac === 0.25 || frac === 0.25);
+
+  let totalReturn;
+  if (betType === 'total') {
+    // Totals: Over wins if totalGoals > line, Under wins if totalGoals < line
+    const totalGoals = homeScore + awayScore;
+    const isOver = position === 'home';
+
+    if (isQuarter) {
+      const line1 = Math.floor(line * 2) / 2; // lower
+      const line2 = Math.ceil(line * 2) / 2;   // higher
+      const halfStake = stake / 2;
+
+      const settle = (l) => {
+        const diff = isOver ? totalGoals - l : l - totalGoals;
+        if (diff > 0) return halfStake * decOdds;
+        if (diff === 0) return halfStake;
+        return 0;
+      };
+      totalReturn = settle(line1) + settle(line2);
+    } else {
+      const diff = isOver ? totalGoals - line : line - totalGoals;
+      if (diff > 0) totalReturn = stake * decOdds;
+      else if (diff === 0) totalReturn = stake;
+      else totalReturn = 0;
+    }
+  } else {
+    // Handicap
+    const goalDiff = position === 'home' ? (homeScore - awayScore) : (awayScore - homeScore);
+
+    if (isQuarter) {
+      const line1 = line > 0 ? Math.floor(line * 2) / 2 : Math.ceil(line * 2) / 2;
+      const line2 = line > 0 ? Math.ceil(line * 2) / 2 : Math.floor(line * 2) / 2;
+      const halfStake = stake / 2;
+
+      const settle = (l) => {
+        const adj = goalDiff + l;
+        if (adj > 0) return halfStake * decOdds;
+        if (adj === 0) return halfStake;
+        return 0;
+      };
+      totalReturn = settle(line1) + settle(line2);
+    } else {
+      const adj = goalDiff + line;
+      if (adj > 0) totalReturn = stake * decOdds;
+      else if (adj === 0) totalReturn = stake;
+      else totalReturn = 0;
+    }
+  }
+
+  const pnl = totalReturn - stake;
+
+  let label, color;
+  const epsilon = 0.01;
+  const fullWin = stake * (decOdds - 1);
+  if (pnl > epsilon) {
+    if (isQuarter && pnl < fullWin - epsilon) { label = 'HALF WIN'; color = 'var(--green)'; }
+    else { label = 'WIN'; color = 'var(--green)'; }
+  } else if (Math.abs(pnl) <= epsilon) { label = 'PUSH'; color = 'var(--yellow)'; }
+  else if (isQuarter && pnl > -stake + epsilon) { label = 'HALF LOSS'; color = 'var(--yellow)'; }
+  else { label = 'LOSS'; color = 'var(--red)'; }
+
+  document.getElementById('res-result').textContent = label;
+  document.getElementById('res-result').style.color = color;
+  document.getElementById('res-detail').textContent = `Score: ${homeScore} - ${awayScore} | Line: ${line}`;
+  document.getElementById('resultBox').style.display = 'block';
+
+  document.getElementById('res-return').textContent = fmt$(totalReturn);
+  document.getElementById('res-pnl').textContent = fmtSign$(pnl);
+  document.getElementById('res-pnl').className = 's-value ' + (pnl >= 0 ? 'green' : 'red');
+}
+
+function resetCalc() {
+  ['line','odds','stake','homeScore','awayScore'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('resultBox').style.display = 'none';
+  document.getElementById('res-return').textContent = '—';
+  document.getElementById('res-pnl').textContent = '—';
+}
+</script>
+</body>
+</html>

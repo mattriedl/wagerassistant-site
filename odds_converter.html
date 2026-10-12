@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Odds Converter - Decimal & Fractional | Wager Assistant</title>
+<meta name="description" content="Free odds converter. Instantly convert between American, decimal and fractional odds and see implied probability for any price. Two-way, real-time.">
+<meta property="og:title" content="Odds Converter - Wager Assistant">
+<meta property="og:description" content="Instantly convert between American, Decimal and Fractional odds with implied probability.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wagerassistant.com/odds_converter.html">
+<meta property="og:site_name" content="Wager Assistant">
+<link rel="canonical" href="https://wagerassistant.com/odds_converter.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261012">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Wager Assistant Blog" href="/blog/feed.xml">
+<!-- Site verification: add Google Search Console & Bing Webmaster Tools meta tags here -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Odds Converter", "description": "Convert between American, Decimal and Fractional odds formats", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://wagerassistant.com/odds_converter.html", "provider": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}, "publisher": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Wager Assistant">
+<meta property="og:image" content="https://wagerassistant.com/og-image.png">
+<meta property="og:image:alt" content="Odds Converter - Wager Assistant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Odds Converter - American, Decimal & Fractional | Wager Assistant">
+<meta name="twitter:description" content="Free odds converter. Instantly convert between American, decimal and fractional odds and see the implied probability for any price. Real-time, two-way conversion.">
+<meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
+<meta name="theme-color" content="#0d0f1a">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert American odds to decimal?", "acceptedAnswer": {"@type": "Answer", "text": "For positive odds: decimal = (odds ÷ 100) + 1. For negative odds: decimal = (100 ÷ |odds|) + 1. Our odds converter does this instantly and in both directions."}}, {"@type": "Question", "name": "What is implied probability from odds?", "acceptedAnswer": {"@type": "Answer", "text": "Implied probability = 1 ÷ decimal odds × 100%. It tells you the win chance the price reflects, which you can compare with your own estimate to find value."}}, {"@type": "Question", "name": "How do I convert decimal odds to fractional?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract 1 from the decimal odds to get the profit per unit, then express it as a fraction. For example, 2.50 becomes 3/2. The converter handles this automatically."}}, {"@type": "Question", "name": "Why convert betting odds?", "acceptedAnswer": {"@type": "Answer", "text": "Converting lets you compare prices across sportsbooks that use different formats, helping you always bet at the best available line."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wagerassistant.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Basic Calculators", "item": "https://wagerassistant.com/index.html#basic"}, {"@type": "ListItem", "position": 3, "name": "Odds Converter", "item": "https://wagerassistant.com/odds_converter.html"}]}
+</script>
+</head>
+<body>
+<!-- =============================================================
+     BULLETPROOF STATIC NAVIGATION  (pure CSS, no JS required)
+     Works in every browser even with JavaScript disabled.
+     ============================================================= -->
+<header class="wa-nav">
+  <div class="wa-nav-inner">
+    <a href="index.html" class="wa-brand"><span class="wa-brand-icon">&spades;</span><span class="wa-brand-text">Wager<b>Assistant</b></span></a>
+    <input type="checkbox" id="wa-nav-toggle" class="wa-nav-toggle" aria-label="Toggle navigation menu">
+    <nav class="wa-menu" aria-label="Main navigation">
+      <a href="index.html" class="wa-link">Home</a>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Basic <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="betting_calculator.html" class="">Betting Calculator</a>
+          <a href="moneyline_calculator.html" class="">Moneyline Calculator</a>
+          <a href="spread_calculator.html" class="">Spread Calculator</a>
+          <a href="over_under_calculator.html" class="">Over/Under Calculator</a>
+          <a href="parlay_calculator.html" class="">Parlay Calculator</a>
+          <a href="odds_converter.html" class="wa-active">Odds Converter</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Advanced <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="arbitrage_calculator.html" class="">Arbitrage Calculator</a>
+          <a href="hedging_calculator.html" class="">Hedging Calculator</a>
+          <a href="dutching_calculator.html" class="">Dutching Calculator</a>
+          <a href="kelly_criterion_calculator.html" class="">Kelly Criterion</a>
+          <a href="expected_value_calculator.html" class="">Expected Value (EV)</a>
+          <a href="no_vig_calculator.html" class="">No-Vig / True Odds</a>
+          <a href="margin_calculator.html" class="">Margin Calculator</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">System <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="accumulator_calculator.html" class="">Accumulator</a>
+          <a href="round_robin_calculator.html" class="">Round Robin</a>
+          <a href="yankee_calculator.html" class="">Yankee</a>
+          <a href="trixie_calculator.html" class="">Trixie</a>
+          <a href="patent_calculator.html" class="">Patent</a>
+          <a href="lucky_15_calculator.html" class="">Lucky 15</a>
+          <a href="lucky_31_calculator.html" class="">Lucky 31</a>
+          <a href="lucky_63_calculator.html" class="">Lucky 63</a>
+          <a href="goliath_calculator.html" class="">Goliath</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Specialty <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="asian_handicap_calculator.html" class="">Asian Handicap</a>
+          <a href="teaser_calculator.html" class="">Teaser Calculator</a>
+          <a href="each_way_calculator.html" class="">Each-Way</a>
+          <a href="matched_betting_calculator.html" class="">Matched Betting</a>
+          <a href="bonus_bet_converter.html" class="">Bonus Bet Converter</a>
+          <a href="poisson_calculator.html" class="">Poisson Distribution</a>
+          <a href="half_point_calculator.html" class="">Half-Point</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Tracking <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="roi_calculator.html" class="">ROI Calculator</a>
+          <a href="progression_bet_calculator.html" class="">Bet Progression</a>
+          <a href="implied_probability_calculator.html" class="">Implied Probability</a>
+        </div>
+      </div>
+      <a href="blog/index.html" class="wa-link">Blog</a>
+    </nav>
+    <label for="wa-nav-toggle" class="wa-burger" aria-label="Open menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+
+<div class="page-content">
+  
+<!--SEO-CONTENT-->
+  <div class="breadcrumb-wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <a href="index.html#basic">Basic Calculators</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-current">Odds Converter</span>
+    </nav>
+  </div>
+  <!-- AD ZONE: Leaderboard 728x90 - READY FOR INTEGRATION -->
+  <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+
+  <header class="header">
+    <div class="badge">🔄 Converter</div>
+    <h1>Odds Converter</h1>
+    <p>Type a value into any field and all other formats update instantly. Supports American, Decimal, Fractional odds and implied probability.</p>
+  </header>
+
+  <main class="card">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="american">American Odds</label>
+        <input type="text" id="american" placeholder="e.g. +150 or -110" oninput="convert('american')">
+      </div>
+      <div class="form-group">
+        <label for="decimal">Decimal Odds</label>
+        <input type="text" id="decimal" placeholder="e.g. 2.50" oninput="convert('decimal')">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fractional">Fractional Odds</label>
+        <input type="text" id="fractional" placeholder="e.g. 3/2" oninput="convert('fractional')">
+      </div>
+      <div class="form-group">
+        <label for="probability">Implied Probability (%)</label>
+        <input type="number" id="probability" placeholder="e.g. 40" min="0.01" max="99.99" step="any" oninput="convert('probability')">
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="result-highlight" id="resultBox" style="display:none;">
+      <div class="result-label">Implied Probability</div>
+      <div class="result-value accent" id="res-prob">—</div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-secondary" onclick="resetCalc()">↻ Clear All</button>
+    </div>
+
+    <div class="info-box">
+      <h3>Understanding Odds Formats</h3>
+      <strong>American:</strong> +150 means $150 profit on a $100 bet. −110 means you must bet $110 to win $100.<br>
+      <strong>Decimal:</strong> 2.50 means a $1 bet returns $2.50 total (including stake).<br>
+      <strong>Fractional:</strong> 3/2 means $3 profit for every $2 staked.<br>
+      <strong>Implied Probability:</strong> The percentage chance of winning that the odds represent.
+    </div>
+  </main>
+
+  <section class="seo-content" id="guide">
+    <div class="seo-section">
+      <p>The <strong>odds converter</strong> instantly translates any price between American, decimal and fractional formats and shows the implied probability at the same time. Type a value into any field and every other format updates in real time — making this the only <strong>odds conversion calculator</strong> you need when comparing prices across international sportsbooks.</p>
+      <p>Different books and regions display odds differently, and converting in your head is slow and error-prone. This <strong>american to decimal odds converter</strong> (and back again) keeps you fast and accurate so you never miss the best price.</p>
+    </div>
+
+    <div class="seo-section">
+      <h2>How to Use the Odds Converter</h2>
+      <ol class="seo-list steps">
+        <li>Enter a price in any one field — American, Decimal, Fractional or Implied Probability.</li>
+        <li>Watch all the other fields convert automatically and instantly.</li>
+        <li>Use the implied probability to judge value against your own estimate.</li>
+        <li>Clear and repeat for the next price you want to compare.</li>
+      </ol>
+    </div>
+
+    <!-- AD ZONE: In-content 300x250 - READY FOR INTEGRATION -->
+    <div class="ad-zone ad-inline" aria-hidden="true"><span>Advertisement</span></div>
+
+    <div class="seo-section">
+      <h2>Why Use Our Odds Converter?</h2>
+      <p>Line shopping is one of the most reliable ways to increase long-term profit, but you can only compare prices if they are in the same format. This converter removes that friction, letting you instantly normalise odds and read the true probability behind any number.</p>
+      <h3>Pro Tips for Smarter Betting</h3>
+      <ul class="seo-list">
+        <li>Decimal odds are the easiest to compare and to multiply for parlays.</li>
+        <li>Implied probability reveals the bookmaker's margin — add up both sides of a market to see the overround.</li>
+        <li>Fractional odds are common in the UK and horse racing; decimal dominates Europe; American is standard in the US.</li>
+      </ul>
+    </div>
+
+    <div class="seo-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How do I convert American odds to decimal?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">For positive odds: decimal = (odds ÷ 100) + 1. For negative odds: decimal = (100 ÷ |odds|) + 1. Our odds converter does this instantly and in both directions.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What is implied probability from odds?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Implied probability = 1 ÷ decimal odds × 100%. It tells you the win chance the price reflects, which you can compare with your own estimate to find value.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How do I convert decimal odds to fractional?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Subtract 1 from the decimal odds to get the profit per unit, then express it as a fraction. For example, 2.50 becomes 3/2. The converter handles this automatically.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>Why convert betting odds?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Converting lets you compare prices across sportsbooks that use different formats, helping you always bet at the best available line.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-calcs">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="betting_calculator.html" class="related-card">
+          <span class="rc-icon">🧮</span>
+          <span class="rc-text">
+            <span class="rc-title">Betting Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="implied_probability_calculator.html" class="related-card">
+          <span class="rc-icon">🎲</span>
+          <span class="rc-text">
+            <span class="rc-title">Implied Probability Calculator</span>
+            <span class="rc-sub">Tracking & Analysis</span>
+          </span>
+        </a>
+        <a href="parlay_calculator.html" class="related-card">
+          <span class="rc-icon">🔗</span>
+          <span class="rc-text">
+            <span class="rc-title">Parlay Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="moneyline_calculator.html" class="related-card">
+          <span class="rc-icon">💵</span>
+          <span class="rc-text">
+            <span class="rc-title">Moneyline Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="no_vig_calculator.html" class="related-card">
+          <span class="rc-icon">🧮</span>
+          <span class="rc-text">
+            <span class="rc-title">No-Vig Calculator</span>
+            <span class="rc-sub">Advanced Strategy</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT HUB: Betting news / blog / guides - READY FOR INTEGRATION -->
+    <div class="content-hub" aria-label="Latest betting insights">
+      <h2>Betting Insights &amp; Guides</h2>
+      <div class="hub-grid">
+        <article class="hub-card"><span class="hub-tag">Guide</span><h3>Understanding Betting Odds</h3><p>Coming soon: in-depth guides to odds formats, value betting, and bankroll management.</p></article>
+        <article class="hub-card"><span class="hub-tag">News</span><h3>Latest Betting News</h3><p>Coming soon: automated sports betting news and market updates.</p></article>
+        <article class="hub-card"><span class="hub-tag">Strategy</span><h3>Winning Strategies</h3><p>Coming soon: expert strategy breakdowns to sharpen your edge.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
+</footer>
+
+<script defer src="nav.js?v=20261012"></script>
+<script>
+
+let isUpdating = false;
+
+function convert(source) {
+  if (isUpdating) return;
+  isUpdating = true;
+
+  let dec = null;
+
+  if (source === 'american') {
+    const val = document.getElementById('american').value.trim().replace('+', '');
+    const n = parseFloat(val);
+    if (!isNaN(n) && (n >= 100 || n <= -100)) {
+      dec = americanToDecimal(n);
+    }
+  } else if (source === 'decimal') {
+    const n = parseFloat(document.getElementById('decimal').value);
+    if (!isNaN(n) && n > 1) dec = n;
+  } else if (source === 'fractional') {
+    dec = fractionalToDecimal(document.getElementById('fractional').value.trim());
+  } else if (source === 'probability') {
+    const p = parseFloat(document.getElementById('probability').value);
+    if (!isNaN(p) && p > 0 && p < 100) {
+      dec = 100 / p;
+    }
+  }
+
+  if (dec && dec > 1) {
+    if (source !== 'american') document.getElementById('american').value = decimalToAmerican(dec);
+    if (source !== 'decimal') document.getElementById('decimal').value = dec.toFixed(4);
+    if (source !== 'fractional') document.getElementById('fractional').value = decimalToFractional(dec);
+    if (source !== 'probability') document.getElementById('probability').value = (100 / dec).toFixed(2);
+
+    document.getElementById('res-prob').textContent = (100 / dec).toFixed(2) + '%';
+    document.getElementById('resultBox').style.display = 'block';
+  } else {
+    if (source !== 'american') document.getElementById('american').value = '';
+    if (source !== 'decimal') document.getElementById('decimal').value = '';
+    if (source !== 'fractional') document.getElementById('fractional').value = '';
+    if (source !== 'probability') document.getElementById('probability').value = '';
+    document.getElementById('resultBox').style.display = 'none';
+  }
+
+  isUpdating = false;
+}
+
+function resetCalc() {
+  ['american','decimal','fractional','probability'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('resultBox').style.display = 'none';
+}
+</script>
+</body>
+</html>

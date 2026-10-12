@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moneyline Calculator - American Odds | Wager Assistant</title>
+<meta name="description" content="Free moneyline calculator for American odds. Instantly calculate payouts and profit on favorites and underdogs, with automatic favorite/underdog detection.">
+<meta property="og:title" content="Moneyline Calculator - Wager Assistant">
+<meta property="og:description" content="Calculate moneyline payouts and implied probability for favorites and underdogs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wagerassistant.com/moneyline_calculator.html">
+<meta property="og:site_name" content="Wager Assistant">
+<link rel="canonical" href="https://wagerassistant.com/moneyline_calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261012">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Wager Assistant Blog" href="/blog/feed.xml">
+<!-- Site verification: add Google Search Console & Bing Webmaster Tools meta tags here -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Moneyline Calculator", "description": "Calculate moneyline bet payouts, profits and implied probability", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://wagerassistant.com/moneyline_calculator.html", "provider": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}, "publisher": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Wager Assistant">
+<meta property="og:image" content="https://wagerassistant.com/og-image.png">
+<meta property="og:image:alt" content="Moneyline Calculator - Wager Assistant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Moneyline Calculator - American Odds Payout Tool | Wager Assistant">
+<meta name="twitter:description" content="Free moneyline calculator for American odds. Instantly calculate payouts and profit on favorites and underdogs, with automatic favorite/underdog detection.">
+<meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
+<meta name="theme-color" content="#0d0f1a">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does a moneyline bet work?", "acceptedAnswer": {"@type": "Answer", "text": "A moneyline bet is a straight wager on which team or player will win. Negative odds (e.g. −150) show how much you must stake to win $100; positive odds (e.g. +150) show how much you win on a $100 stake."}}, {"@type": "Question", "name": "How do I calculate moneyline payouts?", "acceptedAnswer": {"@type": "Answer", "text": "For positive odds, payout = stake × (odds ÷ 100 + 1). For negative odds, payout = stake × (100 ÷ |odds| + 1). Our moneyline calculator handles both automatically."}}, {"@type": "Question", "name": "What does a negative moneyline mean?", "acceptedAnswer": {"@type": "Answer", "text": "A negative moneyline indicates the favorite. The number shows how much you need to risk to win $100 — so −120 means risking $120 to win $100."}}, {"@type": "Question", "name": "Can I use decimal odds here?", "acceptedAnswer": {"@type": "Answer", "text": "This page focuses on American moneyline odds. For decimal or fractional conversions, use our free Odds Converter."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wagerassistant.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Basic Calculators", "item": "https://wagerassistant.com/index.html#basic"}, {"@type": "ListItem", "position": 3, "name": "Moneyline Calculator", "item": "https://wagerassistant.com/moneyline_calculator.html"}]}
+</script>
+</head>
+<body>
+<!-- =============================================================
+     BULLETPROOF STATIC NAVIGATION  (pure CSS, no JS required)
+     Works in every browser even with JavaScript disabled.
+     ============================================================= -->
+<header class="wa-nav">
+  <div class="wa-nav-inner">
+    <a href="index.html" class="wa-brand"><span class="wa-brand-icon">&spades;</span><span class="wa-brand-text">Wager<b>Assistant</b></span></a>
+    <input type="checkbox" id="wa-nav-toggle" class="wa-nav-toggle" aria-label="Toggle navigation menu">
+    <nav class="wa-menu" aria-label="Main navigation">
+      <a href="index.html" class="wa-link">Home</a>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Basic <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="betting_calculator.html" class="">Betting Calculator</a>
+          <a href="moneyline_calculator.html" class="wa-active">Moneyline Calculator</a>
+          <a href="spread_calculator.html" class="">Spread Calculator</a>
+          <a href="over_under_calculator.html" class="">Over/Under Calculator</a>
+          <a href="parlay_calculator.html" class="">Parlay Calculator</a>
+          <a href="odds_converter.html" class="">Odds Converter</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Advanced <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="arbitrage_calculator.html" class="">Arbitrage Calculator</a>
+          <a href="hedging_calculator.html" class="">Hedging Calculator</a>
+          <a href="dutching_calculator.html" class="">Dutching Calculator</a>
+          <a href="kelly_criterion_calculator.html" class="">Kelly Criterion</a>
+          <a href="expected_value_calculator.html" class="">Expected Value (EV)</a>
+          <a href="no_vig_calculator.html" class="">No-Vig / True Odds</a>
+          <a href="margin_calculator.html" class="">Margin Calculator</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">System <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="accumulator_calculator.html" class="">Accumulator</a>
+          <a href="round_robin_calculator.html" class="">Round Robin</a>
+          <a href="yankee_calculator.html" class="">Yankee</a>
+          <a href="trixie_calculator.html" class="">Trixie</a>
+          <a href="patent_calculator.html" class="">Patent</a>
+          <a href="lucky_15_calculator.html" class="">Lucky 15</a>
+          <a href="lucky_31_calculator.html" class="">Lucky 31</a>
+          <a href="lucky_63_calculator.html" class="">Lucky 63</a>
+          <a href="goliath_calculator.html" class="">Goliath</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Specialty <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="asian_handicap_calculator.html" class="">Asian Handicap</a>
+          <a href="teaser_calculator.html" class="">Teaser Calculator</a>
+          <a href="each_way_calculator.html" class="">Each-Way</a>
+          <a href="matched_betting_calculator.html" class="">Matched Betting</a>
+          <a href="bonus_bet_converter.html" class="">Bonus Bet Converter</a>
+          <a href="poisson_calculator.html" class="">Poisson Distribution</a>
+          <a href="half_point_calculator.html" class="">Half-Point</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Tracking <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="roi_calculator.html" class="">ROI Calculator</a>
+          <a href="progression_bet_calculator.html" class="">Bet Progression</a>
+          <a href="implied_probability_calculator.html" class="">Implied Probability</a>
+        </div>
+      </div>
+      <a href="blog/index.html" class="wa-link">Blog</a>
+    </nav>
+    <label for="wa-nav-toggle" class="wa-burger" aria-label="Open menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+
+<div class="page-content">
+  
+<!--SEO-CONTENT-->
+  <div class="breadcrumb-wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <a href="index.html#basic">Basic Calculators</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-current">Moneyline Calculator</span>
+    </nav>
+  </div>
+  <!-- AD ZONE: Leaderboard 728x90 - READY FOR INTEGRATION -->
+  <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+
+  <header class="header">
+    <div class="badge">💲 Moneyline</div>
+    <h1>Moneyline Calculator</h1>
+    <p>Enter your stake and moneyline odds (positive or negative) to instantly calculate your potential payout, profit, and implied probability.</p>
+  </header>
+
+  <main class="card">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="stake">Stake ($)</label>
+        <input type="number" id="stake" placeholder="e.g. 100" min="0" step="any" oninput="calculate()">
+      </div>
+      <div class="form-group">
+        <label for="moneyline">Moneyline Odds</label>
+        <input type="number" id="moneyline" placeholder="e.g. -150 or +200" oninput="calculate()">
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="result-highlight" id="typeBox" style="display:none;">
+      <div class="result-label" id="res-typeLabel">Bet Type</div>
+      <div class="result-value" id="res-type" style="font-size:22px;">—</div>
+    </div>
+
+    <section class="summary" style="margin-top:20px;" aria-label="Moneyline results">
+      <div class="summary-card">
+        <div class="s-label">Potential Payout</div>
+        <div class="s-value green" id="res-payout">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Profit</div>
+        <div class="s-value green" id="res-profit">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Implied Probability</div>
+        <div class="s-value accent" id="res-prob">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Decimal Odds</div>
+        <div class="s-value" id="res-decimal">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Fractional Odds</div>
+        <div class="s-value" id="res-fractional">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Break-Even Win %</div>
+        <div class="s-value yellow" id="res-breakeven">—</div>
+      </div>
+    </section>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="calculate()">Calculate</button>
+      <button class="btn-secondary" onclick="resetCalc()">↻ Reset</button>
+    </div>
+
+    <div class="info-box">
+      <h3>Understanding Moneyline Odds</h3>
+      <strong>Negative moneyline (e.g. −150):</strong> This is the <em>favorite</em>. You must bet $150 to win $100 in profit. The lower (more negative), the heavier the favorite.<br><br>
+      <strong>Positive moneyline (e.g. +200):</strong> This is the <em>underdog</em>. A $100 bet wins $200 in profit. The higher the number, the bigger the underdog.<br><br>
+      <strong>Formulas:</strong><br>
+      Favorite: Profit = Stake × (100 / |Moneyline|)<br>
+      Underdog: Profit = Stake × (Moneyline / 100)<br>
+      Implied Prob (Favorite): |ML| / (|ML| + 100)<br>
+      Implied Prob (Underdog): 100 / (ML + 100)
+    </div>
+  </main>
+
+  <section class="seo-content" id="guide">
+    <div class="seo-section">
+      <p>The <strong>moneyline calculator</strong> is built for American-odds bettors who want instant payout and profit figures on straight win bets. Enter a positive price for underdogs (+150) or a negative price for favorites (&minus;110) and the <strong>american odds calculator</strong> shows your return immediately, automatically detecting whether your pick is the favorite or the underdog.</p>
+      <p>Moneyline bets are the simplest wager in sports — you are backing one team or player to win outright. This <strong>moneyline payout calculator</strong> makes sure you always understand the risk and reward before committing your stake.</p>
+    </div>
+
+    <div class="seo-section">
+      <h2>How to Use the Moneyline Calculator</h2>
+      <ol class="seo-list steps">
+        <li>Enter your stake in dollars.</li>
+        <li>Type the moneyline odds — use a minus sign for favorites and a plus sign for underdogs.</li>
+        <li>Instantly see your total payout and net profit.</li>
+        <li>Compare favorites and underdogs to find the better value play.</li>
+      </ol>
+    </div>
+
+    <!-- AD ZONE: In-content 300x250 - READY FOR INTEGRATION -->
+    <div class="ad-zone ad-inline" aria-hidden="true"><span>Advertisement</span></div>
+
+    <div class="seo-section">
+      <h2>Why Use Our Moneyline Calculator?</h2>
+      <p>Favorites and underdogs pay out very differently, and a small change in the moneyline can dramatically affect your return. This tool removes the mental math so you can quickly compare lines across sportsbooks, evaluate parlay legs, and understand exactly how much an underdog upset would pay.</p>
+      <h3>Pro Tips for Smarter Betting</h3>
+      <ul class="seo-list">
+        <li>A &minus;200 favorite must win 67% of the time just to break even — make sure the price is justified.</li>
+        <li>Underdog moneylines offer bigger payouts; small stakes can return large profits when they hit.</li>
+        <li>Use the implied probability to compare the moneyline against the spread for the same game.</li>
+      </ul>
+    </div>
+
+    <div class="seo-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How does a moneyline bet work?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A moneyline bet is a straight wager on which team or player will win. Negative odds (e.g. &minus;150) show how much you must stake to win $100; positive odds (e.g. +150) show how much you win on a $100 stake.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How do I calculate moneyline payouts?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">For positive odds, payout = stake × (odds ÷ 100 + 1). For negative odds, payout = stake × (100 ÷ |odds| + 1). Our moneyline calculator handles both automatically.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What does a negative moneyline mean?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A negative moneyline indicates the favorite. The number shows how much you need to risk to win $100 — so &minus;120 means risking $120 to win $100.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>Can I use decimal odds here?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">This page focuses on American moneyline odds. For decimal or fractional conversions, use our free Odds Converter.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-calcs">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="betting_calculator.html" class="related-card">
+          <span class="rc-icon">🧮</span>
+          <span class="rc-text">
+            <span class="rc-title">Betting Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="spread_calculator.html" class="related-card">
+          <span class="rc-icon">📐</span>
+          <span class="rc-text">
+            <span class="rc-title">Spread Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="odds_converter.html" class="related-card">
+          <span class="rc-icon">🔄</span>
+          <span class="rc-text">
+            <span class="rc-title">Odds Converter</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="parlay_calculator.html" class="related-card">
+          <span class="rc-icon">🔗</span>
+          <span class="rc-text">
+            <span class="rc-title">Parlay Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="implied_probability_calculator.html" class="related-card">
+          <span class="rc-icon">🎲</span>
+          <span class="rc-text">
+            <span class="rc-title">Implied Probability Calculator</span>
+            <span class="rc-sub">Tracking & Analysis</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT HUB: Betting news / blog / guides - READY FOR INTEGRATION -->
+    <div class="content-hub" aria-label="Latest betting insights">
+      <h2>Betting Insights &amp; Guides</h2>
+      <div class="hub-grid">
+        <article class="hub-card"><span class="hub-tag">Guide</span><h3>Understanding Betting Odds</h3><p>Coming soon: in-depth guides to odds formats, value betting, and bankroll management.</p></article>
+        <article class="hub-card"><span class="hub-tag">News</span><h3>Latest Betting News</h3><p>Coming soon: automated sports betting news and market updates.</p></article>
+        <article class="hub-card"><span class="hub-tag">Strategy</span><h3>Winning Strategies</h3><p>Coming soon: expert strategy breakdowns to sharpen your edge.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
+</footer>
+
+<script defer src="nav.js?v=20261012"></script>
+<script>
+
+function calculate() {
+  const stake = parseFloat(document.getElementById('stake').value);
+  const ml = parseFloat(document.getElementById('moneyline').value);
+
+  if (isNaN(stake) || stake <= 0 || isNaN(ml) || (ml > -100 && ml < 100)) { clearResults(); return; }
+
+  const dec = americanToDecimal(ml);
+  if (!dec) { clearResults(); return; }
+
+  const payout = stake * dec;
+  const profit = payout - stake;
+  const impliedProb = (1 / dec) * 100;
+  const frac = decimalToFractional(dec);
+
+  // Determine type
+  const isFavorite = ml < 0;
+  const typeEl = document.getElementById('res-type');
+  const typeLabelEl = document.getElementById('res-typeLabel');
+  document.getElementById('typeBox').style.display = 'block';
+
+  if (isFavorite) {
+    typeEl.textContent = '📉 Favorite (' + ml + ')';
+    typeEl.style.color = 'var(--yellow)';
+    typeLabelEl.textContent = 'Bet on the Favorite';
+  } else {
+    typeEl.textContent = '📈 Underdog (+' + ml + ')';
+    typeEl.style.color = 'var(--green)';
+    typeLabelEl.textContent = 'Bet on the Underdog';
+  }
+
+  document.getElementById('res-payout').textContent = fmt$(payout);
+  document.getElementById('res-profit').textContent = fmtSign$(profit);
+  document.getElementById('res-prob').textContent = impliedProb.toFixed(2) + '%';
+  document.getElementById('res-decimal').textContent = dec.toFixed(4);
+  document.getElementById('res-fractional').textContent = frac || '—';
+  document.getElementById('res-breakeven').textContent = impliedProb.toFixed(2) + '%';
+}
+
+function clearResults() {
+  ['res-payout','res-profit','res-prob','res-decimal','res-fractional','res-breakeven'].forEach(id => {
+    document.getElementById(id).textContent = '—';
+  });
+  document.getElementById('typeBox').style.display = 'none';
+}
+
+function resetCalc() {
+  document.getElementById('stake').value = '';
+  document.getElementById('moneyline').value = '';
+  clearResults();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Each-Way Calculator - Win & Place Payouts | Wager Assistant</title>
+<meta name="description" content="Free each-way calculator for horse racing and golf. Calculate win and place returns with custom place terms and fractions, plus total payout and profit.">
+<meta property="og:title" content="Each-Way Bet Calculator - Wager Assistant">
+<meta property="og:description" content="Calculate win and place returns for each-way bets with flexible place terms.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wager Assistant">
+<meta property="og:url" content="https://wagerassistant.com/each_way_calculator.html">
+<link rel="canonical" href="https://wagerassistant.com/each_way_calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261012">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Wager Assistant Blog" href="/blog/feed.xml">
+<!-- Site verification: add Google Search Console & Bing Webmaster Tools meta tags here -->
+<style>
+  .scenario-box {
+    margin-top: 18px; padding: 18px; border-radius: 12px;
+    background: var(--surface2); border: 1px solid var(--border);
+  }
+  .scenario-box h4 {
+    font-size: 12px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 12px;
+  }
+  .scenario-row {
+    display: flex; justify-content: space-between; padding: 8px 0;
+    border-bottom: 1px solid var(--border); font-size: 14px;
+  }
+  .scenario-row:last-child { border-bottom: none; }
+  .scenario-label { color: var(--muted); }
+  .scenario-value { font-weight: 700; color: var(--text); }
+  .scenario-value.green { color: var(--green); }
+  .scenario-value.red { color: var(--red); }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Each-Way Bet Calculator", "description": "Calculate win and place returns for each-way bets in horse racing and golf", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://wagerassistant.com/each_way_calculator.html", "provider": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}, "publisher": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Wager Assistant">
+<meta property="og:image" content="https://wagerassistant.com/og-image.png">
+<meta property="og:image:alt" content="Each-Way Calculator - Wager Assistant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Each-Way Calculator - Win & Place Payouts | Wager Assistant">
+<meta name="twitter:description" content="Free each-way calculator for horse racing and golf. Calculate win and place returns with custom place terms and fractions, plus total payout and profit.">
+<meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
+<meta name="theme-color" content="#0d0f1a">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How does each-way betting work?", "acceptedAnswer": {"@type": "Answer", "text": "An each-way bet is two bets: one on your selection to win and one on it to place. The place part pays a fraction of the win odds if your selection finishes in the paid places."}}, {"@type": "Question", "name": "What does 1/5 odds a place mean?", "acceptedAnswer": {"@type": "Answer", "text": "It means the place part of your bet is settled at one-fifth of the win odds. For 10/1, the place would pay at 2/1 if your selection finishes in the paid places."}}, {"@type": "Question", "name": "How much does an each-way bet cost?", "acceptedAnswer": {"@type": "Answer", "text": "Twice your unit stake, because it covers both the win and the place. A £10 each-way bet costs £20 in total."}}, {"@type": "Question", "name": "When is each-way betting worth it?", "acceptedAnswer": {"@type": "Answer", "text": "Each-way bets are valuable on longer-priced selections and in races with extra places, where the place return alone can yield a profit."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wagerassistant.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Specialty Tools", "item": "https://wagerassistant.com/index.html#specialty"}, {"@type": "ListItem", "position": 3, "name": "Each-Way Calculator", "item": "https://wagerassistant.com/each_way_calculator.html"}]}
+</script>
+</head>
+<body>
+<!-- =============================================================
+     BULLETPROOF STATIC NAVIGATION  (pure CSS, no JS required)
+     Works in every browser even with JavaScript disabled.
+     ============================================================= -->
+<header class="wa-nav">
+  <div class="wa-nav-inner">
+    <a href="index.html" class="wa-brand"><span class="wa-brand-icon">&spades;</span><span class="wa-brand-text">Wager<b>Assistant</b></span></a>
+    <input type="checkbox" id="wa-nav-toggle" class="wa-nav-toggle" aria-label="Toggle navigation menu">
+    <nav class="wa-menu" aria-label="Main navigation">
+      <a href="index.html" class="wa-link">Home</a>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Basic <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="betting_calculator.html" class="">Betting Calculator</a>
+          <a href="moneyline_calculator.html" class="">Moneyline Calculator</a>
+          <a href="spread_calculator.html" class="">Spread Calculator</a>
+          <a href="over_under_calculator.html" class="">Over/Under Calculator</a>
+          <a href="parlay_calculator.html" class="">Parlay Calculator</a>
+          <a href="odds_converter.html" class="">Odds Converter</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Advanced <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="arbitrage_calculator.html" class="">Arbitrage Calculator</a>
+          <a href="hedging_calculator.html" class="">Hedging Calculator</a>
+          <a href="dutching_calculator.html" class="">Dutching Calculator</a>
+          <a href="kelly_criterion_calculator.html" class="">Kelly Criterion</a>
+          <a href="expected_value_calculator.html" class="">Expected Value (EV)</a>
+          <a href="no_vig_calculator.html" class="">No-Vig / True Odds</a>
+          <a href="margin_calculator.html" class="">Margin Calculator</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">System <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="accumulator_calculator.html" class="">Accumulator</a>
+          <a href="round_robin_calculator.html" class="">Round Robin</a>
+          <a href="yankee_calculator.html" class="">Yankee</a>
+          <a href="trixie_calculator.html" class="">Trixie</a>
+          <a href="patent_calculator.html" class="">Patent</a>
+          <a href="lucky_15_calculator.html" class="">Lucky 15</a>
+          <a href="lucky_31_calculator.html" class="">Lucky 31</a>
+          <a href="lucky_63_calculator.html" class="">Lucky 63</a>
+          <a href="goliath_calculator.html" class="">Goliath</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Specialty <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="asian_handicap_calculator.html" class="">Asian Handicap</a>
+          <a href="teaser_calculator.html" class="">Teaser Calculator</a>
+          <a href="each_way_calculator.html" class="wa-active">Each-Way</a>
+          <a href="matched_betting_calculator.html" class="">Matched Betting</a>
+          <a href="bonus_bet_converter.html" class="">Bonus Bet Converter</a>
+          <a href="poisson_calculator.html" class="">Poisson Distribution</a>
+          <a href="half_point_calculator.html" class="">Half-Point</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Tracking <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="roi_calculator.html" class="">ROI Calculator</a>
+          <a href="progression_bet_calculator.html" class="">Bet Progression</a>
+          <a href="implied_probability_calculator.html" class="">Implied Probability</a>
+        </div>
+      </div>
+      <a href="blog/index.html" class="wa-link">Blog</a>
+    </nav>
+    <label for="wa-nav-toggle" class="wa-burger" aria-label="Open menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+
+<div class="page-content">
+  
+<!--SEO-CONTENT-->
+  <div class="breadcrumb-wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <a href="index.html#specialty">Specialty Tools</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-current">Each-Way Calculator</span>
+    </nav>
+  </div>
+  <!-- AD ZONE: Leaderboard 728x90 - READY FOR INTEGRATION -->
+  <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+
+  <header class="header">
+    <div class="badge">🏇 EACH-WAY</div>
+    <h1>Each-Way Bet Calculator</h1>
+    <p>Enter your odds, stake, and each-way place terms to see the full breakdown — win return, place return, and total profit for every scenario.</p>
+  </header>
+
+  <main class="card">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="odds">Odds (fractional, e.g. 10/1)</label>
+        <input type="text" id="odds" placeholder="e.g. 10/1" oninput="calculate()">
+      </div>
+      <div class="form-group">
+        <label for="stake">Stake Per Part ($)</label>
+        <input type="number" id="stake" placeholder="e.g. 10" min="0" step="any" oninput="calculate()">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="ewFraction">Each-Way Fraction</label>
+        <select id="ewFraction" onchange="calculate()">
+          <option value="0.25">1/4 Odds</option>
+          <option value="0.2">1/5 Odds</option>
+          <option value="0.333">1/3 Odds</option>
+          <option value="0.5">1/2 Odds</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="places">Number of Places Paid</label>
+        <select id="places" onchange="calculate()">
+          <option value="2">2 Places</option>
+          <option value="3" selected>3 Places</option>
+          <option value="4">4 Places</option>
+          <option value="5">5 Places</option>
+          <option value="6">6 Places</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input type="checkbox" id="ruleDeduct" onchange="calculate()"> Apply Rule 4 Deduction
+      </label>
+    </div>
+    <div class="form-group" id="rule4Group" style="display:none;">
+      <label for="rule4">Rule 4 Deduction (pence)</label>
+      <select id="rule4" onchange="calculate()">
+        <option value="0">0p</option>
+        <option value="5">5p</option>
+        <option value="10">10p</option>
+        <option value="15">15p</option>
+        <option value="20">20p</option>
+        <option value="25">25p</option>
+        <option value="30">30p</option>
+        <option value="35">35p</option>
+        <option value="40">40p</option>
+        <option value="45">45p</option>
+        <option value="50">50p</option>
+        <option value="55">55p</option>
+        <option value="60">60p</option>
+        <option value="65">65p</option>
+        <option value="70">70p</option>
+        <option value="75">75p</option>
+      </select>
+    </div>
+
+    <hr class="divider">
+
+    <section class="summary" aria-label="Each-way summary">
+      <div class="summary-card">
+        <div class="s-label">Total Stake</div>
+        <div class="s-value" id="res-totalStake">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Win Odds</div>
+        <div class="s-value accent" id="res-winOdds">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Place Odds</div>
+        <div class="s-value" id="res-placeOdds">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Places Paid</div>
+        <div class="s-value" id="res-places">—</div>
+      </div>
+    </section>
+
+    <div id="scenarioOutput"></div>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="calculate()">Calculate</button>
+      <button class="btn-secondary" onclick="resetCalc()">↻ Reset</button>
+    </div>
+
+    <div class="info-box">
+      <h3>How Each-Way Bets Work</h3>
+      <p>An each-way bet is actually <strong>two separate bets</strong> — a win bet and a place bet — so it costs <strong>double your unit stake</strong>. The win part pays at full odds if your selection wins. The place part pays at a fraction of the odds (typically 1/4 or 1/5) if your selection finishes in one of the paid places.</p>
+      <p><strong>Example:</strong> A $10 each-way bet at 10/1 with 1/4 odds and 3 places costs $20 total ($10 win + $10 place). If the horse wins, you get $110 (win) + $35 (place) = $145 return. If it places 2nd or 3rd, you get only the $35 place return.</p>
+      <p><strong>Each-Way Terms:</strong></p>
+      <ul>
+        <li><strong>1/4 odds:</strong> Most common for horse racing (5+ runners)</li>
+        <li><strong>1/5 odds:</strong> Standard for handicaps with 16+ runners</li>
+        <li><strong>1/3 odds:</strong> Common in golf outright markets</li>
+      </ul>
+      <p><strong>Rule 4:</strong> When a horse is withdrawn, a deduction is applied to winning and place bets to compensate for the removed runner's odds.</p>
+    </div>
+  </main>
+
+  <section class="seo-content" id="guide">
+    <div class="seo-section">
+      <p>The <strong>each-way calculator</strong> splits your bet into a win part and a place part, settling both according to your bookmaker's each-way terms. Enter your stake, odds, place fraction and the number of places paid, and this <strong>each-way bet calculator</strong> returns your win return, place return, total payout and profit.</p>
+      <p>Each-way betting is hugely popular in horse racing and golf because you can still collect if your selection places. Our <strong>horse racing each-way calculator</strong> handles the place fractions (1/4, 1/5) and outcomes for you.</p>
+    </div>
+
+    <div class="seo-section">
+      <h2>How to Use the Each-Way Calculator</h2>
+      <ol class="seo-list steps">
+        <li>Enter your stake (this is doubled — one win part, one place part).</li>
+        <li>Enter the odds and the place terms (e.g. 1/5 odds, 4 places).</li>
+        <li>Select whether your selection won or placed.</li>
+        <li>Read your win return, place return, total payout and profit.</li>
+      </ol>
+    </div>
+
+    <!-- AD ZONE: In-content 300x250 - READY FOR INTEGRATION -->
+    <div class="ad-zone ad-inline" aria-hidden="true"><span>Advertisement</span></div>
+
+    <div class="seo-section">
+      <h2>Why Use Our Each-Way Calculator?</h2>
+      <p>Each-way returns depend on place fractions and the number of places offered, which vary by event and field size. This calculator applies the exact terms so you know precisely what a win or a place pays before and after the race.</p>
+      <h3>Pro Tips for Smarter Betting</h3>
+      <ul class="seo-list">
+        <li>Your total stake is doubled — £5 each-way costs £10.</li>
+        <li>More runners usually means more places paid; big handicaps may offer extra places.</li>
+        <li>Each-way value is best on bigger-priced selections with generous place terms.</li>
+      </ul>
+    </div>
+
+    <div class="seo-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How does each-way betting work?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">An each-way bet is two bets: one on your selection to win and one on it to place. The place part pays a fraction of the win odds if your selection finishes in the paid places.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What does 1/5 odds a place mean?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">It means the place part of your bet is settled at one-fifth of the win odds. For 10/1, the place would pay at 2/1 if your selection finishes in the paid places.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How much does an each-way bet cost?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Twice your unit stake, because it covers both the win and the place. A £10 each-way bet costs £20 in total.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>When is each-way betting worth it?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Each-way bets are valuable on longer-priced selections and in races with extra places, where the place return alone can yield a profit.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-calcs">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="betting_calculator.html" class="related-card">
+          <span class="rc-icon">🧮</span>
+          <span class="rc-text">
+            <span class="rc-title">Betting Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="matched_betting_calculator.html" class="related-card">
+          <span class="rc-icon">🔄</span>
+          <span class="rc-text">
+            <span class="rc-title">Matched Betting Calculator</span>
+            <span class="rc-sub">Specialty Tools</span>
+          </span>
+        </a>
+        <a href="dutching_calculator.html" class="related-card">
+          <span class="rc-icon">⚖️</span>
+          <span class="rc-text">
+            <span class="rc-title">Dutching Calculator</span>
+            <span class="rc-sub">Advanced Strategy</span>
+          </span>
+        </a>
+        <a href="bonus_bet_converter.html" class="related-card">
+          <span class="rc-icon">🎁</span>
+          <span class="rc-text">
+            <span class="rc-title">Bonus Bet Converter</span>
+            <span class="rc-sub">Specialty Tools</span>
+          </span>
+        </a>
+        <a href="odds_converter.html" class="related-card">
+          <span class="rc-icon">🔄</span>
+          <span class="rc-text">
+            <span class="rc-title">Odds Converter</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT HUB: Betting news / blog / guides - READY FOR INTEGRATION -->
+    <div class="content-hub" aria-label="Latest betting insights">
+      <h2>Betting Insights &amp; Guides</h2>
+      <div class="hub-grid">
+        <article class="hub-card"><span class="hub-tag">Guide</span><h3>Understanding Betting Odds</h3><p>Coming soon: in-depth guides to odds formats, value betting, and bankroll management.</p></article>
+        <article class="hub-card"><span class="hub-tag">News</span><h3>Latest Betting News</h3><p>Coming soon: automated sports betting news and market updates.</p></article>
+        <article class="hub-card"><span class="hub-tag">Strategy</span><h3>Winning Strategies</h3><p>Coming soon: expert strategy breakdowns to sharpen your edge.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
+</footer>
+
+<script defer src="nav.js?v=20261012"></script>
+<script>
+
+document.getElementById('ruleDeduct').addEventListener('change', function() {
+  document.getElementById('rule4Group').style.display = this.checked ? 'block' : 'none';
+});
+
+function parseFracOdds(str) {
+  str = str.trim();
+  if (str.includes('/')) {
+    const parts = str.split('/');
+    const num = parseFloat(parts[0]);
+    const den = parseFloat(parts[1]);
+    if (isNaN(num) || isNaN(den) || den === 0) return null;
+    return num / den;
+  }
+  const v = parseFloat(str);
+  if (isNaN(v) || v <= 0) return null;
+  return v;
+}
+
+function calculate() {
+  const oddsStr = document.getElementById('odds').value.trim();
+  const stake = parseFloat(document.getElementById('stake').value);
+  const ewFrac = parseFloat(document.getElementById('ewFraction').value);
+  const places = parseInt(document.getElementById('places').value);
+  const useRule4 = document.getElementById('ruleDeduct').checked;
+  const rule4p = useRule4 ? parseInt(document.getElementById('rule4').value) : 0;
+
+  const fracOdds = parseFracOdds(oddsStr);
+  if (!fracOdds || isNaN(stake) || stake <= 0) { clearResults(); return; }
+
+  const rule4Factor = 1 - (rule4p / 100);
+  const adjustedWinOdds = fracOdds * rule4Factor;
+  const placeOdds = fracOdds * ewFrac * rule4Factor;
+
+  const totalStake = stake * 2;
+  const winReturn = stake * (adjustedWinOdds + 1);
+  const placeReturn = stake * (placeOdds + 1);
+
+  // Scenario 1: Selection Wins
+  const ifWinTotal = winReturn + placeReturn;
+  const ifWinProfit = ifWinTotal - totalStake;
+
+  // Scenario 2: Selection Places (not win)
+  const ifPlaceTotal = placeReturn;
+  const ifPlaceProfit = ifPlaceTotal - totalStake;
+
+  // Scenario 3: Selection Loses
+  const ifLoseProfit = -totalStake;
+
+  document.getElementById('res-totalStake').textContent = fmt$(totalStake);
+  document.getElementById('res-winOdds').textContent = fracOdds.toFixed(2) + '/1' + (rule4p > 0 ? ` (adj: ${adjustedWinOdds.toFixed(2)}/1)` : '');
+  document.getElementById('res-placeOdds').textContent = placeOdds.toFixed(2) + '/1';
+  document.getElementById('res-places').textContent = places;
+
+  let html = '';
+
+  // Win scenario
+  html += `<div class="scenario-box">
+    <h4>🏆 If Selection Wins</h4>
+    <div class="scenario-row"><span class="scenario-label">Win Return (${adjustedWinOdds.toFixed(2)}/1 × $${stake})</span><span class="scenario-value green">${fmt$(winReturn)}</span></div>
+    <div class="scenario-row"><span class="scenario-label">Place Return (${placeOdds.toFixed(2)}/1 × $${stake})</span><span class="scenario-value green">${fmt$(placeReturn)}</span></div>
+    <div class="scenario-row"><span class="scenario-label">Total Return</span><span class="scenario-value green">${fmt$(ifWinTotal)}</span></div>
+    <div class="scenario-row"><span class="scenario-label"><strong>Profit</strong></span><span class="scenario-value green"><strong>${fmtSign$(ifWinProfit)}</strong></span></div>
+  </div>`;
+
+  // Place scenario
+  html += `<div class="scenario-box">
+    <h4>📍 If Selection Places (2nd–${places}${ordSuffix(places)})</h4>
+    <div class="scenario-row"><span class="scenario-label">Win Bet</span><span class="scenario-value red">Lost ($0)</span></div>
+    <div class="scenario-row"><span class="scenario-label">Place Return (${placeOdds.toFixed(2)}/1 × $${stake})</span><span class="scenario-value green">${fmt$(placeReturn)}</span></div>
+    <div class="scenario-row"><span class="scenario-label">Total Return</span><span class="scenario-value">${fmt$(ifPlaceTotal)}</span></div>
+    <div class="scenario-row"><span class="scenario-label"><strong>Profit / Loss</strong></span><span class="scenario-value ${ifPlaceProfit >= 0 ? 'green' : 'red'}"><strong>${fmtSign$(ifPlaceProfit)}</strong></span></div>
+  </div>`;
+
+  // Lose scenario
+  html += `<div class="scenario-box">
+    <h4>❌ If Selection Does Not Place</h4>
+    <div class="scenario-row"><span class="scenario-label">Total Return</span><span class="scenario-value red">$0.00</span></div>
+    <div class="scenario-row"><span class="scenario-label"><strong>Loss</strong></span><span class="scenario-value red"><strong>${fmtSign$(ifLoseProfit)}</strong></span></div>
+  </div>`;
+
+  document.getElementById('scenarioOutput').innerHTML = html;
+}
+
+function ordSuffix(n) {
+  if (n === 2) return 'nd';
+  if (n === 3) return 'rd';
+  return 'th';
+}
+
+function clearResults() {
+  ['res-totalStake','res-winOdds','res-placeOdds','res-places'].forEach(id => {
+    document.getElementById(id).textContent = '—';
+  });
+  document.getElementById('scenarioOutput').innerHTML = '';
+}
+
+function resetCalc() {
+  document.getElementById('odds').value = '';
+  document.getElementById('stake').value = '';
+  document.getElementById('ewFraction').value = '0.25';
+  document.getElementById('places').value = '3';
+  document.getElementById('ruleDeduct').checked = false;
+  document.getElementById('rule4Group').style.display = 'none';
+  document.getElementById('rule4').value = '0';
+  clearResults();
+}
+</script>
+</body>
+</html>

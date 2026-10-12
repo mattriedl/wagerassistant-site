@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accumulator Calculator - Acca Payout Tool | Wager Assistant</title>
+<meta name="description" content="Free accumulator calculator. Work out acca payouts and profit across multiple selections, with optional bonus percentages for winning accumulators.">
+<meta property="og:title" content="Accumulator Calculator - Wager Assistant">
+<meta property="og:description" content="Calculate accumulator returns with bonus percentages for multi-fold selections.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wager Assistant">
+<meta property="og:url" content="https://wagerassistant.com/accumulator_calculator.html">
+<link rel="canonical" href="https://wagerassistant.com/accumulator_calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261012">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Wager Assistant Blog" href="/blog/feed.xml">
+<!-- Site verification: add Google Search Console & Bing Webmaster Tools meta tags here -->
+<style>
+  .bonus-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  .bonus-table th, .bonus-table td {
+    padding: 10px 12px; text-align: center; font-size: 13px;
+    border-bottom: 1px solid var(--border);
+  }
+  .bonus-table th {
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted); background: var(--surface2);
+  }
+  .bonus-table td { color: var(--text); font-weight: 600; }
+  .bonus-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px;
+    font-weight: 700; background: rgba(16,185,129,0.15); color: var(--green);
+  }
+  .leg-result {
+    display: flex; gap: 8px; align-items: center;
+  }
+  .leg-result select {
+    width: 80px; padding: 6px; font-size: 12px;
+    background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 6px;
+  }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Accumulator Calculator", "description": "Calculate accumulator returns with bonus percentages for multi-fold bets", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://wagerassistant.com/accumulator_calculator.html", "provider": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}, "publisher": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Wager Assistant">
+<meta property="og:image" content="https://wagerassistant.com/og-image.png">
+<meta property="og:image:alt" content="Accumulator Calculator - Wager Assistant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Accumulator Calculator - Acca Payout Tool | Wager Assistant">
+<meta name="twitter:description" content="Free accumulator calculator. Work out acca payouts and profit across multiple selections, with optional bonus percentages for winning accumulators.">
+<meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
+<meta name="theme-color" content="#0d0f1a">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is an accumulator bet?", "acceptedAnswer": {"@type": "Answer", "text": "An accumulator (acca) is a single bet combining four or more selections, where every leg must win for the bet to pay out. The odds multiply together for a larger potential return."}}, {"@type": "Question", "name": "How is an accumulator payout calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply all the legs' decimal odds together, then multiply by your stake. Our accumulator calculator does this and can add an acca bonus percentage."}}, {"@type": "Question", "name": "What is an acca bonus?", "acceptedAnswer": {"@type": "Answer", "text": "Many sportsbooks add a bonus percentage to winning accumulators with a certain number of legs. Enter the percentage and the calculator applies it to your returns."}}, {"@type": "Question", "name": "What is the difference between an acca and a parlay?", "acceptedAnswer": {"@type": "Answer", "text": "They are the same bet — 'accumulator' is the common UK term and 'parlay' is the US term for combining multiple selections into one wager."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wagerassistant.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "System Bets", "item": "https://wagerassistant.com/index.html#system"}, {"@type": "ListItem", "position": 3, "name": "Accumulator Calculator", "item": "https://wagerassistant.com/accumulator_calculator.html"}]}
+</script>
+</head>
+<body>
+<!-- =============================================================
+     BULLETPROOF STATIC NAVIGATION  (pure CSS, no JS required)
+     Works in every browser even with JavaScript disabled.
+     ============================================================= -->
+<header class="wa-nav">
+  <div class="wa-nav-inner">
+    <a href="index.html" class="wa-brand"><span class="wa-brand-icon">&spades;</span><span class="wa-brand-text">Wager<b>Assistant</b></span></a>
+    <input type="checkbox" id="wa-nav-toggle" class="wa-nav-toggle" aria-label="Toggle navigation menu">
+    <nav class="wa-menu" aria-label="Main navigation">
+      <a href="index.html" class="wa-link">Home</a>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Basic <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="betting_calculator.html" class="">Betting Calculator</a>
+          <a href="moneyline_calculator.html" class="">Moneyline Calculator</a>
+          <a href="spread_calculator.html" class="">Spread Calculator</a>
+          <a href="over_under_calculator.html" class="">Over/Under Calculator</a>
+          <a href="parlay_calculator.html" class="">Parlay Calculator</a>
+          <a href="odds_converter.html" class="">Odds Converter</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Advanced <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="arbitrage_calculator.html" class="">Arbitrage Calculator</a>
+          <a href="hedging_calculator.html" class="">Hedging Calculator</a>
+          <a href="dutching_calculator.html" class="">Dutching Calculator</a>
+          <a href="kelly_criterion_calculator.html" class="">Kelly Criterion</a>
+          <a href="expected_value_calculator.html" class="">Expected Value (EV)</a>
+          <a href="no_vig_calculator.html" class="">No-Vig / True Odds</a>
+          <a href="margin_calculator.html" class="">Margin Calculator</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">System <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="accumulator_calculator.html" class="wa-active">Accumulator</a>
+          <a href="round_robin_calculator.html" class="">Round Robin</a>
+          <a href="yankee_calculator.html" class="">Yankee</a>
+          <a href="trixie_calculator.html" class="">Trixie</a>
+          <a href="patent_calculator.html" class="">Patent</a>
+          <a href="lucky_15_calculator.html" class="">Lucky 15</a>
+          <a href="lucky_31_calculator.html" class="">Lucky 31</a>
+          <a href="lucky_63_calculator.html" class="">Lucky 63</a>
+          <a href="goliath_calculator.html" class="">Goliath</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Specialty <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="asian_handicap_calculator.html" class="">Asian Handicap</a>
+          <a href="teaser_calculator.html" class="">Teaser Calculator</a>
+          <a href="each_way_calculator.html" class="">Each-Way</a>
+          <a href="matched_betting_calculator.html" class="">Matched Betting</a>
+          <a href="bonus_bet_converter.html" class="">Bonus Bet Converter</a>
+          <a href="poisson_calculator.html" class="">Poisson Distribution</a>
+          <a href="half_point_calculator.html" class="">Half-Point</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Tracking <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="roi_calculator.html" class="">ROI Calculator</a>
+          <a href="progression_bet_calculator.html" class="">Bet Progression</a>
+          <a href="implied_probability_calculator.html" class="">Implied Probability</a>
+        </div>
+      </div>
+      <a href="blog/index.html" class="wa-link">Blog</a>
+    </nav>
+    <label for="wa-nav-toggle" class="wa-burger" aria-label="Open menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+
+<div class="page-content">
+  
+<!--SEO-CONTENT-->
+  <div class="breadcrumb-wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <a href="index.html#system">System Bets</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-current">Accumulator Calculator</span>
+    </nav>
+  </div>
+  <!-- AD ZONE: Leaderboard 728x90 - READY FOR INTEGRATION -->
+  <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+
+  <header class="header">
+    <div class="badge">📈 ACCUMULATOR</div>
+    <h1>Accumulator Calculator</h1>
+    <p>Build your accumulator, mark winners and losers, and see returns with optional acca bonus percentages applied to winning folds.</p>
+  </header>
+
+  <main class="card">
+    <div class="odds-toggle">
+      <label>Odds Format:</label>
+      <div class="toggle-group">
+        <button id="btn-us" class="active" onclick="setFormat('american')">American</button>
+        <button id="btn-dec" onclick="setFormat('decimal')">Decimal</button>
+        <button id="btn-frac" onclick="setFormat('fractional')">Fractional</button>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="stake">Stake ($)</label>
+        <input type="number" id="stake" placeholder="e.g. 10" min="0" step="any" oninput="calculate()">
+      </div>
+      <div class="form-group">
+        <label>
+          <input type="checkbox" id="useBonus" onchange="calculate()" checked> Apply Acca Bonus
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group"><label>Selections</label></div>
+    <div class="legs-container" id="legsContainer"></div>
+    <div class="btn-row" style="justify-content:flex-start;margin-top:10px;">
+      <button class="btn-secondary" onclick="addLeg()">+ Add Selection</button>
+    </div>
+
+    <hr class="divider">
+
+    <section class="summary" aria-label="Accumulator results">
+      <div class="summary-card">
+        <div class="s-label">Selections</div>
+        <div class="s-value accent" id="res-selections">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Combined Odds</div>
+        <div class="s-value" id="res-combinedOdds">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Base Return</div>
+        <div class="s-value" id="res-baseReturn">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Bonus</div>
+        <div class="s-value green" id="res-bonus">—</div>
+      </div>
+    </section>
+
+    <section class="summary" aria-label="Profit results">
+      <div class="summary-card">
+        <div class="s-label">Total Return</div>
+        <div class="s-value green" id="res-totalReturn">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Profit</div>
+        <div class="s-value green" id="res-profit">—</div>
+      </div>
+    </section>
+
+    <div id="bonusTable"></div>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="calculate()">Calculate</button>
+      <button class="btn-secondary" onclick="resetCalc()">↻ Reset</button>
+    </div>
+
+    <div class="info-box">
+      <h3>How Accumulator Bonuses Work</h3>
+      <p>Many bookmakers offer <strong>acca boost bonuses</strong> that add a percentage to your accumulator winnings based on the number of selections:</p>
+      <table class="bonus-table">
+        <thead><tr><th>Selections</th><th>Bonus %</th></tr></thead>
+        <tbody>
+          <tr><td>1–4</td><td>0%</td></tr>
+          <tr><td>5</td><td>5%</td></tr>
+          <tr><td>6</td><td>10%</td></tr>
+          <tr><td>7</td><td>15%</td></tr>
+          <tr><td>8</td><td>20%</td></tr>
+          <tr><td>9</td><td>25%</td></tr>
+          <tr><td>10</td><td>30%</td></tr>
+          <tr><td>11</td><td>40%</td></tr>
+          <tr><td>12+</td><td>50%</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Note:</strong> Bonus percentages vary by bookmaker. The values above are typical. The bonus is usually applied to <strong>winnings only</strong> (profit), not the total return. Void/pushed legs typically reduce the fold count.</p>
+    </div>
+  </main>
+
+  <section class="seo-content" id="guide">
+    <div class="seo-section">
+      <p>The <strong>accumulator calculator</strong> (or acca calculator) works out the combined return when you roll several selections into one bet. Enter each leg's odds and your stake, and this <strong>acca payout calculator</strong> multiplies them together to show your total payout, profit and any bonus added for winning accumulators.</p>
+      <p>Accumulators turn small stakes into potentially big returns because every selection must win and the odds compound. Our <strong>accumulator bet calculator</strong> reveals the true payout and the long odds involved so you can stake sensibly.</p>
+    </div>
+
+    <div class="seo-section">
+      <h2>How to Use the Accumulator Calculator</h2>
+      <ol class="seo-list steps">
+        <li>Select your odds format.</li>
+        <li>Enter each selection's odds, adding legs as needed.</li>
+        <li>Enter your stake and any acca bonus percentage offered.</li>
+        <li>View your combined odds, total payout and profit instantly.</li>
+      </ol>
+    </div>
+
+    <!-- AD ZONE: In-content 300x250 - READY FOR INTEGRATION -->
+    <div class="ad-zone ad-inline" aria-hidden="true"><span>Advertisement</span></div>
+
+    <div class="seo-section">
+      <h2>Why Use Our Accumulator Calculator?</h2>
+      <p>Acca returns compound fast, making them hard to estimate manually. This calculator shows the exact payout, factors in bonus offers, and highlights how every added leg lowers your win probability — helping you balance excitement with discipline.</p>
+      <h3>Pro Tips for Smarter Betting</h3>
+      <ul class="seo-list">
+        <li>Each extra leg multiplies potential returns but sharply reduces win probability.</li>
+        <li>Look for accumulator bonus and insurance offers to boost value.</li>
+        <li>Consider full-cover bets like a Lucky 15 to retain returns when one leg fails.</li>
+      </ul>
+    </div>
+
+    <div class="seo-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What is an accumulator bet?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">An accumulator (acca) is a single bet combining four or more selections, where every leg must win for the bet to pay out. The odds multiply together for a larger potential return.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How is an accumulator payout calculated?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Multiply all the legs' decimal odds together, then multiply by your stake. Our accumulator calculator does this and can add an acca bonus percentage.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What is an acca bonus?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Many sportsbooks add a bonus percentage to winning accumulators with a certain number of legs. Enter the percentage and the calculator applies it to your returns.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What is the difference between an acca and a parlay?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">They are the same bet — 'accumulator' is the common UK term and 'parlay' is the US term for combining multiple selections into one wager.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-calcs">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="parlay_calculator.html" class="related-card">
+          <span class="rc-icon">🔗</span>
+          <span class="rc-text">
+            <span class="rc-title">Parlay Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="lucky_15_calculator.html" class="related-card">
+          <span class="rc-icon">🍀</span>
+          <span class="rc-text">
+            <span class="rc-title">Lucky 15 Calculator</span>
+            <span class="rc-sub">System Bets</span>
+          </span>
+        </a>
+        <a href="yankee_calculator.html" class="related-card">
+          <span class="rc-icon">🎰</span>
+          <span class="rc-text">
+            <span class="rc-title">Yankee Calculator</span>
+            <span class="rc-sub">System Bets</span>
+          </span>
+        </a>
+        <a href="round_robin_calculator.html" class="related-card">
+          <span class="rc-icon">🔁</span>
+          <span class="rc-text">
+            <span class="rc-title">Round Robin Calculator</span>
+            <span class="rc-sub">System Bets</span>
+          </span>
+        </a>
+        <a href="trixie_calculator.html" class="related-card">
+          <span class="rc-icon">🎲</span>
+          <span class="rc-text">
+            <span class="rc-title">Trixie Calculator</span>
+            <span class="rc-sub">System Bets</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT HUB: Betting news / blog / guides - READY FOR INTEGRATION -->
+    <div class="content-hub" aria-label="Latest betting insights">
+      <h2>Betting Insights &amp; Guides</h2>
+      <div class="hub-grid">
+        <article class="hub-card"><span class="hub-tag">Guide</span><h3>Understanding Betting Odds</h3><p>Coming soon: in-depth guides to odds formats, value betting, and bankroll management.</p></article>
+        <article class="hub-card"><span class="hub-tag">News</span><h3>Latest Betting News</h3><p>Coming soon: automated sports betting news and market updates.</p></article>
+        <article class="hub-card"><span class="hub-tag">Strategy</span><h3>Winning Strategies</h3><p>Coming soon: expert strategy breakdowns to sharpen your edge.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
+</footer>
+
+<script defer src="nav.js?v=20261012"></script>
+<script>
+
+let oddsFormat = 'american';
+let legCount = 0;
+
+const BONUS_SCHEDULE = [
+  { min: 1, max: 4, pct: 0 },
+  { min: 5, max: 5, pct: 5 },
+  { min: 6, max: 6, pct: 10 },
+  { min: 7, max: 7, pct: 15 },
+  { min: 8, max: 8, pct: 20 },
+  { min: 9, max: 9, pct: 25 },
+  { min: 10, max: 10, pct: 30 },
+  { min: 11, max: 11, pct: 40 },
+  { min: 12, max: 99, pct: 50 }
+];
+
+function getBonusPct(n) {
+  for (const tier of BONUS_SCHEDULE) {
+    if (n >= tier.min && n <= tier.max) return tier.pct;
+  }
+  return 0;
+}
+
+function setFormat(fmt) {
+  oddsFormat = fmt;
+  document.getElementById('btn-us').classList.toggle('active', fmt === 'american');
+  document.getElementById('btn-dec').classList.toggle('active', fmt === 'decimal');
+  document.getElementById('btn-frac').classList.toggle('active', fmt === 'fractional');
+  const ph = fmt === 'american' ? 'e.g. -110' : fmt === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
+  document.querySelectorAll('.leg-odds').forEach(el => el.placeholder = ph);
+  calculate();
+}
+
+function addLeg() {
+  legCount++;
+  const c = document.getElementById('legsContainer');
+  const ph = oddsFormat === 'american' ? 'e.g. -110' : oddsFormat === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
+  const row = document.createElement('div');
+  row.className = 'leg-row'; row.id = 'leg-' + legCount;
+  row.innerHTML = `
+    <div class="leg-num">#${legCount}</div>
+    <input type="text" class="leg-odds" placeholder="${ph}" oninput="calculate()">
+    <select class="leg-status" onchange="calculate()">
+      <option value="win">Win</option>
+      <option value="lose">Lose</option>
+      <option value="void">Void</option>
+    </select>
+    <button class="remove-leg" onclick="removeLeg(${legCount})" aria-label="Remove">✕</button>
+  `;
+  c.appendChild(row);
+  calculate();
+}
+
+function removeLeg(id) {
+  const el = document.getElementById('leg-' + id);
+  if (el) el.remove();
+  calculate();
+}
+
+function calculate() {
+  const stake = parseFloat(document.getElementById('stake').value);
+  const useBonus = document.getElementById('useBonus').checked;
+  const rows = document.querySelectorAll('.leg-row');
+
+  if (isNaN(stake) || stake <= 0 || rows.length === 0) { clearResults(); return; }
+
+  let combinedOdds = 1;
+  let winnersCount = 0;
+  let allWin = true;
+  let validLegs = 0;
+
+  rows.forEach(row => {
+    const oddsInput = row.querySelector('.leg-odds');
+    const statusSelect = row.querySelector('.leg-status');
+    const status = statusSelect.value;
+    const dec = parseOddsToDecimal(oddsInput.value.trim(), oddsFormat);
+
+    if (!dec) return;
+    validLegs++;
+
+    if (status === 'void') {
+      // Void legs treated as odds 1.0 (push)
+      combinedOdds *= 1;
+    } else if (status === 'win') {
+      combinedOdds *= dec;
+      winnersCount++;
+    } else {
+      allWin = false;
+      combinedOdds *= 0; // Acca loses
+    }
+  });
+
+  if (validLegs === 0) { clearResults(); return; }
+
+  const baseReturn = allWin ? stake * combinedOdds : 0;
+  const baseProfit = baseReturn - stake;
+  const bonusPct = useBonus && allWin ? getBonusPct(winnersCount) : 0;
+  const bonusAmount = baseProfit > 0 ? baseProfit * (bonusPct / 100) : 0;
+  const totalReturn = baseReturn + bonusAmount;
+  const totalProfit = totalReturn - stake;
+
+  document.getElementById('res-selections').textContent = validLegs + (allWin ? ' ✓' : ' (lost)');
+  document.getElementById('res-combinedOdds').textContent = allWin ? combinedOdds.toFixed(4) : '—';
+  document.getElementById('res-baseReturn').textContent = fmt$(baseReturn);
+  document.getElementById('res-bonus').textContent = bonusPct > 0 ? `+${fmt$(bonusAmount)} (${bonusPct}%)` : 'N/A';
+  document.getElementById('res-totalReturn').textContent = fmt$(totalReturn);
+
+  const profitEl = document.getElementById('res-profit');
+  profitEl.textContent = fmtSign$(totalProfit);
+  profitEl.className = 's-value ' + (totalProfit >= 0 ? 'green' : 'red');
+}
+
+function clearResults() {
+  ['res-selections','res-combinedOdds','res-baseReturn','res-bonus','res-totalReturn','res-profit'].forEach(id => {
+    document.getElementById(id).textContent = '—';
+  });
+}
+
+function resetCalc() {
+  document.getElementById('stake').value = '';
+  document.getElementById('legsContainer').innerHTML = '';
+  legCount = 0;
+  clearResults();
+  for (let i = 0; i < 4; i++) addLeg();
+}
+
+// Initialize with 4 selections
+for (let i = 0; i < 4; i++) addLeg();
+</script>
+</body>
+</html>

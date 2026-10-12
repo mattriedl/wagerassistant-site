@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parlay Calculator - Multi-Leg Payout Tool | Wager Assistant</title>
+<meta name="description" content="Calculate parlay payouts instantly with our free parlay calculator. Add 2-15 legs in any odds format and see combined odds, payout and profit in real time.">
+<meta property="og:title" content="Parlay Calculator - Wager Assistant">
+<meta property="og:description" content="Build multi-leg parlays and see combined odds, payout, profit &amp; implied probability instantly.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wagerassistant.com/parlay_calculator.html">
+<meta property="og:site_name" content="Wager Assistant">
+<link rel="canonical" href="https://wagerassistant.com/parlay_calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261012">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Wager Assistant Blog" href="/blog/feed.xml">
+<!-- Site verification: add Google Search Console & Bing Webmaster Tools meta tags here -->
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Parlay Calculator", "description": "Calculate multi-leg parlay payouts and combined odds", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://wagerassistant.com/parlay_calculator.html", "provider": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}, "publisher": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Wager Assistant">
+<meta property="og:image" content="https://wagerassistant.com/og-image.png">
+<meta property="og:image:alt" content="Parlay Calculator - Wager Assistant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Parlay Calculator - Free Multi-Leg Payout Tool 2026 | Wager Assistant">
+<meta name="twitter:description" content="Calculate parlay payouts instantly with our free parlay calculator. Add 2-15 legs in any odds format and see combined odds, total payout and profit in real time.">
+<meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
+<meta name="theme-color" content="#0d0f1a">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How are parlay payouts calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Convert each leg to decimal odds, multiply them all together, then multiply by your stake. For example, three legs at 2.00 produce combined odds of 8.00, so a $10 stake returns $80."}}, {"@type": "Question", "name": "How many legs can a parlay have?", "acceptedAnswer": {"@type": "Answer", "text": "Most sportsbooks allow up to 10-15 legs. Our parlay calculator supports adding as many legs as you need, in any odds format."}}, {"@type": "Question", "name": "Why do parlays pay so much more?", "acceptedAnswer": {"@type": "Answer", "text": "Because every leg must win, the odds multiply together. The combined probability of all legs winning is low, so the payout is correspondingly high."}}, {"@type": "Question", "name": "Are parlays a good bet?", "acceptedAnswer": {"@type": "Answer", "text": "Parlays offer big payouts but lower win probability and a higher built-in hold. They are best used selectively — use the implied probability to judge whether the price offers value."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wagerassistant.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Basic Calculators", "item": "https://wagerassistant.com/index.html#basic"}, {"@type": "ListItem", "position": 3, "name": "Parlay Calculator", "item": "https://wagerassistant.com/parlay_calculator.html"}]}
+</script>
+</head>
+<body>
+<!-- =============================================================
+     BULLETPROOF STATIC NAVIGATION  (pure CSS, no JS required)
+     Works in every browser even with JavaScript disabled.
+     ============================================================= -->
+<header class="wa-nav">
+  <div class="wa-nav-inner">
+    <a href="index.html" class="wa-brand"><span class="wa-brand-icon">&spades;</span><span class="wa-brand-text">Wager<b>Assistant</b></span></a>
+    <input type="checkbox" id="wa-nav-toggle" class="wa-nav-toggle" aria-label="Toggle navigation menu">
+    <nav class="wa-menu" aria-label="Main navigation">
+      <a href="index.html" class="wa-link">Home</a>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Basic <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="betting_calculator.html" class="">Betting Calculator</a>
+          <a href="moneyline_calculator.html" class="">Moneyline Calculator</a>
+          <a href="spread_calculator.html" class="">Spread Calculator</a>
+          <a href="over_under_calculator.html" class="">Over/Under Calculator</a>
+          <a href="parlay_calculator.html" class="wa-active">Parlay Calculator</a>
+          <a href="odds_converter.html" class="">Odds Converter</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Advanced <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="arbitrage_calculator.html" class="">Arbitrage Calculator</a>
+          <a href="hedging_calculator.html" class="">Hedging Calculator</a>
+          <a href="dutching_calculator.html" class="">Dutching Calculator</a>
+          <a href="kelly_criterion_calculator.html" class="">Kelly Criterion</a>
+          <a href="expected_value_calculator.html" class="">Expected Value (EV)</a>
+          <a href="no_vig_calculator.html" class="">No-Vig / True Odds</a>
+          <a href="margin_calculator.html" class="">Margin Calculator</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">System <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="accumulator_calculator.html" class="">Accumulator</a>
+          <a href="round_robin_calculator.html" class="">Round Robin</a>
+          <a href="yankee_calculator.html" class="">Yankee</a>
+          <a href="trixie_calculator.html" class="">Trixie</a>
+          <a href="patent_calculator.html" class="">Patent</a>
+          <a href="lucky_15_calculator.html" class="">Lucky 15</a>
+          <a href="lucky_31_calculator.html" class="">Lucky 31</a>
+          <a href="lucky_63_calculator.html" class="">Lucky 63</a>
+          <a href="goliath_calculator.html" class="">Goliath</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Specialty <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="asian_handicap_calculator.html" class="">Asian Handicap</a>
+          <a href="teaser_calculator.html" class="">Teaser Calculator</a>
+          <a href="each_way_calculator.html" class="">Each-Way</a>
+          <a href="matched_betting_calculator.html" class="">Matched Betting</a>
+          <a href="bonus_bet_converter.html" class="">Bonus Bet Converter</a>
+          <a href="poisson_calculator.html" class="">Poisson Distribution</a>
+          <a href="half_point_calculator.html" class="">Half-Point</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Tracking <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="roi_calculator.html" class="">ROI Calculator</a>
+          <a href="progression_bet_calculator.html" class="">Bet Progression</a>
+          <a href="implied_probability_calculator.html" class="">Implied Probability</a>
+        </div>
+      </div>
+      <a href="blog/index.html" class="wa-link">Blog</a>
+    </nav>
+    <label for="wa-nav-toggle" class="wa-burger" aria-label="Open menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+
+<div class="page-content">
+  
+<!--SEO-CONTENT-->
+  <div class="breadcrumb-wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <a href="index.html#basic">Basic Calculators</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-current">Parlay Calculator</span>
+    </nav>
+  </div>
+  <!-- AD ZONE: Leaderboard 728x90 - READY FOR INTEGRATION -->
+  <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+
+  <header class="header">
+    <div class="badge">🔗 Multi-Leg</div>
+    <h1>Parlay Calculator</h1>
+    <p>Add multiple selections to build a parlay. See combined odds, total payout, profit, and implied probability in real time.</p>
+  </header>
+
+  <main class="card">
+    <div class="odds-toggle">
+      <label>Odds Format:</label>
+      <div class="toggle-group">
+        <button id="btn-us" class="active" onclick="setFormat('american')">American</button>
+        <button id="btn-dec" onclick="setFormat('decimal')">Decimal</button>
+        <button id="btn-frac" onclick="setFormat('fractional')">Fractional</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="stake">Wager / Stake ($)</label>
+      <input type="number" id="stake" placeholder="e.g. 50" min="0" step="any" oninput="calculate()">
+    </div>
+
+    <div class="form-group">
+      <label>Parlay Legs</label>
+    </div>
+    <div class="legs-container" id="legsContainer"></div>
+
+    <div class="btn-row" style="justify-content:flex-start;margin-top:10px;">
+      <button class="btn-secondary" onclick="addLeg()">+ Add Leg</button>
+    </div>
+
+    <hr class="divider">
+
+    <section class="summary" aria-label="Parlay results">
+      <div class="summary-card">
+        <div class="s-label">Total Payout</div>
+        <div class="s-value green" id="res-payout">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Profit</div>
+        <div class="s-value green" id="res-profit">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Combined Odds</div>
+        <div class="s-value accent" id="res-odds">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Implied Probability</div>
+        <div class="s-value yellow" id="res-prob">—</div>
+      </div>
+    </section>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="calculate()">Calculate</button>
+      <button class="btn-secondary" onclick="resetCalc()">↻ Reset</button>
+    </div>
+
+    <div class="info-box">
+      <h3>How Parlays Work</h3>
+      A parlay combines multiple selections into one bet. All legs must win for the bet to pay out. <strong>Combined Decimal Odds</strong> = Leg 1 × Leg 2 × … × Leg N. <strong>Payout</strong> = Stake × Combined Odds. The more legs, the higher the potential payout — and the lower the probability of winning.
+    </div>
+  </main>
+
+  <section class="seo-content" id="guide">
+    <div class="seo-section">
+      <p>Our <strong>parlay calculator</strong> combines multiple bets into one ticket and shows the combined odds, total payout and profit instantly. Add as many legs as you like in American, decimal or fractional odds and this free <strong>multi-leg parlay calculator</strong> multiplies them together so you can see the explosive payouts parlays are famous for.</p>
+      <p>Parlays offer huge upside because every leg must win, multiplying the odds together. Whether you are building a 2-team teaser-style ticket or a long-shot 10-leg parlay, this <strong>parlay payout calculator</strong> shows the true risk and reward before you bet.</p>
+    </div>
+
+    <div class="seo-section">
+      <h2>How to Use the Parlay Calculator</h2>
+      <ol class="seo-list steps">
+        <li>Choose your odds format.</li>
+        <li>Enter your total stake for the parlay.</li>
+        <li>Add each leg's odds using the &lsquo;Add Leg&rsquo; button.</li>
+        <li>Instantly view combined odds, total payout, profit and implied probability.</li>
+      </ol>
+    </div>
+
+    <!-- AD ZONE: In-content 300x250 - READY FOR INTEGRATION -->
+    <div class="ad-zone ad-inline" aria-hidden="true"><span>Advertisement</span></div>
+
+    <div class="seo-section">
+      <h2>Why Use Our Parlay Calculator?</h2>
+      <p>Because parlay payouts grow exponentially with each leg, it is hard to estimate the return in your head. This calculator gives you exact numbers, helps you see how adding or removing a leg changes the payout, and reveals the long-odds nature of large parlays so you can stake responsibly.</p>
+      <h3>Pro Tips for Smarter Betting</h3>
+      <ul class="seo-list">
+        <li>Each added leg multiplies the odds but also multiplies the risk — more legs means a much lower win probability.</li>
+        <li>Compare a parlay's combined implied probability against your own estimate to judge value.</li>
+        <li>Consider round robins to cover smaller combinations instead of one all-or-nothing ticket.</li>
+      </ul>
+    </div>
+
+    <div class="seo-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How are parlay payouts calculated?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Convert each leg to decimal odds, multiply them all together, then multiply by your stake. For example, three legs at 2.00 produce combined odds of 8.00, so a $10 stake returns $80.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How many legs can a parlay have?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Most sportsbooks allow up to 10-15 legs. Our parlay calculator supports adding as many legs as you need, in any odds format.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>Why do parlays pay so much more?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Because every leg must win, the odds multiply together. The combined probability of all legs winning is low, so the payout is correspondingly high.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>Are parlays a good bet?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Parlays offer big payouts but lower win probability and a higher built-in hold. They are best used selectively — use the implied probability to judge whether the price offers value.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-calcs">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="betting_calculator.html" class="related-card">
+          <span class="rc-icon">🧮</span>
+          <span class="rc-text">
+            <span class="rc-title">Betting Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="round_robin_calculator.html" class="related-card">
+          <span class="rc-icon">🔁</span>
+          <span class="rc-text">
+            <span class="rc-title">Round Robin Calculator</span>
+            <span class="rc-sub">System Bets</span>
+          </span>
+        </a>
+        <a href="accumulator_calculator.html" class="related-card">
+          <span class="rc-icon">🪜</span>
+          <span class="rc-text">
+            <span class="rc-title">Accumulator Calculator</span>
+            <span class="rc-sub">System Bets</span>
+          </span>
+        </a>
+        <a href="odds_converter.html" class="related-card">
+          <span class="rc-icon">🔄</span>
+          <span class="rc-text">
+            <span class="rc-title">Odds Converter</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="expected_value_calculator.html" class="related-card">
+          <span class="rc-icon">📈</span>
+          <span class="rc-text">
+            <span class="rc-title">Expected Value Calculator</span>
+            <span class="rc-sub">Advanced Strategy</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT HUB: Betting news / blog / guides - READY FOR INTEGRATION -->
+    <div class="content-hub" aria-label="Latest betting insights">
+      <h2>Betting Insights &amp; Guides</h2>
+      <div class="hub-grid">
+        <article class="hub-card"><span class="hub-tag">Guide</span><h3>Understanding Betting Odds</h3><p>Coming soon: in-depth guides to odds formats, value betting, and bankroll management.</p></article>
+        <article class="hub-card"><span class="hub-tag">News</span><h3>Latest Betting News</h3><p>Coming soon: automated sports betting news and market updates.</p></article>
+        <article class="hub-card"><span class="hub-tag">Strategy</span><h3>Winning Strategies</h3><p>Coming soon: expert strategy breakdowns to sharpen your edge.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
+</footer>
+
+<script defer src="nav.js?v=20261012"></script>
+<script>
+
+let oddsFormat = 'american';
+let legCount = 0;
+
+function setFormat(fmt) {
+  oddsFormat = fmt;
+  document.getElementById('btn-us').classList.toggle('active', fmt === 'american');
+  document.getElementById('btn-dec').classList.toggle('active', fmt === 'decimal');
+  document.getElementById('btn-frac').classList.toggle('active', fmt === 'fractional');
+  const ph = fmt === 'american' ? 'e.g. -110' : fmt === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
+  document.querySelectorAll('.leg-odds').forEach(el => el.placeholder = ph);
+  calculate();
+}
+
+function addLeg() {
+  legCount++;
+  const container = document.getElementById('legsContainer');
+  const ph = oddsFormat === 'american' ? 'e.g. -110' : oddsFormat === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
+  const row = document.createElement('div');
+  row.className = 'leg-row';
+  row.id = 'leg-' + legCount;
+  row.innerHTML = `
+    <div class="leg-num">Leg ${legCount}</div>
+    <input type="text" class="leg-odds" placeholder="${ph}" oninput="calculate()">
+    <button class="remove-leg" onclick="removeLeg(${legCount})" aria-label="Remove leg ${legCount}">✕</button>
+  `;
+  container.appendChild(row);
+  calculate();
+}
+
+function removeLeg(id) {
+  const el = document.getElementById('leg-' + id);
+  if (el) el.remove();
+  calculate();
+}
+
+function calculate() {
+  const stake = parseFloat(document.getElementById('stake').value);
+  const inputs = document.querySelectorAll('.leg-odds');
+  if (isNaN(stake) || stake <= 0 || inputs.length === 0) { clearResults(); return; }
+
+  let combinedDec = 1;
+  let validLegs = 0;
+  inputs.forEach(inp => {
+    const dec = parseOddsToDecimal(inp.value.trim(), oddsFormat);
+    if (dec) { combinedDec *= dec; validLegs++; }
+  });
+
+  if (validLegs === 0) { clearResults(); return; }
+
+  const payout = stake * combinedDec;
+  const profit = payout - stake;
+  const prob = decimalToImpliedProb(combinedDec);
+
+  document.getElementById('res-payout').textContent = fmt$(payout);
+  document.getElementById('res-profit').textContent = fmtSign$(profit);
+  document.getElementById('res-odds').textContent = combinedDec.toFixed(4);
+  document.getElementById('res-prob').textContent = fmtPct(prob);
+}
+
+function clearResults() {
+  ['res-payout','res-profit','res-odds','res-prob'].forEach(id => {
+    document.getElementById(id).textContent = '—';
+  });
+}
+
+function resetCalc() {
+  document.getElementById('stake').value = '';
+  document.getElementById('legsContainer').innerHTML = '';
+  legCount = 0;
+  clearResults();
+}
+
+// Initialize with 2 legs
+addLeg(); addLeg();
+</script>
+</body>
+</html>

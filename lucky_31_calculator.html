@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucky 31 Calculator - 31-Bet Payout | Wager Assistant</title>
+<meta name="description" content="Free Lucky 31 calculator. Calculate returns on a Lucky 31 — 31 bets from 5 selections — with bonuses for one winner and all winners.">
+<meta property="og:title" content="Lucky 31 Calculator - Wager Assistant">
+<meta property="og:description" content="Calculate payouts for Lucky 31 bets — 31 bets across 5 selections with bonus analysis.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wager Assistant">
+<meta property="og:url" content="https://wagerassistant.com/lucky_31_calculator.html">
+<link rel="canonical" href="https://wagerassistant.com/lucky_31_calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261012">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Wager Assistant Blog" href="/blog/feed.xml">
+<!-- Site verification: add Google Search Console & Bing Webmaster Tools meta tags here -->
+<style>
+  .combo-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  .combo-table th, .combo-table td {
+    padding: 10px 12px; text-align: center; font-size: 13px;
+    border-bottom: 1px solid var(--border);
+  }
+  .combo-table th {
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted); background: var(--surface2);
+  }
+  .combo-table td { color: var(--text); font-weight: 600; }
+  .combo-table tr:hover td { background: rgba(79,110,247,0.06); }
+  .win-cell { color: var(--green) !important; }
+  .combo-section { margin-top: 20px; }
+  .combo-section h4 {
+    font-size: 13px; font-weight: 700; color: var(--accent);
+    letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;
+  }
+  .bonus-box {
+    margin-top: 16px; padding: 16px; border-radius: 12px;
+    background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(99,102,241,0.1));
+    border: 1px solid var(--green);
+  }
+  .bonus-box h4 { color: var(--green); margin: 0 0 8px; font-size: 14px; }
+  .bonus-box p { color: var(--text); font-size: 13px; margin: 0; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Lucky 31 Calculator", "description": "Calculate payouts for Lucky 31 bets with 5 selections across 31 bets", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://wagerassistant.com/lucky_31_calculator.html", "provider": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}, "publisher": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Wager Assistant">
+<meta property="og:image" content="https://wagerassistant.com/og-image.png">
+<meta property="og:image:alt" content="Lucky 31 Calculator - Wager Assistant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lucky 31 Calculator - 31-Bet Payout & Bonus | Wager Assistant">
+<meta name="twitter:description" content="Free Lucky 31 calculator. Calculate returns on a Lucky 31 — 31 bets from 5 selections — with bonuses for one winner and all winners.">
+<meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
+<meta name="theme-color" content="#0d0f1a">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a Lucky 31 bet?", "acceptedAnswer": {"@type": "Answer", "text": "A Lucky 31 is a full-cover bet of 31 bets across 5 selections: 5 singles, 10 doubles, 10 trebles, 5 fourfolds and 1 fivefold, often with bonuses."}}, {"@type": "Question", "name": "How many winners do I need for a Lucky 31?", "acceptedAnswer": {"@type": "Answer", "text": "One winner returns money because of the five single bets included in the bet."}}, {"@type": "Question", "name": "What bonuses apply to a Lucky 31?", "acceptedAnswer": {"@type": "Answer", "text": "Typical offers include double or treble odds on one winner and a percentage bonus for all five winning. Enter them in the calculator."}}, {"@type": "Question", "name": "How much does a Lucky 31 cost?", "acceptedAnswer": {"@type": "Answer", "text": "Your unit stake multiplied by 31. A £1 Lucky 31 costs £31, totalled automatically by the calculator."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wagerassistant.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "System Bets", "item": "https://wagerassistant.com/index.html#system"}, {"@type": "ListItem", "position": 3, "name": "Lucky 31 Calculator", "item": "https://wagerassistant.com/lucky_31_calculator.html"}]}
+</script>
+</head>
+<body>
+<!-- =============================================================
+     BULLETPROOF STATIC NAVIGATION  (pure CSS, no JS required)
+     Works in every browser even with JavaScript disabled.
+     ============================================================= -->
+<header class="wa-nav">
+  <div class="wa-nav-inner">
+    <a href="index.html" class="wa-brand"><span class="wa-brand-icon">&spades;</span><span class="wa-brand-text">Wager<b>Assistant</b></span></a>
+    <input type="checkbox" id="wa-nav-toggle" class="wa-nav-toggle" aria-label="Toggle navigation menu">
+    <nav class="wa-menu" aria-label="Main navigation">
+      <a href="index.html" class="wa-link">Home</a>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Basic <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="betting_calculator.html" class="">Betting Calculator</a>
+          <a href="moneyline_calculator.html" class="">Moneyline Calculator</a>
+          <a href="spread_calculator.html" class="">Spread Calculator</a>
+          <a href="over_under_calculator.html" class="">Over/Under Calculator</a>
+          <a href="parlay_calculator.html" class="">Parlay Calculator</a>
+          <a href="odds_converter.html" class="">Odds Converter</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Advanced <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="arbitrage_calculator.html" class="">Arbitrage Calculator</a>
+          <a href="hedging_calculator.html" class="">Hedging Calculator</a>
+          <a href="dutching_calculator.html" class="">Dutching Calculator</a>
+          <a href="kelly_criterion_calculator.html" class="">Kelly Criterion</a>
+          <a href="expected_value_calculator.html" class="">Expected Value (EV)</a>
+          <a href="no_vig_calculator.html" class="">No-Vig / True Odds</a>
+          <a href="margin_calculator.html" class="">Margin Calculator</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">System <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="accumulator_calculator.html" class="">Accumulator</a>
+          <a href="round_robin_calculator.html" class="">Round Robin</a>
+          <a href="yankee_calculator.html" class="">Yankee</a>
+          <a href="trixie_calculator.html" class="">Trixie</a>
+          <a href="patent_calculator.html" class="">Patent</a>
+          <a href="lucky_15_calculator.html" class="">Lucky 15</a>
+          <a href="lucky_31_calculator.html" class="wa-active">Lucky 31</a>
+          <a href="lucky_63_calculator.html" class="">Lucky 63</a>
+          <a href="goliath_calculator.html" class="">Goliath</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Specialty <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="asian_handicap_calculator.html" class="">Asian Handicap</a>
+          <a href="teaser_calculator.html" class="">Teaser Calculator</a>
+          <a href="each_way_calculator.html" class="">Each-Way</a>
+          <a href="matched_betting_calculator.html" class="">Matched Betting</a>
+          <a href="bonus_bet_converter.html" class="">Bonus Bet Converter</a>
+          <a href="poisson_calculator.html" class="">Poisson Distribution</a>
+          <a href="half_point_calculator.html" class="">Half-Point</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Tracking <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="roi_calculator.html" class="">ROI Calculator</a>
+          <a href="progression_bet_calculator.html" class="">Bet Progression</a>
+          <a href="implied_probability_calculator.html" class="">Implied Probability</a>
+        </div>
+      </div>
+      <a href="blog/index.html" class="wa-link">Blog</a>
+    </nav>
+    <label for="wa-nav-toggle" class="wa-burger" aria-label="Open menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+
+<div class="page-content">
+  
+<!--SEO-CONTENT-->
+  <div class="breadcrumb-wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <a href="index.html#system">System Bets</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-current">Lucky 31 Calculator</span>
+    </nav>
+  </div>
+  <!-- AD ZONE: Leaderboard 728x90 - READY FOR INTEGRATION -->
+  <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+
+  <header class="header">
+    <div class="badge">🍀 Lucky 31</div>
+    <h1>Lucky 31 Calculator</h1>
+    <p>Enter odds for 5 selections to see all 31 bets — 5 singles, 10 doubles, 10 trebles, 5 four-folds, and 1 five-fold accumulator.</p>
+  </header>
+
+  <main class="card">
+    <div class="odds-toggle">
+      <label>Odds Format:</label>
+      <div class="toggle-group">
+        <button id="btn-us" class="active" onclick="setFormat('american')">American</button>
+        <button id="btn-dec" onclick="setFormat('decimal')">Decimal</button>
+        <button id="btn-frac" onclick="setFormat('fractional')">Fractional</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="stake">Unit Stake ($)</label>
+      <input type="number" id="stake" placeholder="e.g. 1" min="0" step="any" oninput="calculate()">
+    </div>
+
+    <div class="form-group"><label>Selections (enter odds for 5 picks)</label></div>
+    <div class="legs-container" id="legsContainer"></div>
+    <div class="btn-row" style="justify-content:flex-start;margin-top:10px;">
+      <button class="btn-secondary" onclick="addLeg()">+ Add Selection</button>
+    </div>
+
+    <hr class="divider">
+
+    <section class="summary" aria-label="Lucky 31 summary">
+      <div class="summary-card">
+        <div class="s-label">Total Bets</div>
+        <div class="s-value accent" id="res-totalBets">31</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Total Stake</div>
+        <div class="s-value" id="res-totalStake">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Max Return (All Win)</div>
+        <div class="s-value green" id="res-maxReturn">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Max Profit (All Win)</div>
+        <div class="s-value green" id="res-maxProfit">—</div>
+      </div>
+    </section>
+
+    <div id="bonusInfo"></div>
+    <div id="combosOutput"></div>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="calculate()">Calculate</button>
+      <button class="btn-secondary" onclick="resetCalc()">↻ Reset</button>
+    </div>
+
+    <div class="info-box">
+      <h3>How Lucky 31 Bets Work</h3>
+      A Lucky 31 is a full-coverage combination bet with <strong>31 bets across 5 selections</strong>:
+      <strong>5 singles</strong>, <strong>10 doubles</strong>, <strong>10 trebles</strong>, <strong>5 four-folds</strong>, and <strong>1 five-fold accumulator</strong>.
+      Like the Lucky 15, only one selection needs to win for a return. Many bookmakers offer a <strong>20% bonus if all 5 selections win</strong>, or double odds on the single if only one selection wins. The Lucky 31 provides maximum coverage with an extra selection compared to the Lucky 15.
+    </div>
+  </main>
+
+  <section class="seo-content" id="guide">
+    <div class="seo-section">
+      <p>The <strong>Lucky 31 calculator</strong> settles a Lucky 31 — a full-cover bet of 31 wagers from 5 selections: 5 singles, 10 doubles, 10 trebles, 5 fourfolds and 1 fivefold. Enter your odds and unit stake, and this <strong>Lucky 31 bet calculator</strong> totals your payout, applies bonuses, and shows your profit.</p>
+      <p>Stepping up from the Lucky 15, the Lucky 31 covers five selections and still pays on a single winner. Our <strong>Lucky 31 payout calculator</strong> handles all 31 lines and bonus rules instantly.</p>
+    </div>
+
+    <div class="seo-section">
+      <h2>How to Use the Lucky 31 Calculator</h2>
+      <ol class="seo-list steps">
+        <li>Enter the odds for all five selections.</li>
+        <li>Enter your unit stake (multiplied across the 31 bets).</li>
+        <li>Set any one-winner or all-winners bonus options.</li>
+        <li>Read your total stake, payout, bonuses and profit.</li>
+      </ol>
+    </div>
+
+    <!-- AD ZONE: In-content 300x250 - READY FOR INTEGRATION -->
+    <div class="ad-zone ad-inline" aria-hidden="true"><span>Advertisement</span></div>
+
+    <div class="seo-section">
+      <h2>Why Use Our Lucky 31 Calculator?</h2>
+      <p>A Lucky 31 rewards a strong multi-selection opinion while protecting you with singles. Settling 31 interlocking bets and bonus rules by hand is unrealistic, so this calculator gives you fast, reliable totals.</p>
+      <h3>Pro Tips for Smarter Betting</h3>
+      <ul class="seo-list">
+        <li>Just one winner returns money thanks to the five singles.</li>
+        <li>All five winning often triggers a sizeable bonus — check your book's terms.</li>
+        <li>A £1 Lucky 31 costs £31, so size your unit stake carefully.</li>
+      </ul>
+    </div>
+
+    <div class="seo-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What is a Lucky 31 bet?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A Lucky 31 is a full-cover bet of 31 bets across 5 selections: 5 singles, 10 doubles, 10 trebles, 5 fourfolds and 1 fivefold, often with bonuses.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How many winners do I need for a Lucky 31?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">One winner returns money because of the five single bets included in the bet.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What bonuses apply to a Lucky 31?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Typical offers include double or treble odds on one winner and a percentage bonus for all five winning. Enter them in the calculator.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How much does a Lucky 31 cost?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Your unit stake multiplied by 31. A £1 Lucky 31 costs £31, totalled automatically by the calculator.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-calcs">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="lucky_15_calculator.html" class="related-card">
+          <span class="rc-icon">🍀</span>
+          <span class="rc-text">
+            <span class="rc-title">Lucky 15 Calculator</span>
+            <span class="rc-sub">System Bets</span>
+          </span>
+        </a>
+        <a href="lucky_63_calculator.html" class="related-card">
+          <span class="rc-icon">🍀</span>
+          <span class="rc-text">
+            <span class="rc-title">Lucky 63 Calculator</span>
+            <span class="rc-sub">System Bets</span>
+          </span>
+        </a>
+        <a href="yankee_calculator.html" class="related-card">
+          <span class="rc-icon">🎰</span>
+          <span class="rc-text">
+            <span class="rc-title">Yankee Calculator</span>
+            <span class="rc-sub">System Bets</span>
+          </span>
+        </a>
+        <a href="goliath_calculator.html" class="related-card">
+          <span class="rc-icon">🏛️</span>
+          <span class="rc-text">
+            <span class="rc-title">Goliath Calculator</span>
+            <span class="rc-sub">System Bets</span>
+          </span>
+        </a>
+        <a href="accumulator_calculator.html" class="related-card">
+          <span class="rc-icon">🪜</span>
+          <span class="rc-text">
+            <span class="rc-title">Accumulator Calculator</span>
+            <span class="rc-sub">System Bets</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT HUB: Betting news / blog / guides - READY FOR INTEGRATION -->
+    <div class="content-hub" aria-label="Latest betting insights">
+      <h2>Betting Insights &amp; Guides</h2>
+      <div class="hub-grid">
+        <article class="hub-card"><span class="hub-tag">Guide</span><h3>Understanding Betting Odds</h3><p>Coming soon: in-depth guides to odds formats, value betting, and bankroll management.</p></article>
+        <article class="hub-card"><span class="hub-tag">News</span><h3>Latest Betting News</h3><p>Coming soon: automated sports betting news and market updates.</p></article>
+        <article class="hub-card"><span class="hub-tag">Strategy</span><h3>Winning Strategies</h3><p>Coming soon: expert strategy breakdowns to sharpen your edge.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
+</footer>
+
+<script defer src="nav.js?v=20261012"></script>
+<script>
+
+let oddsFormat = 'american';
+let legCount = 0;
+
+function setFormat(fmt) {
+  oddsFormat = fmt;
+  document.getElementById('btn-us').classList.toggle('active', fmt === 'american');
+  document.getElementById('btn-dec').classList.toggle('active', fmt === 'decimal');
+  document.getElementById('btn-frac').classList.toggle('active', fmt === 'fractional');
+  const ph = fmt === 'american' ? 'e.g. -110' : fmt === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
+  document.querySelectorAll('.leg-odds').forEach(el => el.placeholder = ph);
+  calculate();
+}
+
+function addLeg() {
+  legCount++;
+  const c = document.getElementById('legsContainer');
+  const ph = oddsFormat === 'american' ? 'e.g. -110' : oddsFormat === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
+  const row = document.createElement('div');
+  row.className = 'leg-row'; row.id = 'leg-' + legCount;
+  row.innerHTML = `
+    <div class="leg-num">#${legCount}</div>
+    <input type="text" class="leg-odds" placeholder="${ph}" oninput="calculate()">
+    <button class="remove-leg" onclick="removeLeg(${legCount})" aria-label="Remove">✕</button>
+  `;
+  c.appendChild(row);
+  calculate();
+}
+
+function removeLeg(id) {
+  const el = document.getElementById('leg-' + id);
+  if (el) el.remove();
+  calculate();
+}
+
+function combinations(arr, k) {
+  if (k === 0) return [[]];
+  if (arr.length === 0) return [];
+  const [first, ...rest] = arr;
+  return [...combinations(rest, k - 1).map(c => [first, ...c]), ...combinations(rest, k)];
+}
+
+function calculate() {
+  const stake = parseFloat(document.getElementById('stake').value);
+  const inputs = document.querySelectorAll('.leg-odds');
+  if (isNaN(stake) || stake <= 0 || inputs.length < 2) { clearResults(); return; }
+
+  const legs = [];
+  inputs.forEach((inp, i) => {
+    const dec = parseOddsToDecimal(inp.value.trim(), oddsFormat);
+    if (dec) legs.push({ index: i + 1, dec });
+  });
+
+  if (legs.length < 2) { clearResults(); return; }
+
+  const betTypes = [
+    { name: 'Singles', k: 1 },
+    { name: 'Doubles', k: 2 },
+    { name: 'Trebles', k: 3 },
+    { name: 'Four-Folds', k: 4 },
+    { name: 'Five-Fold', k: 5 },
+    { name: 'Six-Fold', k: 6 }
+  ].filter(t => t.k <= legs.length);
+
+  let totalBets = 0;
+  let totalReturn = 0;
+  let outputHTML = '';
+  const breakdownRows = [];
+
+  betTypes.forEach(bt => {
+    const combos = combinations(legs, bt.k);
+    if (combos.length === 0) return;
+    totalBets += combos.length;
+
+    let groupReturn = 0;
+    let tableRows = '';
+    combos.forEach((combo, ci) => {
+      const combinedDec = combo.reduce((acc, l) => acc * l.dec, 1);
+      const payout = stake * combinedDec;
+      groupReturn += payout;
+      const selStr = combo.map(l => '#' + l.index).join(' × ');
+      tableRows += `<tr><td>${ci + 1}</td><td>${selStr}</td><td>${combinedDec.toFixed(4)}</td><td class="win-cell">${fmt$(payout)}</td><td class="win-cell">${fmtSign$(payout - stake)}</td></tr>`;
+    });
+
+    totalReturn += groupReturn;
+    breakdownRows.push({ name: bt.name, count: combos.length, ret: groupReturn });
+
+    outputHTML += `<div class="combo-section"><h4>${bt.name} (${combos.length} bet${combos.length > 1 ? 's' : ''})</h4>`;
+    outputHTML += '<table class="combo-table"><thead><tr><th>#</th><th>Selections</th><th>Combined Odds</th><th>Return</th><th>Profit</th></tr></thead><tbody>';
+    outputHTML += tableRows + '</tbody></table></div>';
+  });
+
+  const totalStake = totalBets * stake;
+  const totalProfit = totalReturn - totalStake;
+
+  document.getElementById('res-totalBets').textContent = totalBets;
+  document.getElementById('res-totalStake').textContent = fmt$(totalStake);
+  document.getElementById('res-maxReturn').textContent = fmt$(totalReturn);
+  document.getElementById('res-maxProfit').textContent = fmtSign$(totalProfit);
+
+  if (legs.length === 5) {
+    const bonusReturn = totalReturn * 1.20;
+    const bonusProfit = bonusReturn - totalStake;
+    document.getElementById('bonusInfo').innerHTML = `
+      <div class="bonus-box">
+        <h4>🎉 All-Win Bonus (20%)</h4>
+        <p>If all 5 selections win, many bookmakers offer a 20% bonus on total returns:
+        <strong>${fmt$(bonusReturn)}</strong> return (${fmtSign$(bonusProfit)} profit).</p>
+      </div>`;
+  } else {
+    document.getElementById('bonusInfo').innerHTML = '';
+  }
+
+  let summaryHTML = '<div class="combo-section"><h4>Bet Type Breakdown</h4>';
+  summaryHTML += '<table class="combo-table"><thead><tr><th>Bet Type</th><th>Bets</th><th>Stake</th><th>Return (All Win)</th></tr></thead><tbody>';
+  breakdownRows.forEach(r => {
+    summaryHTML += `<tr><td>${r.name}</td><td>${r.count}</td><td>${fmt$(r.count * stake)}</td><td class="win-cell">${fmt$(r.ret)}</td></tr>`;
+  });
+  summaryHTML += `<tr style="border-top:2px solid var(--accent)"><td><strong>Total</strong></td><td><strong>${totalBets}</strong></td><td><strong>${fmt$(totalStake)}</strong></td><td class="win-cell"><strong>${fmt$(totalReturn)}</strong></td></tr>`;
+  summaryHTML += '</tbody></table></div>';
+
+  document.getElementById('combosOutput').innerHTML = summaryHTML + outputHTML;
+}
+
+function clearResults() {
+  ['res-totalBets','res-totalStake','res-maxReturn','res-maxProfit'].forEach(id => {
+    document.getElementById(id).textContent = '—';
+  });
+  document.getElementById('combosOutput').innerHTML = '';
+  document.getElementById('bonusInfo').innerHTML = '';
+}
+
+function resetCalc() {
+  document.getElementById('stake').value = '';
+  document.getElementById('legsContainer').innerHTML = '';
+  legCount = 0;
+  clearResults();
+  for (let i = 0; i < 5; i++) addLeg();
+}
+
+// Initialize with 5 selections (standard Lucky 31)
+for (let i = 0; i < 5; i++) addLeg();
+</script>
+</body>
+</html>

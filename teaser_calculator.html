@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaser Calculator - NFL & NBA Payouts | Wager Assistant</title>
+<meta name="description" content="Free teaser calculator for NFL and NBA. Adjust spreads by 6, 6.5 or 7 points across multiple legs and see your teaser payout and profit instantly.">
+<meta property="og:title" content="Teaser Calculator - Wager Assistant">
+<meta property="og:description" content="Calculate adjusted spreads and payouts for NFL/NBA teaser bets.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wagerassistant.com/teaser_calculator.html">
+<meta property="og:site_name" content="Wager Assistant">
+<link rel="canonical" href="https://wagerassistant.com/teaser_calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261012">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Wager Assistant Blog" href="/blog/feed.xml">
+<!-- Site verification: add Google Search Console & Bing Webmaster Tools meta tags here -->
+<style>
+  .teaser-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  .teaser-table th, .teaser-table td {
+    padding: 10px 14px; text-align: center; font-size: 13px;
+    border-bottom: 1px solid var(--border);
+  }
+  .teaser-table th {
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted); background: var(--surface2);
+  }
+  .teaser-table td { color: var(--text); font-weight: 600; }
+  .adjusted { color: var(--green) !important; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Teaser Calculator", "description": "Calculate NFL and NBA teaser bet payouts and adjusted spreads", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://wagerassistant.com/teaser_calculator.html", "provider": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}, "publisher": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Wager Assistant">
+<meta property="og:image" content="https://wagerassistant.com/og-image.png">
+<meta property="og:image:alt" content="Teaser Calculator - Wager Assistant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Teaser Calculator - NFL & NBA Teaser Payouts | Wager Assistant">
+<meta name="twitter:description" content="Free teaser calculator for NFL and NBA. Adjust spreads by 6, 6.5 or 7 points across multiple legs and see your teaser payout and profit instantly.">
+<meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
+<meta name="theme-color" content="#0d0f1a">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a teaser bet?", "acceptedAnswer": {"@type": "Answer", "text": "A teaser is a parlay-style bet where you move the spread or total in your favour by a set number of points on each leg, in exchange for reduced odds. All legs must win."}}, {"@type": "Question", "name": "How many points can I tease?", "acceptedAnswer": {"@type": "Answer", "text": "Football teasers are commonly 6, 6.5 or 7 points; basketball teasers are usually 4, 4.5 or 5 points. Our teaser calculator supports the standard increments."}}, {"@type": "Question", "name": "Are teasers worth it?", "acceptedAnswer": {"@type": "Answer", "text": "Teasers can be profitable when you cross key numbers like 3 and 7 in the NFL. The calculator shows the payout so you can weigh the value against the shorter price."}}, {"@type": "Question", "name": "How are teaser payouts calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Each adjusted leg gets teaser odds, which are multiplied together like a parlay and applied to your stake. The calculator handles this automatically."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wagerassistant.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Specialty Tools", "item": "https://wagerassistant.com/index.html#specialty"}, {"@type": "ListItem", "position": 3, "name": "Teaser Calculator", "item": "https://wagerassistant.com/teaser_calculator.html"}]}
+</script>
+</head>
+<body>
+<!-- =============================================================
+     BULLETPROOF STATIC NAVIGATION  (pure CSS, no JS required)
+     Works in every browser even with JavaScript disabled.
+     ============================================================= -->
+<header class="wa-nav">
+  <div class="wa-nav-inner">
+    <a href="index.html" class="wa-brand"><span class="wa-brand-icon">&spades;</span><span class="wa-brand-text">Wager<b>Assistant</b></span></a>
+    <input type="checkbox" id="wa-nav-toggle" class="wa-nav-toggle" aria-label="Toggle navigation menu">
+    <nav class="wa-menu" aria-label="Main navigation">
+      <a href="index.html" class="wa-link">Home</a>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Basic <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="betting_calculator.html" class="">Betting Calculator</a>
+          <a href="moneyline_calculator.html" class="">Moneyline Calculator</a>
+          <a href="spread_calculator.html" class="">Spread Calculator</a>
+          <a href="over_under_calculator.html" class="">Over/Under Calculator</a>
+          <a href="parlay_calculator.html" class="">Parlay Calculator</a>
+          <a href="odds_converter.html" class="">Odds Converter</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Advanced <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="arbitrage_calculator.html" class="">Arbitrage Calculator</a>
+          <a href="hedging_calculator.html" class="">Hedging Calculator</a>
+          <a href="dutching_calculator.html" class="">Dutching Calculator</a>
+          <a href="kelly_criterion_calculator.html" class="">Kelly Criterion</a>
+          <a href="expected_value_calculator.html" class="">Expected Value (EV)</a>
+          <a href="no_vig_calculator.html" class="">No-Vig / True Odds</a>
+          <a href="margin_calculator.html" class="">Margin Calculator</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">System <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="accumulator_calculator.html" class="">Accumulator</a>
+          <a href="round_robin_calculator.html" class="">Round Robin</a>
+          <a href="yankee_calculator.html" class="">Yankee</a>
+          <a href="trixie_calculator.html" class="">Trixie</a>
+          <a href="patent_calculator.html" class="">Patent</a>
+          <a href="lucky_15_calculator.html" class="">Lucky 15</a>
+          <a href="lucky_31_calculator.html" class="">Lucky 31</a>
+          <a href="lucky_63_calculator.html" class="">Lucky 63</a>
+          <a href="goliath_calculator.html" class="">Goliath</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Specialty <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="asian_handicap_calculator.html" class="">Asian Handicap</a>
+          <a href="teaser_calculator.html" class="wa-active">Teaser Calculator</a>
+          <a href="each_way_calculator.html" class="">Each-Way</a>
+          <a href="matched_betting_calculator.html" class="">Matched Betting</a>
+          <a href="bonus_bet_converter.html" class="">Bonus Bet Converter</a>
+          <a href="poisson_calculator.html" class="">Poisson Distribution</a>
+          <a href="half_point_calculator.html" class="">Half-Point</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Tracking <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="roi_calculator.html" class="">ROI Calculator</a>
+          <a href="progression_bet_calculator.html" class="">Bet Progression</a>
+          <a href="implied_probability_calculator.html" class="">Implied Probability</a>
+        </div>
+      </div>
+      <a href="blog/index.html" class="wa-link">Blog</a>
+    </nav>
+    <label for="wa-nav-toggle" class="wa-burger" aria-label="Open menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+
+<div class="page-content">
+  
+<!--SEO-CONTENT-->
+  <div class="breadcrumb-wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <a href="index.html#specialty">Specialty Tools</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-current">Teaser Calculator</span>
+    </nav>
+  </div>
+  <!-- AD ZONE: Leaderboard 728x90 - READY FOR INTEGRATION -->
+  <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+
+  <header class="header">
+    <div class="badge">🏈 Teaser</div>
+    <h1>Teaser Calculator</h1>
+    <p>Select a sport, teaser points, and enter original spreads/totals for each leg. See adjusted lines and the teaser payout based on standard teaser odds.</p>
+  </header>
+
+  <main class="card">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="sport">Sport</label>
+        <select id="sport" onchange="calculate()">
+          <option value="nfl">NFL (Football)</option>
+          <option value="nba">NBA (Basketball)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="teaserPts">Teaser Points</label>
+        <select id="teaserPts" onchange="calculate()">
+          <option value="6">6 Points</option>
+          <option value="6.5">6.5 Points</option>
+          <option value="7">7 Points</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="stake">Stake ($)</label>
+      <input type="number" id="stake" placeholder="e.g. 100" min="0" step="any" oninput="calculate()">
+    </div>
+
+    <div class="form-group"><label>Legs (enter original spread or total)</label></div>
+    <div class="legs-container" id="legsContainer"></div>
+    <div class="btn-row" style="justify-content:flex-start;margin-top:10px;">
+      <button class="btn-secondary" onclick="addLeg()">+ Add Leg</button>
+    </div>
+
+    <hr class="divider">
+
+    <section class="summary" aria-label="Teaser results">
+      <div class="summary-card">
+        <div class="s-label">Teaser Odds</div>
+        <div class="s-value accent" id="res-odds">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Decimal Odds</div>
+        <div class="s-value" id="res-decOdds">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Potential Payout</div>
+        <div class="s-value green" id="res-payout">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Profit</div>
+        <div class="s-value green" id="res-profit">—</div>
+      </div>
+    </section>
+
+    <div id="adjustedOutput"></div>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="calculate()">Calculate</button>
+      <button class="btn-secondary" onclick="resetCalc()">↻ Reset</button>
+    </div>
+
+    <div class="info-box">
+      <h3>How Teasers Work</h3>
+      A teaser adjusts the point spread or total in your favor by a fixed number of points (6, 6.5, or 7) across all legs. In exchange, the payout is reduced compared to a standard parlay. All legs must win for the teaser to pay out.<br><br>
+      <strong>Standard NFL Teaser Odds (6 pts):</strong> 2-team: −110, 3-team: +150, 4-team: +250, 5-team: +400.<br>
+      <strong>Standard NBA Teaser Odds (4 pts):</strong> 2-team: −110, 3-team: +150, 4-team: +250.
+    </div>
+  </main>
+
+  <section class="seo-content" id="guide">
+    <div class="seo-section">
+      <p>The <strong>teaser calculator</strong> works out payouts when you move the spread in your favour across multiple legs. Choose your point adjustment (6, 6.5 or 7 points), add your legs and stake, and this <strong>NFL teaser calculator</strong> returns your combined teaser odds, payout and profit.</p>
+      <p>Teasers let you buy points on football and basketball spreads or totals in exchange for lower odds, but every leg must still win. Our <strong>teaser bet calculator</strong> shows whether the safer lines justify the reduced payout.</p>
+    </div>
+
+    <div class="seo-section">
+      <h2>How to Use the Teaser Calculator</h2>
+      <ol class="seo-list steps">
+        <li>Select the number of points to tease (6, 6.5 or 7).</li>
+        <li>Enter each leg's original spread or total.</li>
+        <li>Enter your stake.</li>
+        <li>View your adjusted lines, combined teaser odds and payout.</li>
+      </ol>
+    </div>
+
+    <!-- AD ZONE: In-content 300x250 - READY FOR INTEGRATION -->
+    <div class="ad-zone ad-inline" aria-hidden="true"><span>Advertisement</span></div>
+
+    <div class="seo-section">
+      <h2>Why Use Our Teaser Calculator?</h2>
+      <p>Teasers improve your spreads but shorten the price, so value depends on which numbers you cross. This calculator quantifies the trade-off, helping you target key numbers like 3 and 7 in the NFL where extra points matter most.</p>
+      <h3>Pro Tips for Smarter Betting</h3>
+      <ul class="seo-list">
+        <li>Teasing through key numbers (3 and 7 in the NFL) adds the most value.</li>
+        <li>Every leg must still win — more legs means lower win probability.</li>
+        <li>Two-team 6-point teasers are the classic profitable spot when crossing key numbers.</li>
+      </ul>
+    </div>
+
+    <div class="seo-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What is a teaser bet?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">A teaser is a parlay-style bet where you move the spread or total in your favour by a set number of points on each leg, in exchange for reduced odds. All legs must win.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How many points can I tease?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Football teasers are commonly 6, 6.5 or 7 points; basketball teasers are usually 4, 4.5 or 5 points. Our teaser calculator supports the standard increments.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>Are teasers worth it?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Teasers can be profitable when you cross key numbers like 3 and 7 in the NFL. The calculator shows the payout so you can weigh the value against the shorter price.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How are teaser payouts calculated?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Each adjusted leg gets teaser odds, which are multiplied together like a parlay and applied to your stake. The calculator handles this automatically.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-calcs">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="spread_calculator.html" class="related-card">
+          <span class="rc-icon">📐</span>
+          <span class="rc-text">
+            <span class="rc-title">Spread Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="half_point_calculator.html" class="related-card">
+          <span class="rc-icon">➕</span>
+          <span class="rc-text">
+            <span class="rc-title">Half-Point Calculator</span>
+            <span class="rc-sub">Specialty Tools</span>
+          </span>
+        </a>
+        <a href="parlay_calculator.html" class="related-card">
+          <span class="rc-icon">🔗</span>
+          <span class="rc-text">
+            <span class="rc-title">Parlay Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="over_under_calculator.html" class="related-card">
+          <span class="rc-icon">🔢</span>
+          <span class="rc-text">
+            <span class="rc-title">Over/Under Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="betting_calculator.html" class="related-card">
+          <span class="rc-icon">🧮</span>
+          <span class="rc-text">
+            <span class="rc-title">Betting Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT HUB: Betting news / blog / guides - READY FOR INTEGRATION -->
+    <div class="content-hub" aria-label="Latest betting insights">
+      <h2>Betting Insights &amp; Guides</h2>
+      <div class="hub-grid">
+        <article class="hub-card"><span class="hub-tag">Guide</span><h3>Understanding Betting Odds</h3><p>Coming soon: in-depth guides to odds formats, value betting, and bankroll management.</p></article>
+        <article class="hub-card"><span class="hub-tag">News</span><h3>Latest Betting News</h3><p>Coming soon: automated sports betting news and market updates.</p></article>
+        <article class="hub-card"><span class="hub-tag">Strategy</span><h3>Winning Strategies</h3><p>Coming soon: expert strategy breakdowns to sharpen your edge.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
+</footer>
+
+<script defer src="nav.js?v=20261012"></script>
+<script>
+
+let legCount = 0;
+
+// Standard teaser odds tables (American odds)
+const TEASER_ODDS = {
+  nfl: {
+    6:   { 2: -110, 3: 150, 4: 250, 5: 400, 6: 600, 7: 900, 8: 1400, 9: 2000, 10: 3000 },
+    6.5: { 2: -120, 3: 130, 4: 220, 5: 350, 6: 500, 7: 750, 8: 1100, 9: 1600, 10: 2500 },
+    7:   { 2: -130, 3: 110, 4: 190, 5: 300, 6: 450, 7: 650, 8: 950, 9: 1400, 10: 2000 }
+  },
+  nba: {
+    6:   { 2: -120, 3: 130, 4: 220, 5: 350, 6: 500, 7: 750, 8: 1100, 9: 1600, 10: 2500 },
+    6.5: { 2: -130, 3: 110, 4: 190, 5: 300, 6: 450, 7: 650, 8: 950, 9: 1400, 10: 2000 },
+    7:   { 2: -140, 3: 100, 4: 170, 5: 260, 6: 400, 7: 550, 8: 800, 9: 1200, 10: 1800 }
+  }
+};
+
+function addLeg() {
+  legCount++;
+  const c = document.getElementById('legsContainer');
+  const row = document.createElement('div');
+  row.className = 'leg-row'; row.id = 'leg-' + legCount;
+  row.innerHTML = `
+    <div class="leg-num">Leg ${legCount}</div>
+    <input type="text" class="leg-spread" placeholder="e.g. -3.5 or O 45.5" oninput="calculate()">
+    <button class="remove-leg" onclick="removeLeg(${legCount})" aria-label="Remove">✕</button>
+  `;
+  c.appendChild(row);
+  calculate();
+}
+
+function removeLeg(id) {
+  const el = document.getElementById('leg-' + id);
+  if (el) el.remove();
+  calculate();
+}
+
+function calculate() {
+  const sport = document.getElementById('sport').value;
+  const pts = parseFloat(document.getElementById('teaserPts').value);
+  const stake = parseFloat(document.getElementById('stake').value);
+  const inputs = document.querySelectorAll('.leg-spread');
+
+  const numLegs = inputs.length;
+  if (numLegs < 2 || isNaN(stake) || stake <= 0) { clearResults(); return; }
+
+  const oddsTable = TEASER_ODDS[sport][pts];
+  const americanOdds = oddsTable[numLegs];
+  if (!americanOdds) {
+    document.getElementById('res-odds').textContent = 'Max ' + Math.max(...Object.keys(oddsTable).map(Number)) + ' teams';
+    return;
+  }
+
+  const decOdds = americanToDecimal(americanOdds);
+  const payout = stake * decOdds;
+  const profit = payout - stake;
+
+  const amStr = americanOdds >= 0 ? '+' + americanOdds : '' + americanOdds;
+  document.getElementById('res-odds').textContent = amStr;
+  document.getElementById('res-decOdds').textContent = decOdds.toFixed(4);
+  document.getElementById('res-payout').textContent = fmt$(payout);
+  document.getElementById('res-profit').textContent = fmtSign$(profit);
+
+  // Show adjusted lines
+  let html = '<table class="teaser-table"><thead><tr><th>Leg</th><th>Original Line</th><th>Adjusted Line</th></tr></thead><tbody>';
+  inputs.forEach((inp, i) => {
+    const raw = inp.value.trim();
+    let original = raw;
+    let adjusted = '—';
+
+    if (raw) {
+      // Parse: could be spread like "-3.5" or total like "O 45.5" / "U 45.5"
+      const isOver = /^o/i.test(raw);
+      const isUnder = /^u/i.test(raw);
+      const numMatch = raw.match(/-?\d+\.?\d*/);
+      if (numMatch) {
+        const num = parseFloat(numMatch[0]);
+        if (isOver) {
+          adjusted = 'O ' + (num - pts).toFixed(1);
+        } else if (isUnder) {
+          adjusted = 'U ' + (num + pts).toFixed(1);
+        } else {
+          // Spread: favorite gets points added (less negative), underdog gets more points
+          adjusted = (num + pts) > 0 ? '+' + (num + pts).toFixed(1) : (num + pts).toFixed(1);
+        }
+      }
+    }
+
+    html += `<tr><td>Leg ${i + 1}</td><td>${original || '—'}</td><td class="adjusted">${adjusted}</td></tr>`;
+  });
+  html += '</tbody></table>';
+  document.getElementById('adjustedOutput').innerHTML = html;
+}
+
+function clearResults() {
+  ['res-odds','res-decOdds','res-payout','res-profit'].forEach(id => {
+    document.getElementById(id).textContent = '—';
+  });
+  document.getElementById('adjustedOutput').innerHTML = '';
+}
+
+function resetCalc() {
+  document.getElementById('stake').value = '';
+  document.getElementById('legsContainer').innerHTML = '';
+  legCount = 0; clearResults();
+  addLeg(); addLeg();
+}
+
+addLeg(); addLeg();
+</script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Implied Probability Calculator - Odds to % | Wager Assistant</title>
+<meta name="description" content="Free implied probability calculator. Convert American, decimal or fractional odds into a win-probability percentage to judge betting value instantly.">
+<meta property="og:title" content="Implied Probability Calculator - Wager Assistant">
+<meta property="og:description" content="Convert odds to probability and probability to odds with margin analysis.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Wager Assistant">
+<meta property="og:url" content="https://wagerassistant.com/implied_probability_calculator.html">
+<link rel="canonical" href="https://wagerassistant.com/implied_probability_calculator.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="styles.css?v=20261012">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="Wager Assistant Blog" href="/blog/feed.xml">
+<!-- Site verification: add Google Search Console & Bing Webmaster Tools meta tags here -->
+<style>
+  .converter-section {
+    padding: 20px; border-radius: 12px; margin-bottom: 18px;
+    background: var(--surface2); border: 1px solid var(--border);
+  }
+  .converter-section h4 {
+    font-size: 13px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+  }
+  .result-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px;
+    margin-top: 14px;
+  }
+  .result-cell {
+    text-align: center; padding: 12px; border-radius: 8px;
+    background: var(--bg); border: 1px solid var(--border);
+  }
+  .result-cell .label { font-size: 11px; color: var(--muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px; }
+  .result-cell .value { font-size: 18px; font-weight: 800; color: var(--text); margin-top: 4px; }
+  .market-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  .market-table th, .market-table td {
+    padding: 10px 12px; text-align: center; font-size: 13px;
+    border-bottom: 1px solid var(--border);
+  }
+  .market-table th {
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--muted); background: var(--surface2);
+  }
+  .market-table td { color: var(--text); font-weight: 600; }
+  .prob-bar {
+    height: 8px; border-radius: 4px; background: var(--accent); margin-top: 4px;
+    transition: width 0.3s ease;
+  }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Implied Probability Calculator", "description": "Convert odds to implied probability and probability to odds in any format", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://wagerassistant.com/implied_probability_calculator.html", "provider": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}, "publisher": {"@type": "Organization", "name": "Wager Assistant", "url": "https://wagerassistant.com"}}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Wager Assistant">
+<meta property="og:image" content="https://wagerassistant.com/og-image.png">
+<meta property="og:image:alt" content="Implied Probability Calculator - Wager Assistant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Implied Probability Calculator - Odds to % Tool | Wager Assistant">
+<meta name="twitter:description" content="Free implied probability calculator. Convert American, decimal or fractional odds into a win-probability percentage to judge betting value instantly.">
+<meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
+<meta name="theme-color" content="#0d0f1a">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is implied probability?", "acceptedAnswer": {"@type": "Answer", "text": "Implied probability is the win chance reflected by betting odds, calculated as 1 ÷ decimal odds × 100%. It shows what the price assumes about an outcome's likelihood."}}, {"@type": "Question", "name": "How do I convert odds to probability?", "acceptedAnswer": {"@type": "Answer", "text": "Convert the odds to decimal, then divide 1 by that number and multiply by 100. Our implied probability calculator handles American, decimal and fractional odds instantly."}}, {"@type": "Question", "name": "Why is implied probability important?", "acceptedAnswer": {"@type": "Answer", "text": "It lets you compare the bookmaker's assessment with your own. When you think the true probability is higher than the implied figure, the bet has positive value."}}, {"@type": "Question", "name": "Does implied probability include the margin?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — raw implied probabilities include the bookmaker's margin, which is why a market's two sides add up to more than 100%. Remove the vig for true probabilities."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://wagerassistant.com/index.html"}, {"@type": "ListItem", "position": 2, "name": "Tracking & Analysis", "item": "https://wagerassistant.com/index.html#tracking"}, {"@type": "ListItem", "position": 3, "name": "Implied Probability Calculator", "item": "https://wagerassistant.com/implied_probability_calculator.html"}]}
+</script>
+</head>
+<body>
+<!-- =============================================================
+     BULLETPROOF STATIC NAVIGATION  (pure CSS, no JS required)
+     Works in every browser even with JavaScript disabled.
+     ============================================================= -->
+<header class="wa-nav">
+  <div class="wa-nav-inner">
+    <a href="index.html" class="wa-brand"><span class="wa-brand-icon">&spades;</span><span class="wa-brand-text">Wager<b>Assistant</b></span></a>
+    <input type="checkbox" id="wa-nav-toggle" class="wa-nav-toggle" aria-label="Toggle navigation menu">
+    <nav class="wa-menu" aria-label="Main navigation">
+      <a href="index.html" class="wa-link">Home</a>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Basic <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="betting_calculator.html" class="">Betting Calculator</a>
+          <a href="moneyline_calculator.html" class="">Moneyline Calculator</a>
+          <a href="spread_calculator.html" class="">Spread Calculator</a>
+          <a href="over_under_calculator.html" class="">Over/Under Calculator</a>
+          <a href="parlay_calculator.html" class="">Parlay Calculator</a>
+          <a href="odds_converter.html" class="">Odds Converter</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Advanced <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="arbitrage_calculator.html" class="">Arbitrage Calculator</a>
+          <a href="hedging_calculator.html" class="">Hedging Calculator</a>
+          <a href="dutching_calculator.html" class="">Dutching Calculator</a>
+          <a href="kelly_criterion_calculator.html" class="">Kelly Criterion</a>
+          <a href="expected_value_calculator.html" class="">Expected Value (EV)</a>
+          <a href="no_vig_calculator.html" class="">No-Vig / True Odds</a>
+          <a href="margin_calculator.html" class="">Margin Calculator</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">System <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="accumulator_calculator.html" class="">Accumulator</a>
+          <a href="round_robin_calculator.html" class="">Round Robin</a>
+          <a href="yankee_calculator.html" class="">Yankee</a>
+          <a href="trixie_calculator.html" class="">Trixie</a>
+          <a href="patent_calculator.html" class="">Patent</a>
+          <a href="lucky_15_calculator.html" class="">Lucky 15</a>
+          <a href="lucky_31_calculator.html" class="">Lucky 31</a>
+          <a href="lucky_63_calculator.html" class="">Lucky 63</a>
+          <a href="goliath_calculator.html" class="">Goliath</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Specialty <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="asian_handicap_calculator.html" class="">Asian Handicap</a>
+          <a href="teaser_calculator.html" class="">Teaser Calculator</a>
+          <a href="each_way_calculator.html" class="">Each-Way</a>
+          <a href="matched_betting_calculator.html" class="">Matched Betting</a>
+          <a href="bonus_bet_converter.html" class="">Bonus Bet Converter</a>
+          <a href="poisson_calculator.html" class="">Poisson Distribution</a>
+          <a href="half_point_calculator.html" class="">Half-Point</a>
+        </div>
+      </div>
+      <div class="wa-dd">
+        <button type="button" class="wa-dd-btn" aria-haspopup="true">Tracking <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="wa-dd-menu">
+          <a href="roi_calculator.html" class="">ROI Calculator</a>
+          <a href="progression_bet_calculator.html" class="">Bet Progression</a>
+          <a href="implied_probability_calculator.html" class="wa-active">Implied Probability</a>
+        </div>
+      </div>
+      <a href="blog/index.html" class="wa-link">Blog</a>
+    </nav>
+    <label for="wa-nav-toggle" class="wa-burger" aria-label="Open menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+
+<div class="page-content">
+  
+<!--SEO-CONTENT-->
+  <div class="breadcrumb-wrap">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <a href="index.html#tracking">Tracking & Analysis</a>
+      <span class="bc-sep">&rsaquo;</span>
+      <span class="bc-current">Implied Probability Calculator</span>
+    </nav>
+  </div>
+  <!-- AD ZONE: Leaderboard 728x90 - READY FOR INTEGRATION -->
+  <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+
+  <header class="header">
+    <div class="badge">🎲 IMPLIED PROBABILITY</div>
+    <h1>Implied Probability Calculator</h1>
+    <p>Convert between odds and probabilities in any direction. Add multiple outcomes to see market margins and true fair probabilities.</p>
+  </header>
+
+  <main class="card">
+    <!-- Section 1: Single Conversion -->
+    <div class="converter-section">
+      <h4>🔄 Quick Conversion</h4>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="inputType">Convert From</label>
+          <select id="inputType" onchange="singleConvert()">
+            <option value="american">American Odds</option>
+            <option value="decimal">Decimal Odds</option>
+            <option value="fractional">Fractional Odds</option>
+            <option value="probability">Probability (%)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="inputVal">Value</label>
+          <input type="text" id="inputVal" placeholder="e.g. -110" oninput="singleConvert()">
+        </div>
+      </div>
+      <div class="result-grid" id="singleResult">
+        <div class="result-cell"><div class="label">American</div><div class="value" id="s-american">—</div></div>
+        <div class="result-cell"><div class="label">Decimal</div><div class="value" id="s-decimal">—</div></div>
+        <div class="result-cell"><div class="label">Fractional</div><div class="value" id="s-fractional">—</div></div>
+        <div class="result-cell"><div class="label">Implied Prob</div><div class="value" id="s-probability">—</div></div>
+      </div>
+    </div>
+
+    <!-- Section 2: Market Analysis -->
+    <div class="converter-section">
+      <h4>📊 Market Analysis (Multiple Outcomes)</h4>
+      <div class="odds-toggle">
+        <label>Odds Format:</label>
+        <div class="toggle-group">
+          <button id="btn-us" class="active" onclick="setMarketFormat('american')">American</button>
+          <button id="btn-dec" onclick="setMarketFormat('decimal')">Decimal</button>
+          <button id="btn-frac" onclick="setMarketFormat('fractional')">Fractional</button>
+        </div>
+      </div>
+      <div class="legs-container" id="outcomesContainer"></div>
+      <div class="btn-row" style="justify-content:flex-start;margin-top:10px;">
+        <button class="btn-secondary" onclick="addOutcome()">+ Add Outcome</button>
+      </div>
+    </div>
+
+    <section class="summary" aria-label="Market analysis results">
+      <div class="summary-card">
+        <div class="s-label">Total Implied Prob</div>
+        <div class="s-value" id="res-totalProb">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Bookmaker Margin</div>
+        <div class="s-value red" id="res-margin">—</div>
+      </div>
+      <div class="summary-card">
+        <div class="s-label">Overround</div>
+        <div class="s-value" id="res-overround">—</div>
+      </div>
+    </section>
+
+    <div id="marketOutput"></div>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="calculateMarket()">Calculate Market</button>
+      <button class="btn-secondary" onclick="resetCalc()">↻ Reset</button>
+    </div>
+
+    <div class="info-box">
+      <h3>Understanding Implied Probability</h3>
+      <p><strong>Implied probability</strong> is the percentage chance of an outcome happening, as reflected by the odds offered. It's the key to identifying value bets.</p>
+      <p><strong>Conversion Formulas:</strong></p>
+      <ul>
+        <li><strong>Decimal → Probability:</strong> <code>1 / decimal × 100</code></li>
+        <li><strong>American (-):</strong> <code>odds / (odds + 100) × 100</code></li>
+        <li><strong>American (+):</strong> <code>100 / (odds + 100) × 100</code></li>
+        <li><strong>Probability → Decimal:</strong> <code>100 / probability</code></li>
+      </ul>
+      <p><strong>Bookmaker Margin:</strong> The total implied probability across all outcomes exceeds 100%. The excess is the bookmaker's built-in profit margin (vig/juice). A market at 104% has a ~4% margin. Lower margins mean fairer odds for bettors.</p>
+      <p><strong>Fair Probability:</strong> Divide each implied probability by the total to remove the margin and get true probabilities that sum to 100%.</p>
+    </div>
+  </main>
+
+  <section class="seo-content" id="guide">
+    <div class="seo-section">
+      <p>The <strong>implied probability calculator</strong> converts any betting odds into the win-probability percentage they represent. Enter a price in American, decimal or fractional format and this <strong>odds to probability calculator</strong> instantly shows the implied chance — the cornerstone of judging whether a bet offers value.</p>
+      <p>Every price reflects an implied probability, and comparing it with your own estimate is how sharp bettors find an edge. Our <strong>betting probability calculator</strong> makes that comparison instant and accurate.</p>
+    </div>
+
+    <div class="seo-section">
+      <h2>How to Use the Implied Probability Calculator</h2>
+      <ol class="seo-list steps">
+        <li>Choose your odds format.</li>
+        <li>Enter the odds for your selection.</li>
+        <li>Read the implied probability percentage instantly.</li>
+        <li>Compare it with your own estimate to judge value.</li>
+      </ol>
+    </div>
+
+    <!-- AD ZONE: In-content 300x250 - READY FOR INTEGRATION -->
+    <div class="ad-zone ad-inline" aria-hidden="true"><span>Advertisement</span></div>
+
+    <div class="seo-section">
+      <h2>Why Use Our Implied Probability Calculator?</h2>
+      <p>Implied probability translates abstract odds into an intuitive percentage you can reason about. If you believe the true chance is higher than the implied probability, the bet has value — making this the simplest, most powerful tool for value betting.</p>
+      <h3>Pro Tips for Smarter Betting</h3>
+      <ul class="seo-list">
+        <li>Implied probability = 1 ÷ decimal odds × 100%.</li>
+        <li>Add up both sides of a market to see the bookmaker's overround.</li>
+        <li>Bet only when your estimated probability comfortably exceeds the implied figure.</li>
+      </ul>
+    </div>
+
+    <div class="seo-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>What is implied probability?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Implied probability is the win chance reflected by betting odds, calculated as 1 ÷ decimal odds × 100%. It shows what the price assumes about an outcome's likelihood.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>How do I convert odds to probability?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Convert the odds to decimal, then divide 1 by that number and multiply by 100. Our implied probability calculator handles American, decimal and fractional odds instantly.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>Why is implied probability important?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">It lets you compare the bookmaker's assessment with your own. When you think the true probability is higher than the implied figure, the bet has positive value.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+            <span>Does implied probability include the margin?</span><span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">Yes — raw implied probabilities include the bookmaker's margin, which is why a market's two sides add up to more than 100%. Remove the vig for true probabilities.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="related-calcs">
+      <h2>Related Calculators</h2>
+      <div class="related-grid">
+        <a href="odds_converter.html" class="related-card">
+          <span class="rc-icon">🔄</span>
+          <span class="rc-text">
+            <span class="rc-title">Odds Converter</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+        <a href="no_vig_calculator.html" class="related-card">
+          <span class="rc-icon">🧮</span>
+          <span class="rc-text">
+            <span class="rc-title">No-Vig Calculator</span>
+            <span class="rc-sub">Advanced Strategy</span>
+          </span>
+        </a>
+        <a href="expected_value_calculator.html" class="related-card">
+          <span class="rc-icon">📈</span>
+          <span class="rc-text">
+            <span class="rc-title">Expected Value Calculator</span>
+            <span class="rc-sub">Advanced Strategy</span>
+          </span>
+        </a>
+        <a href="margin_calculator.html" class="related-card">
+          <span class="rc-icon">📊</span>
+          <span class="rc-text">
+            <span class="rc-title">Margin Calculator</span>
+            <span class="rc-sub">Advanced Strategy</span>
+          </span>
+        </a>
+        <a href="betting_calculator.html" class="related-card">
+          <span class="rc-icon">🧮</span>
+          <span class="rc-text">
+            <span class="rc-title">Betting Calculator</span>
+            <span class="rc-sub">Basic Calculators</span>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <!-- CONTENT HUB: Betting news / blog / guides - READY FOR INTEGRATION -->
+    <div class="content-hub" aria-label="Latest betting insights">
+      <h2>Betting Insights &amp; Guides</h2>
+      <div class="hub-grid">
+        <article class="hub-card"><span class="hub-tag">Guide</span><h3>Understanding Betting Odds</h3><p>Coming soon: in-depth guides to odds formats, value betting, and bankroll management.</p></article>
+        <article class="hub-card"><span class="hub-tag">News</span><h3>Latest Betting News</h3><p>Coming soon: automated sports betting news and market updates.</p></article>
+        <article class="hub-card"><span class="hub-tag">Strategy</span><h3>Winning Strategies</h3><p>Coming soon: expert strategy breakdowns to sharpen your edge.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
+</footer>
+
+<script defer src="nav.js?v=20261012"></script>
+<script>
+
+let marketFormat = 'american';
+let outcomeCount = 0;
+
+function singleConvert() {
+  const type = document.getElementById('inputType').value;
+  const raw = document.getElementById('inputVal').value.trim();
+  if (!raw) { clearSingle(); return; }
+
+  let dec = null;
+  if (type === 'american') {
+    const v = parseFloat(raw);
+    if (isNaN(v) || v === 0) { clearSingle(); return; }
+    dec = americanToDecimal(v);
+  } else if (type === 'decimal') {
+    dec = parseFloat(raw);
+    if (isNaN(dec) || dec <= 1) { clearSingle(); return; }
+  } else if (type === 'fractional') {
+    dec = fractionalToDecimal(raw);
+    if (!dec) { clearSingle(); return; }
+  } else if (type === 'probability') {
+    const p = parseFloat(raw);
+    if (isNaN(p) || p <= 0 || p >= 100) { clearSingle(); return; }
+    dec = 100 / p;
+  }
+
+  if (!dec || dec <= 1) { clearSingle(); return; }
+
+  const prob = decimalToImpliedProb(dec);
+  const american = decimalToAmerican(dec);
+  const frac = decimalToFractional(dec);
+
+  document.getElementById('s-american').textContent = american >= 0 ? '+' + american : american;
+  document.getElementById('s-decimal').textContent = dec.toFixed(4);
+  document.getElementById('s-fractional').textContent = frac;
+  document.getElementById('s-probability').textContent = prob.toFixed(2) + '%';
+}
+
+function clearSingle() {
+  ['s-american','s-decimal','s-fractional','s-probability'].forEach(id => {
+    document.getElementById(id).textContent = '—';
+  });
+}
+
+function setMarketFormat(fmt) {
+  marketFormat = fmt;
+  document.getElementById('btn-us').classList.toggle('active', fmt === 'american');
+  document.getElementById('btn-dec').classList.toggle('active', fmt === 'decimal');
+  document.getElementById('btn-frac').classList.toggle('active', fmt === 'fractional');
+  const ph = fmt === 'american' ? 'e.g. -110' : fmt === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
+  document.querySelectorAll('.out-odds').forEach(el => el.placeholder = ph);
+}
+
+function addOutcome() {
+  outcomeCount++;
+  const c = document.getElementById('outcomesContainer');
+  const ph = marketFormat === 'american' ? 'e.g. -110' : marketFormat === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
+  const row = document.createElement('div');
+  row.className = 'leg-row'; row.id = 'out-' + outcomeCount;
+  row.innerHTML = `
+    <div class="leg-num">Out ${outcomeCount}</div>
+    <input type="text" class="out-odds" placeholder="${ph}" oninput="calculateMarket()">
+    <button class="remove-leg" onclick="removeOutcome(${outcomeCount})" aria-label="Remove">✕</button>
+  `;
+  c.appendChild(row);
+}
+
+function removeOutcome(id) {
+  const el = document.getElementById('out-' + id);
+  if (el) el.remove();
+  calculateMarket();
+}
+
+function calculateMarket() {
+  const inputs = document.querySelectorAll('.out-odds');
+  const outcomes = [];
+  inputs.forEach((inp, i) => {
+    const dec = parseOddsToDecimal(inp.value.trim(), marketFormat);
+    if (dec) outcomes.push({ index: i + 1, dec, prob: 1 / dec });
+  });
+
+  if (outcomes.length < 2) {
+    clearMarket(); return;
+  }
+
+  const totalProb = outcomes.reduce((s, o) => s + o.prob, 0);
+  const margin = (totalProb - 1) * 100;
+
+  document.getElementById('res-totalProb').textContent = (totalProb * 100).toFixed(2) + '%';
+  document.getElementById('res-margin').textContent = margin.toFixed(2) + '%';
+  document.getElementById('res-overround').textContent = (totalProb * 100).toFixed(2) + '%';
+
+  let html = '<table class="market-table"><thead><tr><th>#</th><th>Odds</th><th>Implied Prob</th><th>Fair Prob</th><th>Fair Odds (Dec)</th><th>Fair Odds (US)</th></tr></thead><tbody>';
+  outcomes.forEach(o => {
+    const implied = o.prob * 100;
+    const fair = (o.prob / totalProb) * 100;
+    const fairDec = 100 / fair;
+    const fairUS = decimalToAmerican(fairDec);
+    html += `<tr>
+      <td>Out ${o.index}</td>
+      <td>${o.dec.toFixed(4)}</td>
+      <td>${implied.toFixed(2)}%<div class="prob-bar" style="width:${Math.min(implied, 100)}%;"></div></td>
+      <td style="color:var(--green)">${fair.toFixed(2)}%</td>
+      <td>${fairDec.toFixed(4)}</td>
+      <td>${fairUS >= 0 ? '+' + fairUS : fairUS}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+
+  document.getElementById('marketOutput').innerHTML = html;
+}
+
+function clearMarket() {
+  ['res-totalProb','res-margin','res-overround'].forEach(id => {
+    document.getElementById(id).textContent = '—';
+  });
+  document.getElementById('marketOutput').innerHTML = '';
+}
+
+function resetCalc() {
+  document.getElementById('inputVal').value = '';
+  document.getElementById('inputType').value = 'american';
+  clearSingle();
+  document.getElementById('outcomesContainer').innerHTML = '';
+  outcomeCount = 0;
+  clearMarket();
+  addOutcome(); addOutcome();
+}
+
+// Initialize
+addOutcome(); addOutcome();
+</script>
+</body>
+</html>
