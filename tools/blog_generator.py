@@ -210,7 +210,7 @@ def build_hub(posts):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Betting Blog - Strategy, Odds & Casino Guides | {BRAND}</title>
+<title>Betting Blog: Strategy &amp; Casino Guides | {BRAND}</title>
 <meta name="description" content="Expert sports betting and casino strategy guides: odds, bankroll management, blackjack, roulette, craps, baccarat and more. Free, no signup.">
 <meta property="og:title" content="Wager Assistant Blog - Betting &amp; Casino Guides">
 <meta property="og:description" content="Expert sports betting and casino strategy guides from Wager Assistant.">
@@ -348,11 +348,50 @@ def ping_indexnow(urls):
         print("IndexNow ping failed:", e)
 
 
+TITLE_MAX = 60
+META_MIN, META_MAX = 140, 160
+
+
+def _truncate_at_word(text, limit):
+    """Trim text to <= limit characters at a word boundary, no trailing punctuation."""
+    if len(text) <= limit:
+        return text
+    cut = text[:limit]
+    if " " in cut:
+        cut = cut[:cut.rfind(" ")]
+    return cut.rstrip(" ,;:.-\u2014\u2013")
+
+
+def validate_seo(post):
+    """Enforce title <=60 chars and warn/truncate meta description to 140-160.
+    Mutates the post dict in place and prints warnings. Keeps JSON format
+    backward compatible (no new required fields)."""
+    title = post.get("title", "")
+    if len(title) > TITLE_MAX:
+        new = _truncate_at_word(title, TITLE_MAX)
+        print(f"  [SEO] WARNING title {len(title)} chars > {TITLE_MAX}; "
+              f"truncated at word boundary to {len(new)}: {new!r}")
+        post["title"] = new
+
+    meta = post.get("meta_description", "")
+    if len(meta) > META_MAX:
+        new = _truncate_at_word(meta, META_MAX)
+        print(f"  [SEO] WARNING meta_description {len(meta)} chars > {META_MAX}; "
+              f"truncated at word boundary to {len(new)}.")
+        post["meta_description"] = new
+    elif len(meta) < META_MIN:
+        print(f"  [SEO] WARNING meta_description {len(meta)} chars < {META_MIN}; "
+              f"consider expanding to {META_MIN}-{META_MAX} for best results.")
+    return post
+
+
 def add_post(json_path, ping=False):
     os.makedirs(BLOG, exist_ok=True)
     post = json.load(open(json_path, encoding="utf-8"))
     post.setdefault("date", datetime.date.today().isoformat())
+    # H1 keeps the full original title; <title> tag is length-validated below.
     post.setdefault("h1", post["title"])
+    validate_seo(post)
     posts = load_posts()
     if any(p["slug"] == post["slug"] for p in posts):
         print(f"Slug '{post['slug']}' already exists — skipping.")
