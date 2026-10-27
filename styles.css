@@ -1209,6 +1209,9 @@ body { background: radial-gradient(1200px 600px at 50% -200px, #131830 0%, var(-
 }
 .wa-dd-menu a:hover .wa-dd-sub { color: #cdd5ef; }
 .wa-dd-menu a.wa-active .wa-dd-sub { color: #e6ebff; }
+/* Right-align the two right-most dropdowns so their (wider) menus expand
+   leftward and never push past the viewport edge (prevents horizontal overflow). */
+.wa-menu .wa-dd:nth-last-of-type(-n+2) .wa-dd-menu { left: auto; right: 0; }
 
 /* ─── Hamburger (hidden on desktop) ─── */
 .wa-nav-toggle { display: none; }
