@@ -86,6 +86,14 @@ def head(post):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TJL7RNVKJY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', 'G-TJL7RNVKJY');
+</script>
 <title>{esc(post["title"])}</title>
 <meta name="description" content="{esc(post["meta_description"])}">
 <meta property="og:title" content="{esc(post["title"])}">
@@ -210,6 +218,14 @@ def build_hub(posts):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TJL7RNVKJY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', 'G-TJL7RNVKJY');
+</script>
 <title>Betting Blog: Strategy &amp; Casino Guides | {BRAND}</title>
 <meta name="description" content="Expert sports betting and casino strategy guides: odds, bankroll management, blackjack, roulette, craps, baccarat and more. Free, no signup.">
 <meta property="og:title" content="Wager Assistant Blog - Betting &amp; Casino Guides">
