@@ -31,7 +31,7 @@ BLOG = os.path.join(ROOT, "blog")
 POSTS_JSON = os.path.join(BLOG, "posts.json")
 SITE = "https://wagerassistant.com"
 BRAND = "Wager Assistant"
-CACHE = "v=20261012"
+CACHE = "v=20261027"
 INDEXNOW_KEY = "18151ece1492f341aafcb49eab497ebd"
 
 # ── Shared nav + footer (root-relative; Blog active) ───────────────────────────

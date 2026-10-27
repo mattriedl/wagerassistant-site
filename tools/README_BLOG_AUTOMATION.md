@@ -72,7 +72,7 @@ python3 tools/seed_articles.py
 - **IndexNow key:** `18151ece1492f341aafcb49eab497ebd` — served at
   `https://wagerassistant.com/18151ece1492f341aafcb49eab497ebd.txt`. Keep that file in the
   site root; the generator references it when pinging.
-- **Cache-busting:** asset links use `?v=20261012`. Bump the `CACHE` constant in
+- **Cache-busting:** asset links use `?v=20261027`. Bump the `CACHE` constant in
   `blog_generator.py` whenever `styles.css`/`nav.js` change so browsers refetch.
 - `tools/_nav.html` holds the shared navigation markup used on blog pages (Blog tab active,
   root-relative links). Update it if the main navigation changes.
