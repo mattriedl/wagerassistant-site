@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expected Value Calculator Widget | WagerAssistant.com</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://wagerassistant.com/expected_value_calculator.html">
+<meta name="description" content="Free embeddable expected value (EV) betting calculator by WagerAssistant.com.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f1a;--surface:#141728;--surface2:#1c2038;--border:#2a2f52;--accent:#4f6ef7;--accent2:#7c3aed;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--text:#e8eaf6;--muted:#8892b0}
+html,body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:460px;margin:0 auto;padding:14px}
+.ttl{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.ttl .ic{font-size:20px}
+.ttl h1{font-size:17px;font-weight:700;letter-spacing:-.2px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px}
+.tg{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.tg button{flex:1;min-width:84px;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--muted);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 6px;cursor:pointer;transition:all .15s}
+.tg button.active{color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.fg{flex:1;min-width:120px}
+label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;font-weight:500}
+input[type=text],input[type=number],select{width:100%;font-family:inherit;font-size:15px;color:var(--text);background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px 11px;-webkit-appearance:none;appearance:none}
+input[type=number]{-moz-appearance:textfield}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+input:focus,select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--glow,rgba(79,110,247,.25))}
+input[readonly]{color:var(--muted);background:var(--surface2)}
+.rng{width:100%;margin:6px 0}
+.hr{height:1px;background:var(--border);border:0;margin:14px 0}
+.sum{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sc{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:11px}
+.sl{font-size:11px;color:var(--muted);margin-bottom:4px}
+.sv{font-size:18px;font-weight:700}
+.sv.green{color:var(--green)}.sv.red{color:var(--red)}.sv.accent{color:#8ea2ff}
+.status{text-align:center;font-weight:700;font-size:14px;margin-top:12px;display:none}
+.btns{display:flex;gap:8px;margin-top:12px}
+.btns button{flex:1;font-family:inherit;font-size:13px;font-weight:600;border-radius:8px;padding:10px;cursor:pointer;border:1px solid var(--border)}
+.bp{color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none}
+.bs{color:var(--muted);background:var(--surface2)}
+.leg{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.leg .ln{font-size:12px;color:var(--muted);min-width:46px}
+.leg input{flex:1}
+.leg .rm{background:var(--surface2);border:1px solid var(--border);color:var(--red);border-radius:7px;width:34px;height:34px;cursor:pointer;flex-shrink:0}
+.addbtn{width:100%;font-family:inherit;font-size:13px;font-weight:600;color:var(--accent);background:transparent;border:1px dashed var(--border);border-radius:8px;padding:9px;cursor:pointer;margin-bottom:4px}
+.attr{text-align:center;margin-top:12px;font-size:12px;color:var(--muted)}
+.attr a{color:#8ea2ff;text-decoration:none;font-weight:600}
+.attr a:hover{text-decoration:underline}
+.hint{font-size:11px;color:var(--muted);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="ttl"><span class="ic">📈</span><h1>Expected Value (EV)</h1></div>
+  <div class="card">
+    <div class="tg" role="radiogroup" aria-label="Odds format">
+      <button id="btn-us" class="active" onclick="setFormat('american')">American</button>
+      <button id="btn-dec" onclick="setFormat('decimal')">Decimal</button>
+      <button id="btn-frac" onclick="setFormat('fractional')">Fractional</button>
+    </div>
+    <div class="row"><div class="fg"><label for="stake">Stake ($)</label><input type="number" id="stake" placeholder="e.g. 100" min="0" step="any" oninput="calculate()"></div>
+      <div class="fg"><label for="odds">Odds</label><input type="text" id="odds" placeholder="e.g. +150" oninput="calculate()"></div></div>
+    <div class="fg"><label for="prob">Your Win Probability: <span id="pv">50%</span></label><input type="range" id="prob" class="rng" min="1" max="99" value="50" oninput="upd()"></div>
+    <hr class="hr">
+    <div class="sc" style="margin-bottom:8px"><div class="sl">Expected Value (per bet)</div><div class="sv" id="res-ev">—</div></div>
+    <div class="status" id="tag"></div>
+    <div class="sum">
+      <div class="sc"><div class="sl">ROI per bet</div><div class="sv accent" id="res-roi">—</div></div>
+      <div class="sc"><div class="sl">Break-even Prob</div><div class="sv" id="res-breakeven">—</div></div>
+      <div class="sc"><div class="sl">Profit if Win</div><div class="sv green" id="res-profit">—</div></div>
+      <div class="sc"><div class="sl">Implied Prob</div><div class="sv" id="res-implied">—</div></div>
+    </div>
+    <div class="btns"><button class="bp" onclick="calculate()">Calculate</button><button class="bs" onclick="resetCalc()">↻ Reset</button></div>
+  </div>
+  <div class="attr">Powered by <a href="https://wagerassistant.com/expected_value_calculator.html" target="_blank" rel="noopener">WagerAssistant.com &ndash; Free Betting Calculators</a></div>
+</div>
+<script>
+function americanToDecimal(a){if(a>=100)return a/100+1;if(a<=-100)return 100/Math.abs(a)+1;return null;}
+function decimalToAmerican(d){if(d<=1)return null;if(d>=2)return '+'+Math.round((d-1)*100);return '-'+Math.round(100/(d-1));}
+function fractionalToDecimal(f){var p=(f||'').split('/');if(p.length!==2)return null;var n=parseFloat(p[0]),de=parseFloat(p[1]);if(isNaN(n)||isNaN(de)||de===0)return null;return n/de+1;}
+function decimalToFractional(d){if(d<=1)return null;var pr=d-1;for(var de=1;de<=100;de++){var n=pr*de;if(Math.abs(n-Math.round(n))<0.01)return Math.round(n)+'/'+de;}return pr.toFixed(2)+'/1';}
+function parseOddsToDecimal(v,fmt){if(v===''||v==null)return null;if(fmt==='american'){var n=parseFloat(String(v).replace('+',''));if(isNaN(n)||(n<100&&n>-100))return null;return americanToDecimal(n);}if(fmt==='decimal'){var m=parseFloat(v);if(isNaN(m)||m<=1)return null;return m;}if(fmt==='fractional'){return fractionalToDecimal(String(v).trim());}return null;}
+function decimalToImpliedProb(d){if(!d||d<=0)return null;return 1/d*100;}
+function fmt$(n){if(n===null||isNaN(n))return '\u2014';return '$'+Math.abs(n).toFixed(2);}
+function fmtSign$(n){if(n===null||isNaN(n))return '\u2014';return (n>=0?'+':'-')+'$'+Math.abs(n).toFixed(2);}
+function fmtPct(n){if(n===null||isNaN(n))return '\u2014';return n.toFixed(2)+'%';}
+
+
+var oddsFormat='american';
+
+function setFormat(f){oddsFormat=f;document.getElementById('btn-us').classList.toggle('active',f==='american');document.getElementById('btn-dec').classList.toggle('active',f==='decimal');document.getElementById('btn-frac').classList.toggle('active',f==='fractional');var ph=f==='american'?'e.g. +150':f==='decimal'?'e.g. 2.50':'e.g. 3/2';document.getElementById('odds').placeholder=ph;calculate();}
+
+function upd(){document.getElementById('pv').textContent=document.getElementById('prob').value+'%';calculate();}
+function calculate(){var s=parseFloat(document.getElementById('stake').value);var o=document.getElementById('odds').value.trim();var p=parseFloat(document.getElementById('prob').value)/100;if(isNaN(s)||s<=0||!o){clr();return;}var d=parseOddsToDecimal(o,oddsFormat);if(!d){clr();return;}var pw=s*(d-1);var ev=p*pw-(1-p)*s;var roi=ev/s*100;var be=1/d*100;var e=document.getElementById('res-ev');e.textContent=fmtSign$(ev);e.style.color=ev>=0?'var(--green)':'var(--red)';var t=document.getElementById('tag');t.style.display='block';if(ev>0){t.textContent='✓ POSITIVE EV';t.style.color='var(--green)';}else if(ev===0){t.textContent='— NEUTRAL EV';t.style.color='var(--yellow)';}else{t.textContent='✗ NEGATIVE EV';t.style.color='var(--red)';}document.getElementById('res-roi').textContent=roi.toFixed(2)+'%';document.getElementById('res-breakeven').textContent=be.toFixed(2)+'%';document.getElementById('res-profit').textContent=fmt$(pw);document.getElementById('res-implied').textContent=be.toFixed(2)+'%';}
+function clr(){document.getElementById('tag').style.display='none';document.getElementById('res-ev').textContent='—';['res-roi','res-breakeven','res-profit','res-implied'].forEach(function(i){document.getElementById(i).textContent='—';});}
+function resetCalc(){document.getElementById('stake').value='';document.getElementById('odds').value='';document.getElementById('prob').value=50;upd();clr();}
+
+</script>
+</body>
+</html>

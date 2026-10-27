@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "betting_calculator",
+    "full": "betting_calculator.html",
+    "icon": "\ud83e\uddee",
+    "name": "Betting Calculator",
+    "desc": "Free embeddable bet payout calculator by WagerAssistant.com."
+  },
+  {
+    "slug": "parlay_calculator",
+    "full": "parlay_calculator.html",
+    "icon": "\ud83d\udd17",
+    "name": "Parlay Calculator",
+    "desc": "Free embeddable parlay calculator by WagerAssistant.com."
+  },
+  {
+    "slug": "odds_converter",
+    "full": "odds_converter.html",
+    "icon": "\ud83d\udd04",
+    "name": "Odds Converter",
+    "desc": "Free embeddable odds converter (American, decimal, fractional, probability) by WagerAssistant.com."
+  },
+  {
+    "slug": "arbitrage_calculator",
+    "full": "arbitrage_calculator.html",
+    "icon": "\ud83c\udfaf",
+    "name": "Arbitrage Calculator",
+    "desc": "Free embeddable two-way arbitrage calculator by WagerAssistant.com."
+  },
+  {
+    "slug": "kelly_criterion_calculator",
+    "full": "kelly_criterion_calculator.html",
+    "icon": "\ud83e\udde0",
+    "name": "Kelly Criterion Calculator",
+    "desc": "Free embeddable Kelly Criterion stake-sizing calculator by WagerAssistant.com."
+  },
+  {
+    "slug": "hedging_calculator",
+    "full": "hedging_calculator.html",
+    "icon": "\ud83d\udee1\ufe0f",
+    "name": "Hedging Calculator",
+    "desc": "Free embeddable hedge-bet calculator by WagerAssistant.com."
+  },
+  {
+    "slug": "expected_value_calculator",
+    "full": "expected_value_calculator.html",
+    "icon": "\ud83d\udcc8",
+    "name": "Expected Value Calculator",
+    "desc": "Free embeddable expected value (EV) betting calculator by WagerAssistant.com."
+  },
+  {
+    "slug": "implied_probability_calculator",
+    "full": "implied_probability_calculator.html",
+    "icon": "\ud83d\udcca",
+    "name": "Implied Probability Calculator",
+    "desc": "Free embeddable implied probability calculator by WagerAssistant.com."
+  }
+]

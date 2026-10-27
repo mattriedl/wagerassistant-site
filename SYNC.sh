@@ -27,6 +27,9 @@ cp "$SRC"/*.txt "$DST"/ 2>/dev/null || true
 # blog
 mkdir -p "$DST/blog"
 rsync -a --delete "$SRC/blog/" "$DST/blog/"
+# embed widgets
+mkdir -p "$DST/embed"
+rsync -a --delete "$SRC/embed/" "$DST/embed/"
 # tools
 mkdir -p "$DST/tools"
 rsync -a --delete \
