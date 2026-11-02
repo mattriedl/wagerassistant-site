@@ -401,9 +401,47 @@ def validate_seo(post):
     return post
 
 
+def sanitize_post(post):
+    """Defensive cleanup so stray Markdown artifacts never reach the live HTML.
+
+    Fixes recurring automation issues:
+      - literal horizontal-rule artifacts ('---') leaking into <p>…</p>
+      - whole-paragraph Markdown emphasis wrappers (*text* / _text_)
+      - a duplicate 'Responsible Gambling' FAQ entry (the generator already
+        appends a proper DISCLAIMER block, so it must not also be an FAQ).
+    """
+    def clean(s):
+        if not isinstance(s, str):
+            return s
+        # drop paragraphs that are only a markdown rule
+        s = re.sub(r'<p>\s*-{3,}\s*</p>', '', s)
+        s = re.sub(r'(?m)^\s*-{3,}\s*$', '', s)
+        # unwrap a paragraph fully wrapped in * or _ (…<p>*text*</p>… -> <p><em>text</em></p>)
+        s = re.sub(r'<p>\s*[\*_]{1,2}(.+?)[\*_]{1,2}\s*</p>',
+                   lambda m: f'<p><em>{m.group(1).strip()}</em></p>', s, flags=re.S)
+        return s
+
+    if isinstance(post.get("body_html"), str):
+        post["body_html"] = clean(post["body_html"])
+    if post.get("faq"):
+        cleaned = []
+        for pair in post["faq"]:
+            try:
+                q, a = pair
+            except (ValueError, TypeError):
+                continue
+            # skip a Responsible-Gambling pseudo-FAQ (covered by DISCLAIMER)
+            if "responsible gambling" in str(q).strip().lower():
+                continue
+            cleaned.append([q, clean(a)])
+        post["faq"] = cleaned
+    return post
+
+
 def add_post(json_path, ping=False):
     os.makedirs(BLOG, exist_ok=True)
     post = json.load(open(json_path, encoding="utf-8"))
+    post = sanitize_post(post)
     post.setdefault("date", datetime.date.today().isoformat())
     # H1 keeps the full original title; <title> tag is length-validated below.
     post.setdefault("h1", post["title"])
