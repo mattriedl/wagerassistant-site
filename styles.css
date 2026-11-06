@@ -838,6 +838,39 @@ body { background: radial-gradient(1200px 600px at 50% -200px, #131830 0%, var(-
 .ad-zone.ad-leaderboard { min-height: 90px; }
 .ad-zone.ad-inline { min-height: 100px; }
 
+/* Live ad slots (BannerPromote) — real ad replaces the placeholder visual.
+   Desktop shows the 728x90 leaderboard; narrow screens swap to the 320x50
+   mobile-banner spot so the leaderboard is never cropped. */
+.ad-zone.ad-live {
+  border: none;
+  background: none;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.ad-zone.ad-live::before {
+  content: "Advertisement";
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #8891bf;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.ad-zone.ad-live .ad-slot {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.ad-zone.ad-live .ad-slot-mobile { display: none; }
+@media (max-width: 767px) {
+  .ad-zone.ad-live .ad-slot-desktop { display: none; }
+  .ad-zone.ad-live .ad-slot-mobile { display: flex; }
+}
+
 /* ─────────────────────────────────────────────
    SEO CONTENT SECTIONS
    ───────────────────────────────────────────── */

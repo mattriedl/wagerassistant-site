@@ -113,7 +113,7 @@ def head(post):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/styles.css?{CACHE}">
+<link rel="stylesheet" href="/styles.css?v=20261106">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -169,7 +169,7 @@ def render_article(post, all_posts):
       <h1>{esc(post["h1"])}</h1>
       <p class="article-meta">By <b>WagerAssistant Editorial Team</b> &middot; Published {date_h} &middot; {post.get("read_time", "7")} min read</p>
     </div>
-    <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+    <div class="ad-zone ad-leaderboard ad-live" role="complementary" aria-label="Advertisement"><div class="ad-slot ad-slot-desktop" data-gb-spot="leaderboard"></div><div class="ad-slot ad-slot-mobile" data-gb-spot="mobile-banner"></div></div>
     {toc_block}
     {take_block}
     <div class="article-body">
@@ -182,6 +182,7 @@ def render_article(post, all_posts):
 </div>
 {FOOTER}
 <script defer src="/nav.js?{CACHE}"></script>
+<script src="https://bannerpromote.com/embed.js.php" async></script>
 <script>
 function toggleFaq(b){{var e=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!e);var a=b.nextElementSibling;a.style.maxHeight=e?null:a.scrollHeight+'px';b.querySelector('.faq-icon').textContent=e?'+':'\\u2212';}}
 </script>
@@ -245,7 +246,7 @@ def build_hub(posts):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/styles.css?{CACHE}">
+<link rel="stylesheet" href="/styles.css?v=20261106">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -265,13 +266,14 @@ def build_hub(posts):
     <h1>Betting &amp; Casino Strategy Blog</h1>
     <p>Practical, no-nonsense guides to sports betting and casino games &mdash; odds, bankroll management, and game strategy to help you bet smarter. Pair every guide with our free calculators.</p>
   </header>
-  <div class="ad-zone ad-leaderboard" aria-hidden="true"><span>Advertisement</span></div>
+  <div class="ad-zone ad-leaderboard ad-live" role="complementary" aria-label="Advertisement"><div class="ad-slot ad-slot-desktop" data-gb-spot="leaderboard"></div><div class="ad-slot ad-slot-mobile" data-gb-spot="mobile-banner"></div></div>
   <section class="blog-grid">
     {cards}
   </section>
 </div>
 {FOOTER}
 <script defer src="/nav.js?{CACHE}"></script>
+<script src="https://bannerpromote.com/embed.js.php" async></script>
 </body>
 </html>'''
     open(os.path.join(BLOG, "index.html"), "w", encoding="utf-8").write(doc)
