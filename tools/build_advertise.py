@@ -53,10 +53,10 @@ def card(w, h, name):
           <h2>{name} &mdash; {w}&times;{h}</h2>
         </div>
         <div class="ban-preview">
-          <img class="ban-img" id="img-{slug}" src="banners/wagerassistant_{slug}.gif"
+          <img class="ban-img" id="img-{slug}" src="banners/wagerassistant_{slug}.gif?v=20261105"
                width="{w}" height="{h}" alt="{ALT} ({name}, {w}x{h})" loading="lazy"
-               data-gif="banners/wagerassistant_{slug}.gif"
-               data-png="banners/wagerassistant_{slug}.png">
+               data-gif="banners/wagerassistant_{slug}.gif?v=20261105"
+               data-png="banners/wagerassistant_{slug}.png?v=20261105">
         </div>
         <div class="ban-controls">
           <div class="ban-toggle" role="group" aria-label="Choose banner version for {name}">
