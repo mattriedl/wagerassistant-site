@@ -90,7 +90,7 @@ NAV = '''<header class="wa-nav">
 
 FOOTER = '''<footer class="site-footer">
   <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
-  <p><a href="embed-calculators.html">Embed our free calculators on your site</a> &middot; <a href="sitemap.html">Sitemap</a></p>
+  <p><a href="embed-calculators.html">Embed our free calculators on your site</a> &middot; <a href="advertise-with-us.html">Advertise with Us</a> &middot; <a href="sitemap.html">Sitemap</a></p>
 </footer>'''
 
 PAGE_CSS = '''

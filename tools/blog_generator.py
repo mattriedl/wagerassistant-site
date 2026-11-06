@@ -40,7 +40,7 @@ NAV = open(os.path.join(os.path.dirname(__file__), "_nav.html"), encoding="utf-8
 
 FOOTER = '''<footer class="site-footer">
   <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
-  <p style="margin-top:8px"><a href="/index.html" style="color:#8892b0;margin:0 8px">Calculators</a> &middot; <a href="/blog/index.html" style="color:#8892b0;margin:0 8px">Blog</a> &middot; <a href="/sitemap.html" style="color:#8892b0;margin:0 8px">Sitemap</a></p>
+  <p style="margin-top:8px"><a href="/index.html" style="color:#8892b0;margin:0 8px">Calculators</a> &middot; <a href="/blog/index.html" style="color:#8892b0;margin:0 8px">Blog</a> &middot; <a href="/advertise-with-us.html" style="color:#8892b0;margin:0 8px">Advertise</a> &middot; <a href="/sitemap.html" style="color:#8892b0;margin:0 8px">Sitemap</a></p>
 </footer>'''
 
 DISCLAIMER = '''<div class="rg-disclaimer">
