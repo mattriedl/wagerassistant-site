@@ -6,7 +6,14 @@
     <atom:link href="https://wagerassistant.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Sports betting and casino strategy guides from Wager Assistant.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Nov 2026 19:58:19 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 20:01:30 +0000</lastBuildDate>
+    <item>
+      <title>Kelly Criterion Betting Strategy: The Math of Optimal</title>
+      <link>https://wagerassistant.com/blog/kelly-criterion-betting-strategy.html</link>
+      <guid isPermaLink="true">https://wagerassistant.com/blog/kelly-criterion-betting-strategy.html</guid>
+      <description>Master the Kelly Criterion betting strategy to maximize your long-term profits. Learn the math of optimal staking, fractional Kelly, and how to calculate your</description>
+      <pubDate>Sun, 08 Nov 2026 09:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Point Spread Betting Strategy: How to Master the Spread</title>
       <link>https://wagerassistant.com/blog/point-spread-betting-strategy.html</link>
