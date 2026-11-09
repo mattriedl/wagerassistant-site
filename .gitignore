@@ -13,3 +13,5 @@ __pycache__/
 screenshots/
 *.pdf
 *.docx
+# Local sync script — keep out of the public repo
+SYNC.sh
