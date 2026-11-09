@@ -1588,3 +1588,14 @@ body {
   .article-body { font-size: 15.5px; }
   .article-body h2 { font-size: 20px; }
 }
+
+/* In-depth content tables (calculator guides) */
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0 16px}
+.seo-table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px}
+.seo-table th,.seo-table td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--border,#2a2f52);white-space:nowrap}
+.seo-table th{color:var(--text,#e6e9f5);font-weight:700;background:var(--surface,#141728)}
+.seo-table td{color:var(--muted,#8892b0)}
+.seo-table tbody tr:hover td{background:rgba(79,110,247,.06)}
+.seo-table caption{caption-side:top;text-align:left;color:var(--muted,#8892b0);padding-bottom:6px}
+.trust-links{margin-top:8px}
+.trust-links a{color:#8892b0;margin:0 6px}

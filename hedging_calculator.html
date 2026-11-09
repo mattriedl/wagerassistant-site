@@ -11,10 +11,10 @@
   gtag('js', new Date());
   gtag('config', 'G-TJL7RNVKJY');
 </script>
-<title>Hedging Calculator - Guaranteed Profit | Wager Assistant</title>
-<meta name="description" content="Free hedging calculator to lock in guaranteed profit. Enter your original bet and hedge odds to get the exact hedge stake and profit on every outcome.">
-<meta property="og:title" content="Hedging Calculator - Wager Assistant">
-<meta property="og:description" content="Calculate hedge bet amounts to lock in guaranteed profit on existing wagers.">
+<title>Hedge Calculator – Hedge a Bet &amp; Lock In Profit | Wager Assistant</title>
+<meta name="description" content="Free hedge calculator: enter your original bet and the opposing odds to get the exact hedge stake, guaranteed profit and result on every outcome. Works for parlays.">
+<meta property="og:title" content="Hedge Calculator – Hedge a Bet &amp; Lock In Profit | Wager Assistant">
+<meta property="og:description" content="Free hedge calculator: enter your original bet and the opposing odds to get the exact hedge stake, guaranteed profit and result on every outcome. Works for parlays.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://wagerassistant.com/hedging_calculator.html">
 <meta property="og:site_name" content="Wager Assistant">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261106">
+<link rel="stylesheet" href="styles.css?v=20261108">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -37,8 +37,8 @@
 <meta property="og:image" content="https://wagerassistant.com/og-image.png">
 <meta property="og:image:alt" content="Hedging Calculator - Wager Assistant">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hedging Calculator - Lock In Guaranteed Profit | Wager Assistant">
-<meta name="twitter:description" content="Free hedging calculator to lock in guaranteed profit. Enter your original bet and hedge odds to get the exact hedge stake and profit on every outcome.">
+<meta name="twitter:title" content="Hedge Calculator – Hedge a Bet &amp; Lock In Profit | Wager Assistant">
+<meta name="twitter:description" content="Free hedge calculator: enter your original bet and the opposing odds to get the exact hedge stake, guaranteed profit and result on every outcome. Works for parlays.">
 <meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
 <meta name="theme-color" content="#0d0f1a">
 <script type="application/ld+json">
@@ -140,7 +140,7 @@
 
   <header class="header">
     <div class="badge">🛡️ Hedging</div>
-    <h1>Hedging Calculator</h1>
+    <h1>Hedge Calculator</h1>
     <p>Enter your original bet details and the current hedge odds. The calculator determines the optimal hedge stake to guarantee profit regardless of outcome.</p>
   </header>
 
@@ -264,6 +264,20 @@
       <p>Spot risk-free opportunities with the <a href="/arbitrage_calculator.html">arbitrage betting calculator</a>, or convert free bets with the <a href="/bonus_bet_converter.html">bonus bet calculator</a>. See disciplined exit strategy in our <a href="/blog/bankroll-management-strategies.html">bankroll management strategies</a> guide.</p>
     </div>
 
+    <!--DEPTH-SECTION-->    <div class="seo-section">
+      <h2>How Much Should You Hedge? A Worked Example</h2>
+      <p>Hedging is a choice between upside and certainty. Say you have a <strong>$50 bet at +600</strong> &mdash; a futures bet, or the last leg of a parlay &mdash; that would return <strong>$350.00</strong>. The other side is now available at <strong>-150</strong>. Here is how different hedge sizes play out:</p>
+      <div class="table-wrap"><table class="seo-table"><thead><tr><th>Strategy</th><th>Hedge stake at -150</th><th>Profit if original wins</th><th>Profit if hedge wins</th></tr></thead><tbody><tr><td>No hedge</td><td>$0.00</td><td>+$300.00</td><td>-$50.00</td></tr><tr><td>Break-even hedge</td><td>$75.00</td><td>+$225.00</td><td>+$0.00</td></tr><tr><td>Half of equal hedge</td><td>$105.00</td><td>+$195.00</td><td>+$20.00</td></tr><tr><td>Equal-profit hedge (this calculator)</td><td>$210.00</td><td>+$90.00</td><td>+$90.00</td></tr></tbody></table></div>
+      <ul class="seo-list">
+        <li><strong>Equal-profit hedge</strong> (what this calculator returns): stake = original return &divide; hedge decimal odds = $350.00 &divide; 1.6667 = $210.00. You lock in $90.00 whatever happens.</li>
+        <li><strong>Break-even hedge</strong>: stake just enough that the hedge returns your original $50 if it wins: $50 &divide; (1.6667 &minus; 1) = $75.00. You can&rsquo;t lose money, and you keep most of the upside.</li>
+        <li><strong>Partial hedge</strong>: anything in between &mdash; less guaranteed profit, more upside if your original bet wins.</li>
+      </ul>
+      <h3>Hedging a parlay before the last leg</h3>
+      <p>Enter your parlay stake and its <em>full</em> combined odds as the original bet, then the price of the opposite side of your final leg as the hedge odds. Use the <a href="/parlay_calculator.html">parlay calculator</a> to find the combined odds first. Remember that every hedge pays the bookmaker&rsquo;s vig again, so hedging lowers your expected value even when it lowers your risk &mdash; it&rsquo;s worth doing when the guaranteed amount matters more to you than the extra upside.</p>
+    </div>
+<!--/DEPTH-SECTION-->
+
     <div class="seo-section">
       <h2>Frequently Asked Questions</h2>
       <div class="faq-list">
@@ -350,6 +364,7 @@
 <footer class="site-footer">
   <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
   <p><a href="embed-calculators.html">Embed our free calculators on your site</a> &middot; <a href="advertise-with-us.html">Advertise with Us</a> &middot; <a href="sitemap.html">Sitemap</a></p>
+  <p class="trust-links"><a href="/about.html">About</a> &middot; <a href="/contact.html">Contact</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/responsible-gambling.html">Responsible Gambling</a></p>
 </footer>
 
 <script defer src="nav.js?v=20261027"></script>
