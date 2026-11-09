@@ -40,7 +40,7 @@ NAV = open(os.path.join(os.path.dirname(__file__), "_nav.html"), encoding="utf-8
 
 FOOTER = '''<footer class="site-footer">
   <p>&copy; 2026 WagerAssistant.com - All Rights Reserved. Free tools for informational purposes only. Please gamble responsibly.</p>
-  <p style="margin-top:8px"><a href="/index.html" style="color:#8892b0;margin:0 8px">Calculators</a> &middot; <a href="/blog/index.html" style="color:#8892b0;margin:0 8px">Blog</a> &middot; <a href="/advertise-with-us.html" style="color:#8892b0;margin:0 8px">Advertise</a> &middot; <a href="/sitemap.html" style="color:#8892b0;margin:0 8px">Sitemap</a></p>
+  <p style="margin-top:8px"><a href="/index.html" style="color:#8892b0;margin:0 8px">Calculators</a> &middot; <a href="/blog/" style="color:#8892b0;margin:0 8px">Blog</a> &middot; <a href="/advertise-with-us.html" style="color:#8892b0;margin:0 8px">Advertise</a> &middot; <a href="/sitemap.html" style="color:#8892b0;margin:0 8px">Sitemap</a></p>
 </footer>'''
 
 DISCLAIMER = '''<div class="rg-disclaimer">
@@ -160,7 +160,7 @@ def render_article(post, all_posts):
 <div class="page-content">
   <nav class="breadcrumb-wrap" aria-label="Breadcrumb" style="max-width:820px;margin:16px auto 0;font-size:13px;color:#6f7c91">
     <a href="/index.html" style="color:#8892b0">Home</a> &rsaquo;
-    <a href="/blog/index.html" style="color:#8892b0">Blog</a> &rsaquo;
+    <a href="/blog/" style="color:#8892b0">Blog</a> &rsaquo;
     <span>{esc(post["title"])}</span>
   </nav>
   <article class="article-wrap">
@@ -327,7 +327,7 @@ def update_sitemap_xml(posts):
 def update_sitemap_html(posts):
     path = os.path.join(ROOT, "sitemap.html")
     s = open(path, encoding="utf-8").read()
-    links = '<li><a href="/blog/index.html">Blog Home</a></li>\n' + "".join(
+    links = '<li><a href="/blog/">Blog Home</a></li>\n' + "".join(
         f'        <li><a href="/blog/{p["slug"]}.html">{esc(p["title"])}</a></li>\n' for p in posts)
     block = f'    <!-- BLOG-SECTION -->\n    <section class="sitemap-section"><h2>Blog &amp; Guides</h2>\n      <ul>\n        {links}      </ul>\n    </section>\n    <!-- /BLOG-SECTION -->\n\n'
     s = re.sub(r'\s*<!-- BLOG-SECTION -->.*?<!-- /BLOG-SECTION -->\n\n', '', s, flags=re.DOTALL)
@@ -346,7 +346,7 @@ def update_homepage(posts):
     cards = ""
     for p in latest:
         cards += (f'<article class="hub-card"><span class="hub-tag">{esc(p.get("category","Guide"))}</span>'
-                  f'<h3><a href="blog/{p["slug"]}.html" style="color:inherit;text-decoration:none">{esc(p["title"])}</a></h3>'
+                  f'<h3><a href="/blog/{p["slug"]}.html" style="color:inherit;text-decoration:none">{esc(p["title"])}</a></h3>'
                   f'<p>{esc(p["meta_description"])}</p></article>')
     s = re.sub(r'(<div class="hub-grid">).*?(</div>\s*</div>\s*</section>)',
                r'\1' + cards + r'\2', s, count=1, flags=re.DOTALL)
