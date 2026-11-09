@@ -11,10 +11,10 @@
   gtag('js', new Date());
   gtag('config', 'G-TJL7RNVKJY');
 </script>
-<title>Lucky 15 Calculator – Bet Returns &amp; Bonuses | Wager Assistant</title>
-<meta name="description" content="Free Lucky 15 calculator: work out returns on all 15 bets from 4 selections – 4 singles, 6 doubles, 4 trebles and a fourfold – including bookmaker bonuses.">
-<meta property="og:title" content="Lucky 15 Calculator – Bet Returns &amp; Bonuses | Wager Assistant">
-<meta property="og:description" content="Free Lucky 15 calculator: work out returns on all 15 bets from 4 selections – 4 singles, 6 doubles, 4 trebles and a fourfold – including bookmaker bonuses.">
+<title>Lucky 15 Calculator – Each Way, Bonuses &amp; Returns | Wager Assistant</title>
+<meta name="description" content="Free Lucky 15 calculator: settle all 15 bets from 4 selections win only or each way, with place terms, Rule 4, non-runners and one-winner or all-winners bonuses.">
+<meta property="og:title" content="Lucky 15 Calculator – Each Way, Bonuses &amp; Returns | Wager Assistant">
+<meta property="og:description" content="Free Lucky 15 calculator: settle all 15 bets from 4 selections win only or each way, with place terms, Rule 4, non-runners and one-winner or all-winners bonuses.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Wager Assistant">
 <meta property="og:url" content="https://wagerassistant.com/lucky_15_calculator.html">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261108">
+<link rel="stylesheet" href="styles.css?v=20261109">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -63,8 +63,8 @@
 <meta property="og:image" content="https://wagerassistant.com/og-image.png">
 <meta property="og:image:alt" content="Lucky 15 Calculator - Wager Assistant">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lucky 15 Calculator – Bet Returns &amp; Bonuses | Wager Assistant">
-<meta name="twitter:description" content="Free Lucky 15 calculator: work out returns on all 15 bets from 4 selections – 4 singles, 6 doubles, 4 trebles and a fourfold – including bookmaker bonuses.">
+<meta name="twitter:title" content="Lucky 15 Calculator – Each Way, Bonuses &amp; Returns | Wager Assistant">
+<meta name="twitter:description" content="Free Lucky 15 calculator: settle all 15 bets from 4 selections win only or each way, with place terms, Rule 4, non-runners and one-winner or all-winners bonuses.">
 <meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
 <meta name="theme-color" content="#0d0f1a">
 <script type="application/ld+json">
@@ -167,58 +167,11 @@
   <header class="header">
     <div class="badge">🍀 Lucky 15</div>
     <h1>Lucky 15 Calculator</h1>
-    <p>Enter odds for 4 selections to see all 15 bets — 4 singles, 6 doubles, 4 trebles, and 1 four-fold accumulator — with total stake and maximum return.</p>
+    <p>Enter odds for 4 selections to see all 15 bets — 4 singles, 6 doubles, 4 trebles, and 1 four-fold accumulator. Settle it win only or each way, with place terms, Rule 4 and non-runners.</p>
   </header>
 
   <main class="card">
-    <div class="odds-toggle">
-      <label>Odds Format:</label>
-      <div class="toggle-group">
-        <button id="btn-us" class="active" onclick="setFormat('american')">American</button>
-        <button id="btn-dec" onclick="setFormat('decimal')">Decimal</button>
-        <button id="btn-frac" onclick="setFormat('fractional')">Fractional</button>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="stake">Unit Stake ($)</label>
-      <input type="number" id="stake" placeholder="e.g. 1" min="0" step="any" oninput="calculate()">
-    </div>
-
-    <div class="form-group"><label>Selections (enter odds for 4 picks)</label></div>
-    <div class="legs-container" id="legsContainer"></div>
-    <div class="btn-row" style="justify-content:flex-start;margin-top:10px;">
-      <button class="btn-secondary" onclick="addLeg()">+ Add Selection</button>
-    </div>
-
-    <hr class="divider">
-
-    <section class="summary" aria-label="Lucky 15 summary">
-      <div class="summary-card">
-        <div class="s-label">Total Bets</div>
-        <div class="s-value accent" id="res-totalBets">15</div>
-      </div>
-      <div class="summary-card">
-        <div class="s-label">Total Stake</div>
-        <div class="s-value" id="res-totalStake">—</div>
-      </div>
-      <div class="summary-card">
-        <div class="s-label">Max Return (All Win)</div>
-        <div class="s-value green" id="res-maxReturn">—</div>
-      </div>
-      <div class="summary-card">
-        <div class="s-label">Max Profit (All Win)</div>
-        <div class="s-value green" id="res-maxProfit">—</div>
-      </div>
-    </section>
-
-    <div id="bonusInfo"></div>
-    <div id="combosOutput"></div>
-
-    <div class="btn-row">
-      <button class="btn-primary" onclick="calculate()">Calculate</button>
-      <button class="btn-secondary" onclick="resetCalc()">↻ Reset</button>
-    </div>
+    <div id="sb-app" data-bet="lucky15"><noscript><p>This calculator needs JavaScript turned on.</p></noscript></div>
 
     <div class="info-box">
       <h3>How Lucky 15 Bets Work</h3>
@@ -237,10 +190,11 @@
     <div class="seo-section">
       <h2>How to Use the Lucky 15 Calculator</h2>
       <ol class="seo-list steps">
-        <li>Enter the odds for all four selections.</li>
-        <li>Enter your unit stake (multiplied across the 15 bets).</li>
-        <li>Set any bonus options your bookmaker offers.</li>
-        <li>View your total stake, payout, bonuses and profit.</li>
+        <li>Enter the odds for all four selections (fractional, decimal or American).</li>
+        <li>Enter your unit stake and choose <strong>Win only</strong> or <strong>Each way</strong> (each way doubles the stake to 30 units).</li>
+        <li>Set each selection&rsquo;s result &mdash; won, placed, lost or non-runner &mdash; plus its place terms and any Rule 4 deduction.</li>
+        <li>Add your bookmaker&rsquo;s one-winner or all-winners bonus if it offers one.</li>
+        <li>Read your total stake, return and profit, with a breakdown of all 15 bets.</li>
       </ol>
     </div>
 
@@ -283,7 +237,7 @@
       <h3>Lucky 15 bonuses</h3>
       <p>Bookmakers often add extras to Lucky 15s, such as boosted odds on the single if only one selection wins, or a percentage bonus if all four win. These offers vary by bookmaker and change often, so check the terms before you bet and enter the bonus in the calculator above where it applies.</p>
       <h3>Each way Lucky 15s</h3>
-      <p>Placed each way, a Lucky 15 becomes 30 bets: 15 on your selections to win and 15 on them to place at the race&rsquo;s place terms (for example, 1/5 of the odds for the first three places in a non-handicap with 8 or more runners). This calculator works out win returns; for the place part, use the <a href="/each_way_calculator.html">each way calculator</a> to find each selection&rsquo;s place odds.</p>
+      <p>Placed each way, a Lucky 15 becomes 30 bets: 15 on your selections to win and 15 on them to place at the race&rsquo;s place terms (for example, 1/5 of the odds for the first three places in a non-handicap with 8 or more runners). Switch the calculator above to <strong>Each way</strong>, set each selection&rsquo;s place terms and mark it won, placed or lost: it settles both halves of all 30 bets. A selection that only places still earns its place singles and place multiples, so an each way Lucky 15 can pay out even with no winners.</p>
     </div>
 <!--/DEPTH-SECTION-->
 
@@ -377,161 +331,7 @@
 </footer>
 
 <script defer src="nav.js?v=20261027"></script>
-<script>
-
-let oddsFormat = 'american';
-let legCount = 0;
-
-function setFormat(fmt) {
-  oddsFormat = fmt;
-  document.getElementById('btn-us').classList.toggle('active', fmt === 'american');
-  document.getElementById('btn-dec').classList.toggle('active', fmt === 'decimal');
-  document.getElementById('btn-frac').classList.toggle('active', fmt === 'fractional');
-  const ph = fmt === 'american' ? 'e.g. -110' : fmt === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
-  document.querySelectorAll('.leg-odds').forEach(el => el.placeholder = ph);
-  calculate();
-}
-
-function addLeg() {
-  legCount++;
-  const c = document.getElementById('legsContainer');
-  const ph = oddsFormat === 'american' ? 'e.g. -110' : oddsFormat === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
-  const row = document.createElement('div');
-  row.className = 'leg-row'; row.id = 'leg-' + legCount;
-  row.innerHTML = `
-    <div class="leg-num">#${legCount}</div>
-    <input type="text" class="leg-odds" placeholder="${ph}" oninput="calculate()">
-    <button class="remove-leg" onclick="removeLeg(${legCount})" aria-label="Remove">✕</button>
-  `;
-  c.appendChild(row);
-  calculate();
-}
-
-function removeLeg(id) {
-  const el = document.getElementById('leg-' + id);
-  if (el) el.remove();
-  calculate();
-}
-
-function combinations(arr, k) {
-  if (k === 0) return [[]];
-  if (arr.length === 0) return [];
-  const [first, ...rest] = arr;
-  return [...combinations(rest, k - 1).map(c => [first, ...c]), ...combinations(rest, k)];
-}
-
-function calculate() {
-  const stake = parseFloat(document.getElementById('stake').value);
-  const inputs = document.querySelectorAll('.leg-odds');
-  if (isNaN(stake) || stake <= 0 || inputs.length < 2) { clearResults(); return; }
-
-  const legs = [];
-  inputs.forEach((inp, i) => {
-    const dec = parseOddsToDecimal(inp.value.trim(), oddsFormat);
-    if (dec) legs.push({ index: i + 1, dec });
-  });
-
-  if (legs.length < 2) { clearResults(); return; }
-
-  const betTypes = [
-    { name: 'Singles', k: 1 },
-    { name: 'Doubles', k: 2 },
-    { name: 'Trebles', k: 3 },
-    { name: 'Four-Fold', k: 4 },
-    { name: 'Five-Fold', k: 5 },
-    { name: 'Six-Fold', k: 6 }
-  ].filter(t => t.k <= legs.length);
-
-  let totalBets = 0;
-  let totalReturn = 0;
-  let outputHTML = '';
-  const breakdownRows = [];
-
-  betTypes.forEach(bt => {
-    const combos = combinations(legs, bt.k);
-    if (combos.length === 0) return;
-    totalBets += combos.length;
-
-    let groupReturn = 0;
-    let tableRows = '';
-    combos.forEach((combo, ci) => {
-      const combinedDec = combo.reduce((acc, l) => acc * l.dec, 1);
-      const payout = stake * combinedDec;
-      groupReturn += payout;
-
-      const selStr = combo.map(l => '#' + l.index).join(' × ');
-      tableRows += `<tr>
-        <td>${ci + 1}</td>
-        <td>${selStr}</td>
-        <td>${combinedDec.toFixed(4)}</td>
-        <td class="win-cell">${fmt$(payout)}</td>
-        <td class="win-cell">${fmtSign$(payout - stake)}</td>
-      </tr>`;
-    });
-
-    totalReturn += groupReturn;
-    breakdownRows.push({ name: bt.name, count: combos.length, ret: groupReturn });
-
-    outputHTML += `<div class="combo-section"><h4>${bt.name} (${combos.length} bet${combos.length > 1 ? 's' : ''})</h4>`;
-    outputHTML += '<table class="combo-table"><thead><tr><th>#</th><th>Selections</th><th>Combined Odds</th><th>Return</th><th>Profit</th></tr></thead><tbody>';
-    outputHTML += tableRows;
-    outputHTML += '</tbody></table></div>';
-  });
-
-  const totalStake = totalBets * stake;
-  const totalProfit = totalReturn - totalStake;
-
-  document.getElementById('res-totalBets').textContent = totalBets;
-  document.getElementById('res-totalStake').textContent = fmt$(totalStake);
-  document.getElementById('res-maxReturn').textContent = fmt$(totalReturn);
-  document.getElementById('res-maxProfit').textContent = fmtSign$(totalProfit);
-
-  // Bonus info for Lucky 15 (all 4 win)
-  if (legs.length === 4) {
-    const bonusReturn = totalReturn * 1.10;
-    const bonusProfit = bonusReturn - totalStake;
-    document.getElementById('bonusInfo').innerHTML = `
-      <div class="bonus-box">
-        <h4>🎉 All-Win Bonus (10%)</h4>
-        <p>If all 4 selections win, many bookmakers offer a 10% bonus on total returns:
-        <strong>${fmt$(bonusReturn)}</strong> return (${fmtSign$(bonusProfit)} profit).</p>
-      </div>`;
-  } else {
-    document.getElementById('bonusInfo').innerHTML = '';
-  }
-
-  // Summary breakdown
-  let summaryHTML = '<div class="combo-section"><h4>Bet Type Breakdown</h4>';
-  summaryHTML += '<table class="combo-table"><thead><tr><th>Bet Type</th><th>Bets</th><th>Stake</th><th>Return (All Win)</th></tr></thead><tbody>';
-  breakdownRows.forEach(r => {
-    summaryHTML += `<tr><td>${r.name}</td><td>${r.count}</td><td>${fmt$(r.count * stake)}</td><td class="win-cell">${fmt$(r.ret)}</td></tr>`;
-  });
-  summaryHTML += `<tr style="border-top:2px solid var(--accent)"><td><strong>Total</strong></td><td><strong>${totalBets}</strong></td><td><strong>${fmt$(totalStake)}</strong></td><td class="win-cell"><strong>${fmt$(totalReturn)}</strong></td></tr>`;
-  summaryHTML += '</tbody></table></div>';
-
-  document.getElementById('combosOutput').innerHTML = summaryHTML + outputHTML;
-}
-
-function clearResults() {
-  ['res-totalBets','res-totalStake','res-maxReturn','res-maxProfit'].forEach(id => {
-    document.getElementById(id).textContent = '—';
-  });
-  document.getElementById('res-totalBets').textContent = '—';
-  document.getElementById('combosOutput').innerHTML = '';
-  document.getElementById('bonusInfo').innerHTML = '';
-}
-
-function resetCalc() {
-  document.getElementById('stake').value = '';
-  document.getElementById('legsContainer').innerHTML = '';
-  legCount = 0;
-  clearResults();
-  addLeg(); addLeg(); addLeg(); addLeg();
-}
-
-// Initialize with 4 selections (standard Lucky 15)
-addLeg(); addLeg(); addLeg(); addLeg();
-</script>
-    <script src="https://bannerpromote.com/embed.js.php" async></script>
+<script defer src="/system-bet.js?v=20261109"></script>
+<script src="https://bannerpromote.com/embed.js.php" async></script>
 </body>
 </html>

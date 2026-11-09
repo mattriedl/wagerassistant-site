@@ -11,10 +11,10 @@
   gtag('js', new Date());
   gtag('config', 'G-TJL7RNVKJY');
 </script>
-<title>Patent Calculator - 7-Bet Full Cover Tool | Wager Assistant</title>
-<meta name="description" content="Free Patent calculator. Calculate returns on a Patent bet — 7 bets from 3 selections (3 singles, 3 doubles, 1 treble) — with exact payout and profit.">
-<meta property="og:title" content="Patent Calculator - Wager Assistant">
-<meta property="og:description" content="Calculate payouts for Patent bets — 7 bets across 3 selections including singles.">
+<title>Patent Calculator – Each Way Patent Bet Returns | Wager Assistant</title>
+<meta name="description" content="Free Patent bet calculator: settle all 7 bets from 3 selections – singles, doubles and a treble – win only or each way, with Rule 4 and non-runners.">
+<meta property="og:title" content="Patent Calculator – Each Way Patent Bet Returns | Wager Assistant">
+<meta property="og:description" content="Free Patent bet calculator: settle all 7 bets from 3 selections – singles, doubles and a treble – win only or each way, with Rule 4 and non-runners.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Wager Assistant">
 <meta property="og:url" content="https://wagerassistant.com/patent_calculator.html">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261108">
+<link rel="stylesheet" href="styles.css?v=20261109">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,8 +56,8 @@
 <meta property="og:image" content="https://wagerassistant.com/og-image.png">
 <meta property="og:image:alt" content="Patent Calculator - Wager Assistant">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Patent Calculator - 7-Bet Full Cover Tool | Wager Assistant">
-<meta name="twitter:description" content="Free Patent calculator. Calculate returns on a Patent bet — 7 bets from 3 selections (3 singles, 3 doubles, 1 treble) — with exact payout and profit.">
+<meta name="twitter:title" content="Patent Calculator – Each Way Patent Bet Returns | Wager Assistant">
+<meta name="twitter:description" content="Free Patent bet calculator: settle all 7 bets from 3 selections – singles, doubles and a treble – win only or each way, with Rule 4 and non-runners.">
 <meta name="twitter:image" content="https://wagerassistant.com/og-image.png">
 <meta name="theme-color" content="#0d0f1a">
 <script type="application/ld+json">
@@ -160,57 +160,11 @@
   <header class="header">
     <div class="badge">📋 Patent</div>
     <h1>Patent Calculator</h1>
-    <p>Enter odds for 3 selections to see all 7 bets — 3 singles, 3 doubles, and 1 treble — with total stake and maximum return.</p>
+    <p>Enter odds for 3 selections to see all 7 bets — 3 singles, 3 doubles, and 1 treble. Settle it win only or each way, with place terms, Rule 4 and non-runners.</p>
   </header>
 
   <main class="card">
-    <div class="odds-toggle">
-      <label>Odds Format:</label>
-      <div class="toggle-group">
-        <button id="btn-us" class="active" onclick="setFormat('american')">American</button>
-        <button id="btn-dec" onclick="setFormat('decimal')">Decimal</button>
-        <button id="btn-frac" onclick="setFormat('fractional')">Fractional</button>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="stake">Unit Stake ($)</label>
-      <input type="number" id="stake" placeholder="e.g. 1" min="0" step="any" oninput="calculate()">
-    </div>
-
-    <div class="form-group"><label>Selections (enter odds for 3 picks)</label></div>
-    <div class="legs-container" id="legsContainer"></div>
-    <div class="btn-row" style="justify-content:flex-start;margin-top:10px;">
-      <button class="btn-secondary" onclick="addLeg()">+ Add Selection</button>
-    </div>
-
-    <hr class="divider">
-
-    <section class="summary" aria-label="Patent summary">
-      <div class="summary-card">
-        <div class="s-label">Total Bets</div>
-        <div class="s-value accent" id="res-totalBets">7</div>
-      </div>
-      <div class="summary-card">
-        <div class="s-label">Total Stake</div>
-        <div class="s-value" id="res-totalStake">—</div>
-      </div>
-      <div class="summary-card">
-        <div class="s-label">Max Return (All Win)</div>
-        <div class="s-value green" id="res-maxReturn">—</div>
-      </div>
-      <div class="summary-card">
-        <div class="s-label">Max Profit (All Win)</div>
-        <div class="s-value green" id="res-maxProfit">—</div>
-      </div>
-    </section>
-
-    <div id="combosOutput"></div>
-
-    <div class="btn-row">
-      <button class="btn-primary" onclick="calculate()">Calculate</button>
-      <button class="btn-secondary" onclick="resetCalc()">↻ Reset</button>
-    </div>
+    <div id="sb-app" data-bet="patent"><noscript><p>This calculator needs JavaScript turned on.</p></noscript></div>
 
     <div class="info-box">
       <h3>How Patent Bets Work</h3>
@@ -229,10 +183,10 @@
     <div class="seo-section">
       <h2>How to Use the Patent Calculator</h2>
       <ol class="seo-list steps">
-        <li>Enter the odds for your three selections.</li>
-        <li>Enter your unit stake (multiplied across the 7 bets).</li>
-        <li>The calculator builds the 3 singles, 3 doubles and 1 treble.</li>
-        <li>Read your total stake, payout and profit.</li>
+        <li>Enter the odds for all three selections (fractional, decimal or American).</li>
+        <li>Enter your unit stake and choose <strong>Win only</strong> or <strong>Each way</strong> (each way doubles the stake to 14 units).</li>
+        <li>Set each selection&rsquo;s result &mdash; won, placed, lost or non-runner &mdash; plus its place terms and any Rule 4 deduction.</li>
+        <li>Read your total stake, return and profit, with a breakdown of all 7 bets.</li>
       </ol>
     </div>
 
@@ -356,134 +310,7 @@
 </footer>
 
 <script defer src="nav.js?v=20261027"></script>
-<script>
-
-let oddsFormat = 'american';
-let legCount = 0;
-
-function setFormat(fmt) {
-  oddsFormat = fmt;
-  document.getElementById('btn-us').classList.toggle('active', fmt === 'american');
-  document.getElementById('btn-dec').classList.toggle('active', fmt === 'decimal');
-  document.getElementById('btn-frac').classList.toggle('active', fmt === 'fractional');
-  const ph = fmt === 'american' ? 'e.g. -110' : fmt === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
-  document.querySelectorAll('.leg-odds').forEach(el => el.placeholder = ph);
-  calculate();
-}
-
-function addLeg() {
-  legCount++;
-  const c = document.getElementById('legsContainer');
-  const ph = oddsFormat === 'american' ? 'e.g. -110' : oddsFormat === 'decimal' ? 'e.g. 1.91' : 'e.g. 10/11';
-  const row = document.createElement('div');
-  row.className = 'leg-row'; row.id = 'leg-' + legCount;
-  row.innerHTML = `
-    <div class="leg-num">#${legCount}</div>
-    <input type="text" class="leg-odds" placeholder="${ph}" oninput="calculate()">
-    <button class="remove-leg" onclick="removeLeg(${legCount})" aria-label="Remove">✕</button>
-  `;
-  c.appendChild(row);
-  calculate();
-}
-
-function removeLeg(id) {
-  const el = document.getElementById('leg-' + id);
-  if (el) el.remove();
-  calculate();
-}
-
-function combinations(arr, k) {
-  if (k === 0) return [[]];
-  if (arr.length === 0) return [];
-  const [first, ...rest] = arr;
-  return [...combinations(rest, k - 1).map(c => [first, ...c]), ...combinations(rest, k)];
-}
-
-function calculate() {
-  const stake = parseFloat(document.getElementById('stake').value);
-  const inputs = document.querySelectorAll('.leg-odds');
-  if (isNaN(stake) || stake <= 0 || inputs.length < 2) { clearResults(); return; }
-
-  const legs = [];
-  inputs.forEach((inp, i) => {
-    const dec = parseOddsToDecimal(inp.value.trim(), oddsFormat);
-    if (dec) legs.push({ index: i + 1, dec });
-  });
-
-  if (legs.length < 2) { clearResults(); return; }
-
-  // Patent: singles + doubles + treble (all combos from k=1 to k=n)
-  const betTypeNames = { 1: 'Singles', 2: 'Doubles', 3: 'Treble', 4: 'Four-Fold', 5: 'Five-Fold' };
-  const betTypes = [];
-  for (let k = 1; k <= legs.length; k++) {
-    betTypes.push({ name: betTypeNames[k] || k + '-Fold', k });
-  }
-
-  let totalBets = 0;
-  let totalReturn = 0;
-  let outputHTML = '';
-  const breakdownRows = [];
-
-  betTypes.forEach(bt => {
-    const combos = combinations(legs, bt.k);
-    if (combos.length === 0) return;
-    totalBets += combos.length;
-
-    let groupReturn = 0;
-    let tableRows = '';
-    combos.forEach((combo, ci) => {
-      const combinedDec = combo.reduce((acc, l) => acc * l.dec, 1);
-      const payout = stake * combinedDec;
-      groupReturn += payout;
-      const selStr = combo.map(l => '#' + l.index).join(' × ');
-      tableRows += `<tr><td>${ci + 1}</td><td>${selStr}</td><td>${combinedDec.toFixed(4)}</td><td class="win-cell">${fmt$(payout)}</td><td class="win-cell">${fmtSign$(payout - stake)}</td></tr>`;
-    });
-
-    totalReturn += groupReturn;
-    breakdownRows.push({ name: bt.name, count: combos.length, ret: groupReturn });
-
-    outputHTML += `<div class="combo-section"><h4>${bt.name} (${combos.length} bet${combos.length > 1 ? 's' : ''})</h4>`;
-    outputHTML += '<table class="combo-table"><thead><tr><th>#</th><th>Selections</th><th>Combined Odds</th><th>Return</th><th>Profit</th></tr></thead><tbody>';
-    outputHTML += tableRows + '</tbody></table></div>';
-  });
-
-  const totalStake = totalBets * stake;
-  const totalProfit = totalReturn - totalStake;
-
-  document.getElementById('res-totalBets').textContent = totalBets;
-  document.getElementById('res-totalStake').textContent = fmt$(totalStake);
-  document.getElementById('res-maxReturn').textContent = fmt$(totalReturn);
-  document.getElementById('res-maxProfit').textContent = fmtSign$(totalProfit);
-
-  let summaryHTML = '<div class="combo-section"><h4>Bet Type Breakdown</h4>';
-  summaryHTML += '<table class="combo-table"><thead><tr><th>Bet Type</th><th>Bets</th><th>Stake</th><th>Return (All Win)</th></tr></thead><tbody>';
-  breakdownRows.forEach(r => {
-    summaryHTML += `<tr><td>${r.name}</td><td>${r.count}</td><td>${fmt$(r.count * stake)}</td><td class="win-cell">${fmt$(r.ret)}</td></tr>`;
-  });
-  summaryHTML += `<tr style="border-top:2px solid var(--accent)"><td><strong>Total</strong></td><td><strong>${totalBets}</strong></td><td><strong>${fmt$(totalStake)}</strong></td><td class="win-cell"><strong>${fmt$(totalReturn)}</strong></td></tr>`;
-  summaryHTML += '</tbody></table></div>';
-
-  document.getElementById('combosOutput').innerHTML = summaryHTML + outputHTML;
-}
-
-function clearResults() {
-  ['res-totalBets','res-totalStake','res-maxReturn','res-maxProfit'].forEach(id => {
-    document.getElementById(id).textContent = '—';
-  });
-  document.getElementById('combosOutput').innerHTML = '';
-}
-
-function resetCalc() {
-  document.getElementById('stake').value = '';
-  document.getElementById('legsContainer').innerHTML = '';
-  legCount = 0;
-  clearResults();
-  addLeg(); addLeg(); addLeg();
-}
-
-// Initialize with 3 selections (standard Patent)
-addLeg(); addLeg(); addLeg();
-</script>
-    <script src="https://bannerpromote.com/embed.js.php" async></script>
+<script defer src="/system-bet.js?v=20261109"></script>
+<script src="https://bannerpromote.com/embed.js.php" async></script>
 </body>
 </html>

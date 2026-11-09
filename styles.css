@@ -1599,3 +1599,32 @@ body {
 .seo-table caption{caption-side:top;text-align:left;color:var(--muted,#8892b0);padding-bottom:6px}
 .trust-links{margin-top:8px}
 .trust-links a{color:#8892b0;margin:0 6px}
+
+/* ─── UK SYSTEM BET SETTLER (system-bet.js) ─── */
+.sb-stake-wrap{display:grid;grid-template-columns:72px 1fr;gap:8px}
+.sb-head,.sb-row{display:grid;grid-template-columns:52px minmax(90px,1.2fr) minmax(110px,1fr) minmax(100px,1fr) minmax(90px,.9fr);gap:10px;align-items:center}
+#sb-app:not(.sb-is-ew) .sb-head,#sb-app:not(.sb-is-ew) .sb-row{grid-template-columns:52px minmax(90px,1.2fr) minmax(110px,1fr) minmax(90px,.9fr)}
+#sb-app:not(.sb-is-ew) .sb-ew-only{display:none}
+.sb-head{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:6px 0 8px}
+.sb-row{margin-bottom:10px}
+.sb-num{font-size:12px;font-weight:700;color:var(--accent);background:rgba(79,110,247,0.12);border-radius:8px;padding:8px 6px;text-align:center}
+.sb-row input,.sb-row select{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:15px;font-weight:600;font-family:'Inter',sans-serif;padding:10px 12px;outline:none}
+.sb-row select{font-size:14px;cursor:pointer}
+.sb-row input:focus,.sb-row select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
+.sb-row.sb-invalid input{border-color:var(--red)}
+.sb-quick{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;font-size:13px;color:var(--muted)}
+.sb-quick .btn-secondary{padding:7px 14px}
+.sb-msg{min-height:1.2em;margin-top:10px;font-size:13px;color:var(--yellow)}
+.sb-note{font-size:12.5px;color:var(--muted);line-height:1.6;margin:-6px 0 14px}
+#sb-out .sb-note{margin:10px 0 0}
+.sb-table td{white-space:nowrap}
+.sb-table .sb-total td{font-weight:700;color:var(--text);border-top:2px solid var(--accent)}
+.sb-zero{opacity:.55}
+.sb-details{margin-top:12px}
+.sb-details summary{cursor:pointer;color:var(--accent-text,#a5b4fc);font-weight:600;font-size:14px;padding:6px 0}
+#sb-out{margin-top:18px}
+@media (max-width:560px){
+  .sb-head{display:none}
+  .sb-row,#sb-app:not(.sb-is-ew) .sb-row{grid-template-columns:44px 1fr 1fr;grid-template-areas:"num odds odds" ". res r4" ". terms terms";padding-bottom:10px;border-bottom:1px solid var(--border)}
+  .sb-num{grid-area:num}.sb-odds{grid-area:odds}.sb-result{grid-area:res}.sb-r4{grid-area:r4}.sb-terms{grid-area:terms}
+}
