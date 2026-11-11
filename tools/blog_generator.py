@@ -32,6 +32,7 @@ POSTS_JSON = os.path.join(BLOG, "posts.json")
 SITE = "https://wagerassistant.com"
 BRAND = "Wager Assistant"
 CACHE = "v=20261027"
+STYLES_V = "20261111"  # bump when styles.css changes; new pages pick it up
 INDEXNOW_KEY = "18151ece1492f341aafcb49eab497ebd"
 
 # ── Shared nav + footer (root-relative; Blog active) ───────────────────────────
@@ -56,8 +57,14 @@ def esc(s):
     return html.escape(s, quote=True)
 
 
+def hero_src(post):
+    h = post.get("hero_image") or {}
+    return h.get("src") or f"{SITE}/og-image.png"
+
+
 def head(post):
     url = f"{SITE}/blog/{post['slug']}.html"
+    img = hero_src(post)
     kw = ", ".join([post["primary_keyword"]] + post.get("secondary_keywords", []))
     faq_schema = ""
     if post.get("faq"):
@@ -69,10 +76,10 @@ def head(post):
     blogposting = json.dumps({
         "@context": "https://schema.org", "@type": "BlogPosting",
         "headline": post["title"], "description": post["meta_description"],
-        "image": f"{SITE}/og-image.png", "author": {"@type": "Organization", "name": "WagerAssistant Editorial Team"},
+        "image": img, "author": {"@type": "Organization", "name": "WagerAssistant Editorial Team"},
         "publisher": {"@type": "Organization", "name": BRAND,
                       "logo": {"@type": "ImageObject", "url": f"{SITE}/og-image.png"}},
-        "datePublished": post["date"], "dateModified": post["date"],
+        "datePublished": post["date"], "dateModified": post.get("date_modified", post["date"]),
         "mainEntityOfPage": {"@type": "WebPage", "@id": url}, "keywords": kw
     })
     breadcrumb = json.dumps({
@@ -102,11 +109,12 @@ def head(post):
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="{BRAND}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE}/og-image.png">
+<meta property="og:image" content="{esc(img)}">
+<meta property="article:published_time" content="{post["date"]}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{esc(post["title"])}">
 <meta name="twitter:description" content="{esc(post["meta_description"])}">
-<meta name="twitter:image" content="{SITE}/og-image.png">
+<meta name="twitter:image" content="{esc(img)}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="WagerAssistant Editorial Team">
 <meta name="theme-color" content="#0d0f1a">
@@ -114,7 +122,7 @@ def head(post):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/styles.css?v=20261109">
+<link rel="stylesheet" href="/styles.css?v={STYLES_V}">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -153,6 +161,17 @@ def render_article(post, all_posts):
     if rel_calc or rel_posts:
         related = '<section class="related-posts"><h2>Related Tools &amp; Guides</h2><div class="related-grid">' \
                   + rel_calc + rel_posts + "</div></section>"
+    hero = ""
+    h = post.get("hero_image")
+    if h and h.get("src"):
+        dims = f' width="{int(h["width"])}" height="{int(h["height"])}"' if h.get("width") and h.get("height") else ""
+        hero = (f'<figure class="article-hero"><img src="{esc(h["src"])}" alt="{esc(h.get("alt", ""))}"{dims} '
+                f'fetchpriority="high" decoding="async"><figcaption>{h.get("credit_html", "")}</figcaption></figure>')
+    sources = ""
+    if post.get("sources"):
+        items = "".join(f'<li><a href="{esc(u)}" target="_blank" rel="noopener">{esc(t)}</a></li>'
+                        for t, u in post["sources"])
+        sources = f'<section class="article-sources"><h2 id="sources">Sources</h2><ol>{items}</ol></section>'
     toc_block = f'<nav class="toc" aria-label="Table of contents"><h2>In this guide</h2><ol>{toc}</ol></nav>' if toc else ""
     take_block = f'<div class="takeaways"><h2>Key takeaways</h2><ul>{takeaways}</ul></div>' if takeaways else ""
     date_h = datetime.datetime.strptime(post["date"], "%Y-%m-%d").strftime("%B %-d, %Y")
@@ -170,12 +189,14 @@ def render_article(post, all_posts):
       <h1>{esc(post["h1"])}</h1>
       <p class="article-meta">By <b>WagerAssistant Editorial Team</b> &middot; Published {date_h} &middot; {post.get("read_time", "7")} min read</p>
     </div>
+    {hero}
     <div class="ad-zone ad-leaderboard ad-live" role="complementary" aria-label="Advertisement"><div class="ad-slot ad-slot-desktop" data-gb-spot="leaderboard"></div><div class="ad-slot ad-slot-mobile" data-gb-spot="mobile-banner"></div></div>
     {toc_block}
     {take_block}
     <div class="article-body">
       {post["body_html"]}
     </div>
+    {sources}
     {faq_html}
     {related}
     {DISCLAIMER}
@@ -247,7 +268,7 @@ def build_hub(posts):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/styles.css?v=20261109">
+<link rel="stylesheet" href="/styles.css?v={STYLES_V}">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -322,7 +343,11 @@ def update_sitemap_xml(posts):
         add += ensure(f"{SITE}/blog/{p['slug']}.html")
     if add:
         s = s.replace("</urlset>", add + "</urlset>")
-        open(path, "w", encoding="utf-8").write(s)
+    newest = max((p["date"] for p in posts), default=today)
+    for u in (f"{SITE}/blog/", f"{SITE}/"):
+        s = re.sub(r"(<loc>" + re.escape(u) + r"</loc>\s*<lastmod>)[^<]*(</lastmod>)",
+                   lambda m: m.group(1) + newest + m.group(2), s)
+    open(path, "w", encoding="utf-8").write(s)
 
 
 def update_sitemap_html(posts):

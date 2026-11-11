@@ -22,4 +22,6 @@ Since the repo is public, the server can `git pull` without credentials.
 
 ## Automated blog updates
 
-A scheduled agent generates a new post every few days by running the generator in the source workspace, then syncing here via `SYNC.sh` (not committed) and pushing to `main`.
+A Claude scheduled task researches (OpenSEO), writes and publishes one new article every 3 days directly
+in this repo and pushes to `main`. The rules it follows are in `blog/WRITING-GUIDE.md`, the keyword plan is
+`blog/topics.md`, and `tools/blog_seo_check.py` is the quality gate every post must pass.

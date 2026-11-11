@@ -50,9 +50,19 @@ python3 tools/blog_generator.py rebuild
   "takeaways": ["Short takeaway bullet", "..."],
   "body_html": "<h2 id=\"section-id\">...</h2><p>...</p>",
   "faq": [["Question?", "Answer HTML."]],
-  "related_calculators": [["Parlay Calculator", "/parlay_calculator.html"]]
+  "related_calculators": [["Parlay Calculator", "/parlay_calculator.html"]],
+  "sources": [["Source title (publisher)", "https://example.org/page"]],
+  "hero_image": {"src": "https://upload.wikimedia.org/...", "width": 1200, "height": 800,
+                 "alt": "...", "file_page": "https://commons.wikimedia.org/wiki/File:...",
+                 "credit_html": "Photo: <a href=...>Author</a>, CC BY-SA 4.0, via Wikimedia Commons"}
 }
 ```
+
+- `sources` renders a cited Sources list; `hero_image` renders a credited hero photo and becomes the
+  OG/Twitter/BlogPosting image (falls back to `/og-image.png`). Both are optional for the generator but
+  required by the house rules in `blog/WRITING-GUIDE.md`.
+- Check every draft with `python3 tools/blog_seo_check.py post.json` before `add`, and the rendered page
+  with `python3 tools/blog_seo_check.py --html <slug>` after.
 
 - `body_html` is pre-formatted HTML. Use `<h2 id="...">`/`<h3>` for sections and make the
   `id`s match the second element of each `toc` row so the table of contents links work.

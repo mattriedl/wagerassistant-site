@@ -1628,3 +1628,22 @@ body {
   .sb-row,#sb-app:not(.sb-is-ew) .sb-row{grid-template-columns:44px 1fr 1fr;grid-template-areas:"num odds odds" ". res r4" ". terms terms";padding-bottom:10px;border-bottom:1px solid var(--border)}
   .sb-num{grid-area:num}.sb-odds{grid-area:odds}.sb-result{grid-area:res}.sb-r4{grid-area:r4}.sb-terms{grid-area:terms}
 }
+
+/* Blog article media, sources and wide tables (added 2026-11-11) */
+.article-hero { margin: 0 0 24px; }
+.article-hero img, .article-body figure img { display: block; width: 100%; height: auto; border-radius: 12px; background: var(--surface2); }
+.article-hero figcaption, .article-body figcaption { font-size: 12.5px; color: #8892b0; margin-top: 8px; line-height: 1.5; }
+.article-hero figcaption a, .article-body figcaption a { color: #8892b0; border-bottom: 1px dotted rgba(136,146,176,.5); }
+.article-body figure { margin: 8px 0 24px; }
+.article-body .table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 20px; }
+.article-body .table-wrap table { margin: 0; min-width: 480px; }
+.article-body .quick-answer { background: var(--surface2); border-left: 4px solid var(--accent); border-radius: 10px; padding: 14px 18px; margin: 0 0 22px; }
+.article-body .quick-answer p:last-child { margin-bottom: 0; }
+.article-body .calc-cta { border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; margin: 0 0 22px; }
+.article-sources { margin: 28px 0 8px; font-size: 14px; color: #a9b0cc; }
+.article-sources h2 { font-size: 20px; color: var(--text); margin: 0 0 10px; }
+.article-sources ol { margin: 0 0 0 20px; }
+.article-sources li { margin-bottom: 6px; overflow-wrap: anywhere; }
+.article-sources a { color: var(--accent); }
+/* keep wide tables from stretching the article on phones (flex child min-width) */
+.article-wrap { min-width: 0; width: 100%; }
