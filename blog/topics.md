@@ -13,6 +13,7 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | Date | Post | Primary keyword |
 |---|---|---|
+| 2026-11-10 | what-is-a-round-robin-bet | what is a round robin bet |
 | 2026-11-08 | kelly-criterion-betting-strategy | Kelly Criterion betting strategy |
 | 2026-11-05 | point-spread-betting-strategy | point spread betting strategy |
 | 2026-11-02 | moneyline-betting-strategy | moneyline betting strategy |
@@ -37,7 +38,6 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | # | Primary keyword (vol / KD) | Secondary keywords (vol / KD) | Calculator to feature | Notes |
 |---|---|---|---|---|
-| 1 | what is a round robin bet (2,900 / 0) | round robin bet (1,900 / 4), round robin bet meaning (720 / 0), round robin parlay bet (480 / 0), round robin bet calculator (320 / 0), what does round robin mean in betting (320 / 0), how to place a round robin bet (70 / 5) | /round_robin_calculator.html | Page one: ballybet, casino.org, bettingpros, bet365 news, Reddit. Show by-2s/by-3s combos with a worked payout table. |
 | 2 | what does over under mean in betting (1,600 / 17) | over under betting (2,900 / 36), what does under and over mean in betting (1,600 / 20), what does total mean in betting (170 / 6), what does 2.5 mean in betting (210 / 1), what does over 2.5 mean in betting (90 / 2) | /over_under_calculator.html | Cover NFL/NBA/MLB/NHL/soccer totals, half-points, push on whole numbers, overtime rules. |
 | 3 | what is a teaser bet (880 / 1) | teaser bet (590 / 22), how does a teaser work (140 / 23), what does teasing mean in betting (50 / 0), what does a teaser mean in betting (50 / 26) | /teaser_calculator.html | Timely in NFL season. Explain key numbers 3 and 7 (link point-spread post), Wong-style teasers, typical payout tables (cite a book's posted table). |
 | 4 | what does -1.5 mean in betting (720 / 0) | what does 1.5 mean in betting (480 / 0), puck line (880 / 0), run line betting (260 / 0), what does plus 1.5 mean in betting (170 / 0), what does 1.5 goals mean in betting (320 / 0) | /spread_calculator.html, /moneyline_calculator.html | Title idea: "What Does +1.5 and -1.5 Mean in Betting?" Hockey puck line, MLB run line, soccer goals. |
@@ -75,3 +75,7 @@ clearer answer, worked examples with real math, and a working calculator.
   rather than a competing post (needs Matt's OK; scheduled runs only add new posts).
 - "how do betting odds work" (3,600 / 34) and "how to read betting odds" (2,400 / 28) partly overlap
   understanding-odds-and-implied-probability; backlog #7 targets the beginner long tail instead.
+- "how does a round robin bet work" (1,600 / 0) and "round robin by 2s" (70 / 2) are now served by
+  what-is-a-round-robin-bet (2026-11-10); don't target them again.
+- "can you bet on the olympics" (880 / 0): informational, legality varies by state; consider a few weeks
+  before the next Olympics.
