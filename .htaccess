@@ -1,0 +1,8 @@
+# Ask proxies such as Cloudflare not to modify the pages. Cloudflare otherwise injects its own
+# obfuscated bot-detection script (/cdn-cgi/challenge-platform/scripts/jsd/main.js) into every
+# HTML page, which antivirus programs such as Avast flag as "HTML:Script-inf [Susp]".
+<IfModule mod_headers.c>
+    <FilesMatch "\.html?$">
+        Header merge Cache-Control "no-transform"
+    </FilesMatch>
+</IfModule>
