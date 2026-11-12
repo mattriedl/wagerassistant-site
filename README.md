@@ -4,13 +4,18 @@ Deployable static site for **wagerassistant.com** — 32 betting calculators, a 
 
 ## Deploying
 
-The production server runs a cron job that pulls this repo into the web root:
+The site is served by **Cloudflare Workers** (static assets), straight from Cloudflare's network.
+Cloudflare rebuilds and publishes it automatically on every push to `main` (Workers Builds),
+usually within a minute or two. Nothing runs on a server.
 
-```bash
-cd /path/to/webroot && git pull origin main
-```
+- `wrangler.jsonc`: Cloudflare settings. `.html` addresses are kept as they are (`html_handling: none`).
+- `_redirects`: `/` and `/blog/` serve their `index.html`; `/blog` redirects to `/blog/`.
+- `_headers`: response headers for every file.
+- `.assetsignore`: repository files that are not published (tools, Markdown, this README).
 
-Since the repo is public, the server can `git pull` without credentials.
+When you add a new folder with an `index.html`, add a matching line to `_redirects`.
+
+The old copy on the web server (updated by a cron `git pull`) is kept as a fallback only.
 
 ## Structure
 

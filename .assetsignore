@@ -1,0 +1,13 @@
+# Files in this repository that are NOT part of the public website.
+.git
+.github
+.gitignore
+.htaccess
+.assetsignore
+.wrangler
+node_modules
+wrangler.jsonc
+README.md
+*.md
+*.py
+tools/

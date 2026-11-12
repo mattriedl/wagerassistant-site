@@ -1,0 +1,5 @@
+# Folder addresses serve their index page (same URL, no redirect).
+/  /index.html  200
+/blog/  /blog/index.html  200
+# Folder without its trailing slash -> with it (as the old server did).
+/blog  /blog/  301

@@ -1,0 +1,19 @@
+// Cloudflare Workers settings for wagerassistant.com: a static site served straight
+// from Cloudflare's network (no server, no Worker code). Every file in this folder is
+// published except what .assetsignore lists.
+{
+  "name": "wagerassistant",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": ".",
+    // Keep the site's .html addresses exactly as they are (/odds_converter.html).
+    // The default would redirect them to /odds_converter and change every URL.
+    // Folder addresses (/ and /blog/) are mapped to their index.html in _redirects.
+    "html_handling": "none",
+    // Unknown addresses get /404.html with a real 404 status.
+    "not_found_handling": "404-page"
+  },
+  // Served on wagerassistant.com once the domain is switched over; until then on the
+  // workers.dev test address.
+  "workers_dev": true
+}

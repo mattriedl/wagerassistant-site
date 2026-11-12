@@ -1,0 +1,6 @@
+# Response headers for every file (Cloudflare Workers static assets).
+/*
+  # Tell Cloudflare not to modify pages (it can inject a bot-detection script that
+  # antivirus programs flag).
+  Cache-Control: public, max-age=0, must-revalidate, no-transform
+  X-Content-Type-Options: nosniff
