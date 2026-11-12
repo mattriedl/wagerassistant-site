@@ -5,8 +5,8 @@ Deployable static site for **wagerassistant.com** — 32 betting calculators, a 
 ## Deploying
 
 The site is served by **Cloudflare Workers** (static assets), straight from Cloudflare's network.
-Cloudflare rebuilds and publishes it automatically on every push to `main` (Workers Builds),
-usually within a minute or two. Nothing runs on a server.
+GitHub Actions (`.github/workflows/deploy-cloudflare.yml`) publishes it to Cloudflare on every push to
+`main`, usually within a minute or two (needs the repository secret `CLOUDFLARE_API_TOKEN`). Nothing runs on a server.
 
 - `wrangler.jsonc`: Cloudflare settings. `.html` addresses are kept as they are (`html_handling: none`).
 - `_redirects`: `/` and `/blog/` serve their `index.html`; `/blog` redirects to `/blog/`.
@@ -14,6 +14,8 @@ usually within a minute or two. Nothing runs on a server.
 - `.assetsignore`: repository files that are not published (tools, Markdown, this README).
 
 When you add a new folder with an `index.html`, add a matching line to `_redirects`.
+
+`.github/workflows/cloudflare-domain.yml` shows where the domain points, switches it to the Worker, or rolls it back to the web server.
 
 The old copy on the web server (updated by a cron `git pull`) is kept as a fallback only.
 

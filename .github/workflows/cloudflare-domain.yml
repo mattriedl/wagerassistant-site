@@ -1,0 +1,32 @@
+# Points wagerassistant.com at its Cloudflare Worker ("switch"), shows the current setup ("status"),
+# or points it back at the web server ("rollback", enter the server IP).
+# Run it from Actions > Cloudflare domain > Run workflow. Needs secret CLOUDFLARE_API_TOKEN.
+
+name: Cloudflare domain
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "What to do"
+        type: choice
+        options: [status, switch, rollback]
+        default: status
+      origin_ip:
+        description: "Rollback only: the web server's IP address"
+        required: false
+
+jobs:
+  domain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: ${{ inputs.action }} wagerassistant.com
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: "85d2ba69d7730294ed5758d25f277d23"
+          DOMAIN: wagerassistant.com
+          WORKER: wagerassistant
+          ACTION: ${{ inputs.action }}
+          ORIGIN_IP: ${{ inputs.origin_ip }}
+        run: python3 .github/scripts/cf_domain.py

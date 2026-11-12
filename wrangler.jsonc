@@ -3,6 +3,7 @@
 // published except what .assetsignore lists.
 {
   "name": "wagerassistant",
+  "account_id": "85d2ba69d7730294ed5758d25f277d23",
   "compatibility_date": "2026-11-01",
   "assets": {
     "directory": ".",
