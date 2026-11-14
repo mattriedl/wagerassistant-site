@@ -236,6 +236,9 @@ answered.
 - IndexNow: OpenSEO `submit_indexnow_urls` with the article URL, `https://wagerassistant.com/blog/` and
   `https://wagerassistant.com/` (OpenSEO's key file `c1405303997646469b7fa65ab6601f7f.txt` is at the site
   root). If that fails, run `python3 -c "import sys; sys.path.insert(0,'tools'); import blog_generator as g; g.ping_indexnow([...])"`.
+- OpenSEO `save_keywords` (free) with the post's primary keyword and all its secondary keywords (lowercase),
+  projectId `c4cc47e5-a942-4d0d-a467-2e5d41786fa2`, so every keyword the site targets is in Saved Keywords for
+  rank tracking later. Re-saving an existing keyword does nothing, so no need to check first.
 - OpenSEO `update_project_context` with `appendResearchLog`: "Blog post <date>: /blog/<slug>.html — primary
   '<keyword>' (vol/KD), secondaries ..., credits used N."
 - In `blog/topics.md`: add the post to the Published table, delete its Backlog row, and append any good new
