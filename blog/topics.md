@@ -13,6 +13,7 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | Date | Post | Primary keyword |
 |---|---|---|
+| 2026-11-14 | what-is-a-teaser-bet | what is a teaser bet |
 | 2026-11-13 | what-does-over-under-mean-in-betting | what does over under mean in betting |
 | 2026-11-10 | what-is-a-round-robin-bet | what is a round robin bet |
 | 2026-11-08 | kelly-criterion-betting-strategy | Kelly Criterion betting strategy |
@@ -39,7 +40,6 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | # | Primary keyword (vol / KD) | Secondary keywords (vol / KD) | Calculator to feature | Notes |
 |---|---|---|---|---|
-| 3 | what is a teaser bet (880 / 1) | teaser bet (590 / 22), how does a teaser work (140 / 23), what does teasing mean in betting (50 / 0), what does a teaser mean in betting (50 / 26) | /teaser_calculator.html | Timely in NFL season. Explain key numbers 3 and 7 (link point-spread post), Wong-style teasers, typical payout tables (cite a book's posted table). |
 | 4 | what does -1.5 mean in betting (720 / 0) | what does 1.5 mean in betting (480 / 0), puck line (880 / 0), run line betting (260 / 0), what does plus 1.5 mean in betting (170 / 0), what does 1.5 goals mean in betting (320 / 0) | /spread_calculator.html, /moneyline_calculator.html | Title idea: "What Does +1.5 and -1.5 Mean in Betting?" Hockey puck line, MLB run line, soccer goals. |
 | 5 | sports betting terms (590 / 12) | betting terms (720 / 17), what does pk mean in betting (480 / 0), what does chalk mean in betting (320 / 0), what does push mean in betting (210 / 0), what does fading mean in betting (260 / 0), what does ats mean in betting (170 / 1), what does tailing mean in betting (140 / 0) | /betting_calculator.html, /odds_converter.html | A-Z glossary with jump links; each term 1-3 sentences + link to the deeper post/calculator. Use a definition list. |
 | 6 | what is vig (1,300 / 6) | what does vig mean in betting (210 / 13), juice in betting, vigorish, how to calculate vig, no vig odds | /no_vig_calculator.html, /margin_calculator.html | Worked -110/-110 example (4.55% hold). Don't duplicate the implied-probability post; link to it. |
@@ -82,3 +82,7 @@ clearer answer, worked examples with real math, and a working calculator.
 - "over under meaning" (4,400 / 28), "over under betting" (2,900 / 36) and "how does over under betting work" (390 / 46)
   are now served by what-does-over-under-mean-in-betting (2026-11-13); don't target them again. Possible
   follow-up with a different intent: "team total" / "what is a team total bet" (research volume first).
+- "what is a teaser bet" (880 / 1), "teaser bet" (590 / 22), "wong teaser" (390 / 9), "teaser bet calculator" (170 / 0),
+  "how does a teaser bet work" (140 / 18), "teaser vs parlay" (70 / 14), "teaser bet odds" (50 / 12) are now served by
+  what-is-a-teaser-bet (2026-11-14); don't target them again. Possible follow-up: "super teaser" / "monster teaser" (10 / 44,
+  low volume) or a "pleaser bet" explainer (research volume first).
