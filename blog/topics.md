@@ -13,6 +13,7 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | Date | Post | Primary keyword |
 |---|---|---|
+| 2026-11-15 | what-does-minus-1-5-mean-in-betting | what does minus 1.5 mean in betting |
 | 2026-11-14 | what-is-a-teaser-bet | what is a teaser bet |
 | 2026-11-13 | what-does-over-under-mean-in-betting | what does over under mean in betting |
 | 2026-11-10 | what-is-a-round-robin-bet | what is a round robin bet |
@@ -40,7 +41,6 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | # | Primary keyword (vol / KD) | Secondary keywords (vol / KD) | Calculator to feature | Notes |
 |---|---|---|---|---|
-| 4 | what does -1.5 mean in betting (720 / 0) | what does 1.5 mean in betting (480 / 0), puck line (880 / 0), run line betting (260 / 0), what does plus 1.5 mean in betting (170 / 0), what does 1.5 goals mean in betting (320 / 0) | /spread_calculator.html, /moneyline_calculator.html | Title idea: "What Does +1.5 and -1.5 Mean in Betting?" Hockey puck line, MLB run line, soccer goals. |
 | 5 | sports betting terms (590 / 12) | betting terms (720 / 17), what does pk mean in betting (480 / 0), what does chalk mean in betting (320 / 0), what does push mean in betting (210 / 0), what does fading mean in betting (260 / 0), what does ats mean in betting (170 / 1), what does tailing mean in betting (140 / 0) | /betting_calculator.html, /odds_converter.html | A-Z glossary with jump links; each term 1-3 sentences + link to the deeper post/calculator. Use a definition list. |
 | 6 | what is vig (1,300 / 6) | what does vig mean in betting (210 / 13), juice in betting, vigorish, how to calculate vig, no vig odds | /no_vig_calculator.html, /margin_calculator.html | Worked -110/-110 example (4.55% hold). Don't duplicate the implied-probability post; link to it. |
 | 7 | what does plus and minus mean in betting (720 / 9) | what does plus minus mean in betting (390 / 4), what does minus mean in betting (260 / 7), what does plus mean in betting (260 / 14), what does +150 mean in betting (110 / 1), what does +200 mean in betting (110 / 18), how to read betting odds (2,400 / 28) | /odds_converter.html, /moneyline_calculator.html | "what does and mean in betting" (9,900) is almost certainly people typing "+ and -". Reading American odds for beginners; payout table for common prices. |
@@ -86,3 +86,10 @@ clearer answer, worked examples with real math, and a working calculator.
   "how does a teaser bet work" (140 / 18), "teaser vs parlay" (70 / 14), "teaser bet odds" (50 / 12) are now served by
   what-is-a-teaser-bet (2026-11-14); don't target them again. Possible follow-up: "super teaser" / "monster teaser" (10 / 44,
   low volume) or a "pleaser bet" explainer (research volume first).
+- "what does minus 1.5 mean in betting" (720 / 0), "what does 1.5 mean in betting" (480 / 0), "puck line meaning" (720 / 0),
+  "what is puck line in betting" (170 / 2), "puck line vs moneyline" (70 / 2), "what is a run line" (480 / 0), "run line betting"
+  (260 / 0), "what does 1.5 goals mean in betting" (320 / 0), "what does plus 1.5 mean in betting" (170 / 0), "what does over 1.5 mean
+  in betting" (70 / 0) and "what does 1.5 mean in hockey betting" (50 / 4) are now served by what-does-minus-1-5-mean-in-betting
+  (2026-11-15). Also covered in passing: "puck line" (880 / 0), "hockey puck line" (880 / 3), "run line" (1,600 / 0). Possible
+  follow-ups with a different intent: a dedicated MLB "run line" explainer before Opening Day (1,600 / 0, check it doesn't cannibalise),
+  "what does 3.5 mean in betting" (260 / 0), "what does 7.5 mean in betting" (140 / 0).
