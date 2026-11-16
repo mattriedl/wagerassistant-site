@@ -13,6 +13,7 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | Date | Post | Primary keyword |
 |---|---|---|
+| 2026-11-16 | sports-betting-terms | sports betting terms |
 | 2026-11-15 | what-does-minus-1-5-mean-in-betting | what does minus 1.5 mean in betting |
 | 2026-11-14 | what-is-a-teaser-bet | what is a teaser bet |
 | 2026-11-13 | what-does-over-under-mean-in-betting | what does over under mean in betting |
@@ -41,7 +42,6 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | # | Primary keyword (vol / KD) | Secondary keywords (vol / KD) | Calculator to feature | Notes |
 |---|---|---|---|---|
-| 5 | sports betting terms (590 / 12) | betting terms (720 / 17), what does pk mean in betting (480 / 0), what does chalk mean in betting (320 / 0), what does push mean in betting (210 / 0), what does fading mean in betting (260 / 0), what does ats mean in betting (170 / 1), what does tailing mean in betting (140 / 0) | /betting_calculator.html, /odds_converter.html | A-Z glossary with jump links; each term 1-3 sentences + link to the deeper post/calculator. Use a definition list. |
 | 6 | what is vig (1,300 / 6) | what does vig mean in betting (210 / 13), juice in betting, vigorish, how to calculate vig, no vig odds | /no_vig_calculator.html, /margin_calculator.html | Worked -110/-110 example (4.55% hold). Don't duplicate the implied-probability post; link to it. |
 | 7 | what does plus and minus mean in betting (720 / 9) | what does plus minus mean in betting (390 / 4), what does minus mean in betting (260 / 7), what does plus mean in betting (260 / 14), what does +150 mean in betting (110 / 1), what does +200 mean in betting (110 / 18), how to read betting odds (2,400 / 28) | /odds_converter.html, /moneyline_calculator.html | "what does and mean in betting" (9,900) is almost certainly people typing "+ and -". Reading American odds for beginners; payout table for common prices. |
 | 8 | what is a unit in betting (390 / 0) | what does units mean in betting (210 / 11), what does 1u mean in betting (110 / 11), what does 1 unit mean in betting (50 / 11), betting unit size | /kelly_criterion_calculator.html, /roi_calculator.html | Link bankroll-management post. |
@@ -56,6 +56,8 @@ clearer answer, worked examples with real math, and a working calculator.
 | 17 | what is a bad beat (140 / 7) | bad beat meaning, bad beat jackpot (poker vs sports) | /parlay_calculator.html | Lower priority. |
 | 18 | each way bet (170 / 8) | what is an each way bet (50 / 7), each way bet explained, each way place terms | /each_way_calculator.html | US volume small; UK volume is large. Use British terms only where explained. |
 | 19 | what is a lucky 15 (30 / 0 US) | lucky 15 bet explained, lucky 15 calculator (UK 40.5K / 0), what is a yankee bet, what is a trixie bet (70 / 2), what is a patent bet (70 / 4) | /lucky_15_calculator.html, /yankee_calculator.html, /trixie_calculator.html, /patent_calculator.html | UK audience; one "full cover bets explained" post can rank for all of them. |
+| 20 | what does moneyline mean in betting (2,900 / 3) | what does money line mean in betting (3,600 / 16), what does ml mean in betting (590 / 17), what does m l mean in betting (720 / 23) | /moneyline_calculator.html, /implied_probability_calculator.html | Beginner explainer; moneyline-betting-strategy is strategy intent, link to it as the next step. Found 2026-11-16. |
+| 21 | what does hedge mean in betting (720 / 6) | hedge bet meaning, how to hedge a bet | /hedging_calculator.html | Definition intent only; don't re-teach hedging-bets-strategy. Found 2026-11-16. |
 
 ### Seasonal (publish 2-6 weeks before the peak; verify event dates with a web search first)
 
@@ -93,3 +95,13 @@ clearer answer, worked examples with real math, and a working calculator.
   (2026-11-15). Also covered in passing: "puck line" (880 / 0), "hockey puck line" (880 / 3), "run line" (1,600 / 0). Possible
   follow-ups with a different intent: a dedicated MLB "run line" explainer before Opening Day (1,600 / 0, check it doesn't cannibalise),
   "what does 3.5 mean in betting" (260 / 0), "what does 7.5 mean in betting" (140 / 0).
+- "sports betting terms" (590 / 12), "betting terms" (720 / 17), "sports betting lingo" (140 / 10), "sports betting slang" (140 / 9),
+  "sports betting terms explained" (70 / 13), "what does pk mean in betting" (480 / 0), "what does chalk mean in betting" (320 / 0),
+  "what does fading mean in betting" (260 / 0), "what does push mean in betting" (210 / 0), "what does ats mean in betting" (170 / 1),
+  "what does tailing mean in betting" (140 / 0) are now served by sports-betting-terms (2026-11-16, glossary grouped by odds/spread/bet
+  types/settlement/slang/money). Also covered in passing: "what does handle mean in betting" (70 / 0), "what does su mean in betting" (50 / 0).
+- New ideas from the 2026-11-16 research (OpenSEO, US): "what does money line mean in betting" (3,600 / 16) and "what does moneyline mean in
+  betting" (2,900 / 3) look like the best next explainer (beginner intent; moneyline-betting-strategy is strategy intent, link to it);
+  "what does ml mean in betting" (590 / 17); "what does hedge mean in betting" (720 / 6, pair with hedging calculator; don't overlap
+  hedging-bets-strategy); "what does ev mean in betting" (260 / 4); "what does 3.5 mean in betting" (260 / 0); "what does handicap mean in
+  betting" (140 / 3); "what does edge mean in betting" (110 / 0).
