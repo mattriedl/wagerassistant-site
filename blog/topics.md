@@ -13,6 +13,7 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | Date | Post | Primary keyword |
 |---|---|---|
+| 2026-11-17 | what-is-vig | what is vig |
 | 2026-11-16 | sports-betting-terms | sports betting terms |
 | 2026-11-15 | what-does-minus-1-5-mean-in-betting | what does minus 1.5 mean in betting |
 | 2026-11-14 | what-is-a-teaser-bet | what is a teaser bet |
@@ -42,7 +43,6 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | # | Primary keyword (vol / KD) | Secondary keywords (vol / KD) | Calculator to feature | Notes |
 |---|---|---|---|---|
-| 6 | what is vig (1,300 / 6) | what does vig mean in betting (210 / 13), juice in betting, vigorish, how to calculate vig, no vig odds | /no_vig_calculator.html, /margin_calculator.html | Worked -110/-110 example (4.55% hold). Don't duplicate the implied-probability post; link to it. |
 | 7 | what does plus and minus mean in betting (720 / 9) | what does plus minus mean in betting (390 / 4), what does minus mean in betting (260 / 7), what does plus mean in betting (260 / 14), what does +150 mean in betting (110 / 1), what does +200 mean in betting (110 / 18), how to read betting odds (2,400 / 28) | /odds_converter.html, /moneyline_calculator.html | "what does and mean in betting" (9,900) is almost certainly people typing "+ and -". Reading American odds for beginners; payout table for common prices. |
 | 8 | what is a unit in betting (390 / 0) | what does units mean in betting (210 / 11), what does 1u mean in betting (110 / 11), what does 1 unit mean in betting (50 / 11), betting unit size | /kelly_criterion_calculator.html, /roi_calculator.html | Link bankroll-management post. |
 | 9 | how do bonus bets work (320 / 0) | what is a bonus bet (320 / 0), bonus bet conversion, stake not returned, free bet calculator | /bonus_bet_converter.html, /matched_betting_calculator.html | Explain SNR vs SR math. Generic only: no sportsbook promo codes or offers; terms vary by book and state. |
@@ -105,3 +105,10 @@ clearer answer, worked examples with real math, and a working calculator.
   "what does ml mean in betting" (590 / 17); "what does hedge mean in betting" (720 / 6, pair with hedging calculator; don't overlap
   hedging-bets-strategy); "what does ev mean in betting" (260 / 4); "what does 3.5 mean in betting" (260 / 0); "what does handicap mean in
   betting" (140 / 3); "what does edge mean in betting" (110 / 0).
+- "what is vig" (1,300 / 10), "vig betting" (720 / 14), "what is vigorish" (590 / 6), "juice in betting" (320 / 0), "what does vig mean in betting"
+  (210 / 13), "what is a vig in betting" (170 / 10), "no vig odds" (170 / 0), "what is vig in sports betting" (140 / 11), "vig meaning betting" (70 / 12),
+  "what does juice mean in betting" (40 / 0), "how to calculate vig" (30 / 0) are now served by what-is-vig (2026-11-17). Page one for "what is vig"
+  is mixed intent (loan-shark/dictionary pages plus betting.us, ballislife). Other ideas from the 2026-11-17 research: "vigorish" (1,600 / 7) could
+  be a supporting target for the same post; "vig calculator" (1,000 / 0) belongs to /no_vig_calculator.html (consider adding "vig calculator"
+  wording there; needs Matt's OK); "fantasy football playoff odds calculator" (320 / 0) is a possible new tool idea; "how do betting lines work"
+  (260 / 24).
