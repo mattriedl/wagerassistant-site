@@ -13,6 +13,7 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | Date | Post | Primary keyword |
 |---|---|---|
+| 2026-11-18 | what-does-plus-and-minus-mean-in-betting | what does plus and minus mean in betting |
 | 2026-11-17 | what-is-vig | what is vig |
 | 2026-11-16 | sports-betting-terms | sports betting terms |
 | 2026-11-15 | what-does-minus-1-5-mean-in-betting | what does minus 1.5 mean in betting |
@@ -43,7 +44,6 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | # | Primary keyword (vol / KD) | Secondary keywords (vol / KD) | Calculator to feature | Notes |
 |---|---|---|---|---|
-| 7 | what does plus and minus mean in betting (720 / 9) | what does plus minus mean in betting (390 / 4), what does minus mean in betting (260 / 7), what does plus mean in betting (260 / 14), what does +150 mean in betting (110 / 1), what does +200 mean in betting (110 / 18), how to read betting odds (2,400 / 28) | /odds_converter.html, /moneyline_calculator.html | "what does and mean in betting" (9,900) is almost certainly people typing "+ and -". Reading American odds for beginners; payout table for common prices. |
 | 8 | what is a unit in betting (390 / 0) | what does units mean in betting (210 / 11), what does 1u mean in betting (110 / 11), what does 1 unit mean in betting (50 / 11), betting unit size | /kelly_criterion_calculator.html, /roi_calculator.html | Link bankroll-management post. |
 | 9 | how do bonus bets work (320 / 0) | what is a bonus bet (320 / 0), bonus bet conversion, stake not returned, free bet calculator | /bonus_bet_converter.html, /matched_betting_calculator.html | Explain SNR vs SR math. Generic only: no sportsbook promo codes or offers; terms vary by book and state. |
 | 10 | what does the spread mean (12,100 / 0) | what does spread mean in betting (9,900 / 21), what does spread mean in betting nfl (170 / 7), what does spread mean in betting nba (320 / 24), what does minus mean in betting spread (140 / 25) | /spread_calculator.html, /half_point_calculator.html | Beginner definition. Must not overlap point-spread-betting-strategy (strategy intent): link to it as the next step. |
@@ -112,3 +112,8 @@ clearer answer, worked examples with real math, and a working calculator.
   be a supporting target for the same post; "vig calculator" (1,000 / 0) belongs to /no_vig_calculator.html (consider adding "vig calculator"
   wording there; needs Matt's OK); "fantasy football playoff odds calculator" (320 / 0) is a possible new tool idea; "how do betting lines work"
   (260 / 24).
+- "what does plus and minus mean in betting" (720 / 22 on 2026-11-18, was 9), "what does plus minus mean in betting" (390 / 4), "what does minus mean
+  in betting" (260 / 7), "what does plus mean in betting" (260 / 14), "what does and mean in betting odds" (1,900 / 22), "what does +150 / +200 mean
+  in betting", "plus minus odds" (70 / 24), "what does a negative number mean in betting" (30 / -) are now served by what-does-plus-and-minus-mean-in-betting
+  (2026-11-18). Page one was weak (syndicated radio-station pages, Facebook, a spam site, thecoldline). "what does and mean in betting" (9,900 / no KD)
+  is the same intent; don't target it again. Other ideas: "american odds explained" (140 / 37, overlaps; skip), "what does -110 mean in betting" (check volume).
