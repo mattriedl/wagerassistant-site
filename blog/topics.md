@@ -13,6 +13,7 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | Date | Post | Primary keyword |
 |---|---|---|
+| 2026-11-19 | what-does-moneyline-mean-in-betting | what does moneyline mean in betting |
 | 2026-11-18 | what-does-plus-and-minus-mean-in-betting | what does plus and minus mean in betting |
 | 2026-11-17 | what-is-vig | what is vig |
 | 2026-11-16 | sports-betting-terms | sports betting terms |
@@ -56,7 +57,6 @@ clearer answer, worked examples with real math, and a working calculator.
 | 17 | what is a bad beat (140 / 7) | bad beat meaning, bad beat jackpot (poker vs sports) | /parlay_calculator.html | Lower priority. |
 | 18 | each way bet (170 / 8) | what is an each way bet (50 / 7), each way bet explained, each way place terms | /each_way_calculator.html | US volume small; UK volume is large. Use British terms only where explained. |
 | 19 | what is a lucky 15 (30 / 0 US) | lucky 15 bet explained, lucky 15 calculator (UK 40.5K / 0), what is a yankee bet, what is a trixie bet (70 / 2), what is a patent bet (70 / 4) | /lucky_15_calculator.html, /yankee_calculator.html, /trixie_calculator.html, /patent_calculator.html | UK audience; one "full cover bets explained" post can rank for all of them. |
-| 20 | what does moneyline mean in betting (2,900 / 3) | what does money line mean in betting (3,600 / 16), what does ml mean in betting (590 / 17), what does m l mean in betting (720 / 23) | /moneyline_calculator.html, /implied_probability_calculator.html | Beginner explainer; moneyline-betting-strategy is strategy intent, link to it as the next step. Found 2026-11-16. |
 | 21 | what does hedge mean in betting (720 / 6) | hedge bet meaning, how to hedge a bet | /hedging_calculator.html | Definition intent only; don't re-teach hedging-bets-strategy. Found 2026-11-16. |
 
 ### Seasonal (publish 2-6 weeks before the peak; verify event dates with a web search first)
@@ -117,3 +117,9 @@ clearer answer, worked examples with real math, and a working calculator.
   in betting", "plus minus odds" (70 / 24), "what does a negative number mean in betting" (30 / -) are now served by what-does-plus-and-minus-mean-in-betting
   (2026-11-18). Page one was weak (syndicated radio-station pages, Facebook, a spam site, thecoldline). "what does and mean in betting" (9,900 / no KD)
   is the same intent; don't target it again. Other ideas: "american odds explained" (140 / 37, overlaps; skip), "what does -110 mean in betting" (check volume).
+- "what does moneyline mean in betting" (3,600 / 3 on 2026-11-19), "moneyline meaning" (4,400 / 13), "what does money line mean in betting" (3,600 / 16),
+  "what is a moneyline bet" (2,900 / 23), "moneyline vs spread" (1,600 / 0), "how does moneyline work" (1,300 / 15), "moneyline bet meaning" (1,300 / 10),
+  "what does m l mean in betting" (720 / 23), "what does ml mean in betting" (590 / -), "3 way moneyline meaning" (260 / 2), "how to read moneyline odds" (260 / 28)
+  are now served by what-does-moneyline-mean-in-betting (2026-11-19). Page one was thin (athlonsports, a Q&A page; AI overview + PAA). Also covered in
+  passing: "what does moneyline mean" (2,900 / 15), "how do moneyline bets work" (390 / 15), "money line 3 way meaning" (390 / 4), "3 way moneyline" (480 / 0).
+  Other ideas: "moneyline bet" (3,600 / 29, commercial, skip), "spread total moneyline meaning" (110 / 24), "regulation time moneyline meaning" (70 / 2).
