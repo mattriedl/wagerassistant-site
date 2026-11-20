@@ -13,6 +13,7 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | Date | Post | Primary keyword |
 |---|---|---|
+| 2026-11-20 | what-does-the-spread-mean | what does the spread mean |
 | 2026-11-19 | what-does-moneyline-mean-in-betting | what does moneyline mean in betting |
 | 2026-11-18 | what-does-plus-and-minus-mean-in-betting | what does plus and minus mean in betting |
 | 2026-11-17 | what-is-vig | what is vig |
@@ -47,7 +48,6 @@ clearer answer, worked examples with real math, and a working calculator.
 |---|---|---|---|---|
 | 8 | what is a unit in betting (390 / 0) | what does units mean in betting (210 / 11), what does 1u mean in betting (110 / 11), what does 1 unit mean in betting (50 / 11), betting unit size | /kelly_criterion_calculator.html, /roi_calculator.html | Link bankroll-management post. |
 | 9 | how do bonus bets work (320 / 0) | what is a bonus bet (320 / 0), bonus bet conversion, stake not returned, free bet calculator | /bonus_bet_converter.html, /matched_betting_calculator.html | Explain SNR vs SR math. Generic only: no sportsbook promo codes or offers; terms vary by book and state. |
-| 10 | what does the spread mean (12,100 / 0) | what does spread mean in betting (9,900 / 21), what does spread mean in betting nfl (170 / 7), what does spread mean in betting nba (320 / 24), what does minus mean in betting spread (140 / 25) | /spread_calculator.html, /half_point_calculator.html | Beginner definition. Must not overlap point-spread-betting-strategy (strategy intent): link to it as the next step. |
 | 11 | cash out betting (260 / 0) | what is a cash out bet, should you cash out a bet, partial cash out, sports betting cash out strategy (20 / 0) | /hedging_calculator.html, /expected_value_calculator.html | Compare cash-out offer vs fair hedge value. |
 | 12 | line movement (480 / 16) | reverse line movement (210 / 0), why do betting lines move, steam move, closing line value (170 / 0), what does clv mean in betting (70 / 3) | /implied_probability_calculator.html, /no_vig_calculator.html | |
 | 13 | what does double chance mean in betting (320 / 0) | what does 2.5 goals mean in betting (170 / 0), what does 0.5 goals mean in betting (90 / 1), draw no bet, what does h2h mean in betting (90 / 0) | /asian_handicap_calculator.html, /over_under_calculator.html | Soccer markets. |
@@ -123,3 +123,9 @@ clearer answer, worked examples with real math, and a working calculator.
   are now served by what-does-moneyline-mean-in-betting (2026-11-19). Page one was thin (athlonsports, a Q&A page; AI overview + PAA). Also covered in
   passing: "what does moneyline mean" (2,900 / 15), "how do moneyline bets work" (390 / 15), "money line 3 way meaning" (390 / 4), "3 way moneyline" (480 / 0).
   Other ideas: "moneyline bet" (3,600 / 29, commercial, skip), "spread total moneyline meaning" (110 / 24), "regulation time moneyline meaning" (70 / 2).
+- "what does the spread mean" (12,100 / 0 on 2026-11-20), "what does spread mean in betting" (9,900 / 21), "how does the spread work" (2,400 / 15), "what does it mean to cover
+  the spread" (1,600 / 8), "what does covering the spread mean" (1,600 / 22), "what does the spread mean in football" (720 / 19), "what does spread mean in betting nba"
+  (390 / 24), "what does against the spread mean" (320 / 21), "what does the spread mean in football betting" (210 / 12), "what does minus mean in betting spread" (170 / 25),
+  "what does spread mean in betting nfl" (140 / 7) are now served by what-does-the-spread-mean (2026-11-20). Page one was weak (playohio, oddscrowd, nysafebets, ell.stackexchange,
+  Facebook, sports-king, wizardslots, Cambridge dictionary; AI overview + PAA). Also covered in passing: "what is the spread in betting" (8,100 / 32), "point spread meaning"
+  (3,600 / 36). Other ideas: "spread betting explained" (1,000 / 34, overlaps; skip), "what does +7 mean in betting" / "what does -3.5 mean in betting" (check volume).
