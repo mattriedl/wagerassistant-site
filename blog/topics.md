@@ -13,6 +13,7 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | Date | Post | Primary keyword |
 |---|---|---|
+| 2026-11-21 | what-is-a-unit-in-sports-betting | what is a unit in sports betting |
 | 2026-11-20 | what-does-the-spread-mean | what does the spread mean |
 | 2026-11-19 | what-does-moneyline-mean-in-betting | what does moneyline mean in betting |
 | 2026-11-18 | what-does-plus-and-minus-mean-in-betting | what does plus and minus mean in betting |
@@ -46,7 +47,6 @@ clearer answer, worked examples with real math, and a working calculator.
 
 | # | Primary keyword (vol / KD) | Secondary keywords (vol / KD) | Calculator to feature | Notes |
 |---|---|---|---|---|
-| 8 | what is a unit in betting (390 / 0) | what does units mean in betting (210 / 11), what does 1u mean in betting (110 / 11), what does 1 unit mean in betting (50 / 11), betting unit size | /kelly_criterion_calculator.html, /roi_calculator.html | Link bankroll-management post. |
 | 9 | how do bonus bets work (320 / 0) | what is a bonus bet (320 / 0), bonus bet conversion, stake not returned, free bet calculator | /bonus_bet_converter.html, /matched_betting_calculator.html | Explain SNR vs SR math. Generic only: no sportsbook promo codes or offers; terms vary by book and state. |
 | 11 | cash out betting (260 / 0) | what is a cash out bet, should you cash out a bet, partial cash out, sports betting cash out strategy (20 / 0) | /hedging_calculator.html, /expected_value_calculator.html | Compare cash-out offer vs fair hedge value. |
 | 12 | line movement (480 / 16) | reverse line movement (210 / 0), why do betting lines move, steam move, closing line value (170 / 0), what does clv mean in betting (70 / 3) | /implied_probability_calculator.html, /no_vig_calculator.html | |
@@ -129,3 +129,10 @@ clearer answer, worked examples with real math, and a working calculator.
   "what does spread mean in betting nfl" (140 / 7) are now served by what-does-the-spread-mean (2026-11-20). Page one was weak (playohio, oddscrowd, nysafebets, ell.stackexchange,
   Facebook, sports-king, wizardslots, Cambridge dictionary; AI overview + PAA). Also covered in passing: "what is the spread in betting" (8,100 / 32), "point spread meaning"
   (3,600 / 36). Other ideas: "spread betting explained" (1,000 / 34, overlaps; skip), "what does +7 mean in betting" / "what does -3.5 mean in betting" (check volume).
+- "what is a unit in sports betting" (720 / 10 on 2026-11-21), "what are units in sports betting" (720 / 11), "what are units in betting" (390 / 0), "what is a unit in betting"
+  (390 / 0), "what does units mean in betting" (210 / 11), "how much is a unit in betting" (110 / 11), "what does 1u mean in betting" (110 / 11), "what does 1 unit mean in betting"
+  (50 / 11), "unit size betting" (50 / 11), "what does 5 units mean in betting" (30 / 0) are now served by what-is-a-unit-in-sports-betting (2026-11-21). Page one: boydsbets,
+  sportingnews, sickfade, valuebetfactory, Reddit r/sportsbetting, a spam site; AI overview + PAA. Few explain risk vs to-win units or ROI. Also "unit betting" (210 / 11, commercial).
+  Other ideas from the 2026-11-21 research: "hedging bets" (2,900 / 0, commercial; hedging-bets-strategy already targets it), "positive ev betting" (390 / 3, overlaps
+  value-betting-strategy; maybe a "what does ev mean in betting" explainer), "how do bonus bets work" (now 260 / 0), "pot odds calculator" (480 / 9) and "poker odds calculator"
+  (9,900 / 0) as possible new tools.
